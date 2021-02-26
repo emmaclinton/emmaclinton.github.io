@@ -13,5 +13,5 @@ Thanks for checking out my site!
 
 ## Blog Posts
 
-- [What is Open Source GIScience?](blogs/open-souce.md)
+- [What is Open Source GIScience?](blogs/open-source.md)
 - another future blog

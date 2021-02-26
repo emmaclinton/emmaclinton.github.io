@@ -8,7 +8,7 @@ This is a reflection on the readings of the week of 02/26/21 regarding Open Sour
 The main organization for open source GIS is [OSGeo](https://www.osgeo.org/).
 
 ![OSGeo Logo](logo-osgeo.svg)
-[![OSGeo Logo](logo-osgeo.svg)](https://www.osgeo.org/)
+[![OSGeo Logo](logo-osgeo.svg)](https://www.osgeo.org/).
 
 ***bold italics***
 **bold**
