@@ -18,10 +18,8 @@ Here is `some code`
 
 Here is a block of code:
 
-```
-markdown
+```markdown
 ![OSGeo Logo](logo-osgeo.svg)
 
 [![OSGeo Logo](logo-osgeo.svg)](https://www.osgeo.org/)
-
 ```
