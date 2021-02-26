@@ -1,3 +1,7 @@
+---
+title: Main Page
+layout: default
+---
 # Emma Clinton Open Source GIS Portfolio
 Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GIS course at Middlebury College. 
 
