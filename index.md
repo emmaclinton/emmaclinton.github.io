@@ -10,11 +10,12 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 1. [Gravity Model of Spatial Interaction](gravity/gravity.md)
 2.  Another Future Analysis
 
-The course website is found [here](https://gis4dev.github.io).
-
-Thanks for checking out my site!
 
 ## Blog Posts
 
 1.  [What is Open Source GIScience?](blogs/open-source.md)
 2.  another future blog
+
+The course website is found [here](https://gis4dev.github.io).
+
+Thanks for checking out my site!
