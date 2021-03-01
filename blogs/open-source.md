@@ -20,7 +20,7 @@ This kind of collaborative learning at an undergraduate level may be useful in h
 
 To learn more, the main organization for open source GIS is [OSGeo](https://www.osgeo.org/).
 
-[![OSGeo Logo](logo-osgeo.svg)](https://www.osgeo.org/).
+[![OSGeo Logo](logo-osgeo.svg)](https://www.osgeo.org/)
 
 Readings:
 
