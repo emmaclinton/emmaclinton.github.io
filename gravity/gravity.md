@@ -9,7 +9,7 @@ In the gravity model, the potential for interaction between an input and a desti
 
 In this exercise, we analyzed the interactions between hospital clusters and towns in New England and then compared our results to those of the Dartmouth Health Atlas.
 
-The first step in this process was to create a model to preprocess the [hospitals data](https://hifld-geoplatform.opendata.arcgis.com/datasets/6ac5e325468c4cb9b905f1728d6fbf0f_0), which is sourced from the Department of Homeland Security. This data contains the locations of hospitals in the United States and US Territories. This model takes these hospitals and filters them to the analysis extent and also removes hospitals that lack data on number of beds, hospitals that are closed, and hospitals that are not categorized as children's hospitals, women's hospitals, or general acute care facilities.
+The first step in this process was to create a model to preprocess the [hospitals data](https://hifld-geoplatform.opendata.arcgis.com/datasets/6ac5e325468c4cb9b905f1728d6fbf0f_0), which is sourced from the Department of Homeland Security. This data contains the locations of hospitals in the United States and US Territories. This [model](assets/GravityModel) takes these hospitals and filters them to the analysis extent and also removes hospitals that lack data on number of beds, hospitals that are closed, and hospitals that are not categorized as children's hospitals, women's hospitals, or general acute care facilities.
 
 Link to model3 files and images of models
 
