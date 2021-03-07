@@ -32,7 +32,7 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/catchments_1.js"></script>
+        <script src="data/GravityModel_Catchments_1.js"></script>
         <script src="data/Hospital_Catchments_DartmouthAtlas_2.js"></script>
         <script src="data/Hospital_Clusters_Summed_NE_3.js"></script>
         <script>
@@ -56,7 +56,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot;  <a href="https://emmaclinton.github.io" target="_blank">Emma Clinton</a> &middot;<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://emmaclinton.github.io" target="_blank">Emma Clinton</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var measureControl = new L.Control.Measure({
             position: 'topleft',
@@ -89,7 +89,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_catchments_1(feature, layer) {
+        function pop_GravityModel_Catchments_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -122,9 +122,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_catchments_1_0() {
+        function style_GravityModel_Catchments_1_0() {
             return {
-                pane: 'pane_catchments_1',
+                pane: 'pane_GravityModel_Catchments_1',
                 opacity: 1,
                 color: 'rgba(193,154,23,1.0)',
                 dashArray: '',
@@ -135,20 +135,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_catchments_1');
-        map.getPane('pane_catchments_1').style.zIndex = 401;
-        map.getPane('pane_catchments_1').style['mix-blend-mode'] = 'normal';
-        var layer_catchments_1 = new L.geoJson(json_catchments_1, {
+        map.createPane('pane_GravityModel_Catchments_1');
+        map.getPane('pane_GravityModel_Catchments_1').style.zIndex = 401;
+        map.getPane('pane_GravityModel_Catchments_1').style['mix-blend-mode'] = 'normal';
+        var layer_GravityModel_Catchments_1 = new L.geoJson(json_GravityModel_Catchments_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_catchments_1',
-            layerName: 'layer_catchments_1',
-            pane: 'pane_catchments_1',
-            onEachFeature: pop_catchments_1,
-            style: style_catchments_1_0,
+            dataVar: 'json_GravityModel_Catchments_1',
+            layerName: 'layer_GravityModel_Catchments_1',
+            pane: 'pane_GravityModel_Catchments_1',
+            onEachFeature: pop_GravityModel_Catchments_1,
+            style: style_GravityModel_Catchments_1_0,
         });
-        bounds_group.addLayer(layer_catchments_1);
-        map.addLayer(layer_catchments_1);
+        bounds_group.addLayer(layer_GravityModel_Catchments_1);
+        map.addLayer(layer_GravityModel_Catchments_1);
         function pop_Hospital_Catchments_DartmouthAtlas_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -304,7 +304,7 @@
             };
             abstract.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Hospital_Clusters_Summed_NE_3.png" /> Hospital_Clusters_Summed_NE': layer_Hospital_Clusters_Summed_NE_3,'<img src="legend/Hospital_Catchments_DartmouthAtlas_2.png" /> Hospital_Catchments_DartmouthAtlas': layer_Hospital_Catchments_DartmouthAtlas_2,'<img src="legend/catchments_1.png" /> catchments': layer_catchments_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Hospital_Clusters_Summed_NE_3.png" /> Hospital_Clusters_Summed_NE': layer_Hospital_Clusters_Summed_NE_3,'<img src="legend/Hospital_Catchments_DartmouthAtlas_2.png" /> Hospital_Catchments_DartmouthAtlas': layer_Hospital_Catchments_DartmouthAtlas_2,'<img src="legend/GravityModel_Catchments_1.png" /> GravityModel_Catchments': layer_GravityModel_Catchments_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
