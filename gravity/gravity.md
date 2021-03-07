@@ -15,7 +15,13 @@ After the HSA data was filtered, the next step was to group the hospitals by tow
 
 Once the data was preprocessed, the spatial interaction model could be implemented. This model takes an input layer (in our case, the towns of New England) and a destination layer (the hospital clusters created in the model above). It converts their geometries into centroids and then runs a distance matrix which calculates the distance between each of the inputs and each of the destinations. The parameter "k", which can be adjusted, determines the number of destinations that will be assessed as a possible service destination for the inputs. The default value of k is 20. The input weight values (town population) and target weight values (number of beds) are then joined as attributes to the distance matrix.
 
-The potential for interaction between a source and a destination can be calculated as **(origin weight * destination weight) / distance^2)**. The potential for interaction increases as the weights of the numerator values increase, and decreases as distance increases in the denominator. In this model, the relative influences of the weights and the distance can be altered by changing their respective exponents. The input weight's influence can be changed via the lambda variable (default = 1), the target weight's influence can be changed by changing alpha (default = 1) and the distance parameter can be changed by changing beta (default = 2). 
+The potential for interaction between a source and a destination can be calculated as **(origin weight * destination weight) / distance^2)**. The potential for interaction increases as the weights of the numerator values increase, and decreases as distance increases in the denominator. Initially, input and target features with weights of 0 are excluded from the analysis using the Extract by Expression tool.
+
+In this model, the relative influences of the weights and the distance can be altered by changing their respective exponents. The input weight's influence can be changed via the lambda variable (default = 1), the target weight's influence can be changed by changing alpha (default = 1) and the distance parameter can be changed by changing beta (default = 2).
+
+After potential has been calculated for each input-target pair, the maximum potential value for each input is determined using the Field Calculator. For each input, the input-target combination with the highest potential is determined to be the most likely option for interaction.
+
+The maximum potential data is then joined back to the input layer (in our case, towns) and this information is aggregated to form hospital service area 'catchments' comprised of all towns that are served by a hospital cluster target point. 
 
 Link to model3 files and images of models
 
