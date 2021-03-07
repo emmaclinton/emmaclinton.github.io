@@ -9,4 +9,4 @@ In the gravity model, the potential for interaction between an input and a desti
 
 Link to model3 files and images of models
 
-Link to [map](assets/index.html)
+Link to [map](assets/)!
