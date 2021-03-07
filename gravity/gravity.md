@@ -17,7 +17,7 @@ The first step in this process was to create a model to preprocess the [hospital
 After the HSA data was filtered, the next step was to group the hospitals by town, essentially creating a single centroid for all the hospitals that fall within each zip code. This [model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Preprocess_Filtered_Target_Features.model3) sums the number of beds available in the centroids and retains the ZIP code, the hospital name, and the sum of the beds in the attribute table.
 
 ![Target Data Preprocessing Model](/assets/target_preprocess.png)
-*target data preprocessing model (still Homeland Security data-specific)*
+*Target layer data preprocessing model (still Homeland Security data-specific)*
 
 Once the data was preprocessed, the [spatial interaction model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/GravityModelUsingDistMatrix.model3) could be implemented. This model takes an input layer (in our case, the towns of New England) and a destination layer (the hospital clusters created in the model above). It converts their geometries into centroids and then runs a distance matrix which calculates the distance between each of the inputs and each of the destinations. The parameter "k", which can be adjusted, determines the number of destinations that will be assessed as a possible service destination for the inputs. The default value of k is 20. The input weight values (town population) and target weight values (number of beds) are then joined as attributes to the distance matrix.
 
@@ -30,6 +30,7 @@ After potential has been calculated for each input-target pair, the maximum pote
 The maximum potential data is then joined back to the input layer (in our case, towns) and this information is aggregated to form hospital service area 'catchments' comprised of all towns that are served by a hospital cluster target point.
 
 ![Spatial Interaction Model](/assets/GravityModel.png)
+*Spatial Interaction Model*
 
 
 Here is a link to the [map](assets/)!
