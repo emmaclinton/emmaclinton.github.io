@@ -3,7 +3,7 @@ layout: page
 title: Gravity Model of Spatial Interaction
 ---
 
-The purpose of this week's lab was to create a [Gravity Model of Spatial Interaction] (https://transportgeography.org/contents/methods/spatial-interactions-gravity-model/) to determine the service area "catchments" of hospitals.
+The purpose of this week's lab was to create a [Gravity Model of Spatial Interaction](https://transportgeography.org/contents/methods/spatial-interactions-gravity-model/) to determine the service area "catchments" of hospitals.
 
 In the gravity model, the potential for interaction between an input and a destination is based on the distance between the two bodies and their respective "attractiveness", or weights. The influences of these weight values, as well as the distance exponent, can be changed in the model. For instance, in our model, hospitals were weighted by the number of beds they have available, and towns served by hospitals are weighted by their population.
 
