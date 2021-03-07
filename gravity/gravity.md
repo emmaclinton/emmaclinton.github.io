@@ -32,7 +32,8 @@ The maximum potential data is then joined back to the input layer (in our case, 
 ![Spatial Interaction Model](/assets/GravityModel.png)
 *Spatial Interaction Model*
 
-
 Here is a link to the [map](assets/)!
+
+The results of this model differ from those of the [Dartmouth Health Atlas Hospital Services Areas](https://atlasdata.dartmouth.edu/downloads/supplemental#boundaries) (HSAs). This may be due to several factors. It is possible that our K value does not match with that used to generate the HSAs. It is also possible that the parameters in our potential model are weighted differently (i.e. different exponent values for the alpha, beta, and lambda parameters).
 
 ACKNOWLEDGEMENTS: I would like to thank Joseph Holler and the members of GEOG0323 Spring 2021 for their [insights, questions, and answers regarding this project](https://github.com/GIS4DEV/GIS4DEV.github.io/issues).
