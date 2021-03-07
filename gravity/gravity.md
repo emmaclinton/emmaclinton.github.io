@@ -34,3 +34,5 @@ The maximum potential data is then joined back to the input layer (in our case, 
 
 
 Here is a link to the [map](assets/)!
+
+ACKNOWLEDGEMENTS: I would like to thank Joseph Holler and the members of GEOG0323 Spring 2021 for their [insights, questions, and answers regarding this project](https://github.com/GIS4DEV/GIS4DEV.github.io/issues).
