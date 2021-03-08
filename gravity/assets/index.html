@@ -32,7 +32,7 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/catchments_k20_1.js"></script>
+        <script src="data/Gravity_Model_Hospital_Catchments_1.js"></script>
         <script src="data/Hospital_Catchments_DartmouthAtlas_2.js"></script>
         <script src="data/Hospital_Clusters_Summed_NE_3.js"></script>
         <script>
@@ -56,7 +56,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://emmaclinton.github.io" target="_blank">Emma Clinton</a> &middot; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var measureControl = new L.Control.Measure({
             position: 'topleft',
@@ -89,7 +89,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_catchments_k20_1(feature, layer) {
+        function pop_Gravity_Model_Hospital_Catchments_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -107,24 +107,24 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">TargetID</th>\
-                        <td>' + (feature.properties['TargetID'] !== null ? autolinker.link(feature.properties['TargetID'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ZIP</th>\
+                        <td>' + (feature.properties['ZIP'] !== null ? autolinker.link(feature.properties['ZIP'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">TargetWeig</th>\
-                        <td>' + (feature.properties['TargetWeig'] !== null ? autolinker.link(feature.properties['TargetWeig'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Beds</th>\
+                        <td>' + (feature.properties['Beds'] !== null ? autolinker.link(feature.properties['Beds'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">SumInputWe</th>\
-                        <td>' + (feature.properties['SumInputWe'] !== null ? autolinker.link(feature.properties['SumInputWe'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Population</th>\
+                        <td>' + (feature.properties['Population'] !== null ? autolinker.link(feature.properties['Population'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_catchments_k20_1_0() {
+        function style_Gravity_Model_Hospital_Catchments_1_0() {
             return {
-                pane: 'pane_catchments_k20_1',
+                pane: 'pane_Gravity_Model_Hospital_Catchments_1',
                 opacity: 1,
                 color: 'rgba(193,154,23,1.0)',
                 dashArray: '',
@@ -135,20 +135,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_catchments_k20_1');
-        map.getPane('pane_catchments_k20_1').style.zIndex = 401;
-        map.getPane('pane_catchments_k20_1').style['mix-blend-mode'] = 'normal';
-        var layer_catchments_k20_1 = new L.geoJson(json_catchments_k20_1, {
+        map.createPane('pane_Gravity_Model_Hospital_Catchments_1');
+        map.getPane('pane_Gravity_Model_Hospital_Catchments_1').style.zIndex = 401;
+        map.getPane('pane_Gravity_Model_Hospital_Catchments_1').style['mix-blend-mode'] = 'normal';
+        var layer_Gravity_Model_Hospital_Catchments_1 = new L.geoJson(json_Gravity_Model_Hospital_Catchments_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_catchments_k20_1',
-            layerName: 'layer_catchments_k20_1',
-            pane: 'pane_catchments_k20_1',
-            onEachFeature: pop_catchments_k20_1,
-            style: style_catchments_k20_1_0,
+            dataVar: 'json_Gravity_Model_Hospital_Catchments_1',
+            layerName: 'layer_Gravity_Model_Hospital_Catchments_1',
+            pane: 'pane_Gravity_Model_Hospital_Catchments_1',
+            onEachFeature: pop_Gravity_Model_Hospital_Catchments_1,
+            style: style_Gravity_Model_Hospital_Catchments_1_0,
         });
-        bounds_group.addLayer(layer_catchments_k20_1);
-        map.addLayer(layer_catchments_k20_1);
+        bounds_group.addLayer(layer_Gravity_Model_Hospital_Catchments_1);
+        map.addLayer(layer_Gravity_Model_Hospital_Catchments_1);
         function pop_Hospital_Catchments_DartmouthAtlas_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -166,9 +166,6 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">HSA_Name</th>\
                         <td>' + (feature.properties['HSA_Name'] !== null ? autolinker.link(feature.properties['HSA_Name'].toLocaleString()) : '') + '</td>\
@@ -189,7 +186,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 3.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(55,126,184,0.0)',
@@ -232,8 +229,8 @@
                         <td>' + (feature.properties['ZIP'] !== null ? autolinker.link(feature.properties['ZIP'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">TotalBEDS</th>\
-                        <td>' + (feature.properties['TotalBEDS'] !== null ? autolinker.link(feature.properties['TotalBEDS'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Total_Beds</th>\
+                        <td>' + (feature.properties['Total_Beds'] !== null ? autolinker.link(feature.properties['Total_Beds'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -307,7 +304,7 @@
             };
             abstract.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Hospital_Clusters_Summed_NE_3.png" /> Hospital_Clusters_Summed_NE': layer_Hospital_Clusters_Summed_NE_3,'<img src="legend/Hospital_Catchments_DartmouthAtlas_2.png" /> Hospital_Catchments_DartmouthAtlas': layer_Hospital_Catchments_DartmouthAtlas_2,'<img src="legend/catchments_k20_1.png" /> catchments_k20': layer_catchments_k20_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Hospital_Clusters_Summed_NE_3.png" /> Hospital_Clusters_Summed_NE': layer_Hospital_Clusters_Summed_NE_3,'<img src="legend/Hospital_Catchments_DartmouthAtlas_2.png" /> Hospital_Catchments_DartmouthAtlas': layer_Hospital_Catchments_DartmouthAtlas_2,'<img src="legend/Gravity_Model_Hospital_Catchments_1.png" /> Gravity_Model_Hospital_Catchments': layer_Gravity_Model_Hospital_Catchments_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
