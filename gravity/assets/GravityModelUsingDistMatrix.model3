@@ -18,8 +18,8 @@
       </Option>
       <Option value="Aggregate" type="QString" name="component_description"/>
       <Option value="44.40814862690092" type="double" name="component_height"/>
-      <Option value="1337.428235260821" type="double" name="component_pos_x"/>
-      <Option value="945.2538329596138" type="double" name="component_pos_y"/>
+      <Option value="1388.0949019274876" type="double" name="component_pos_x"/>
+      <Option value="865.2538329596138" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:aggregate_1" type="QString" name="id"/>
@@ -175,8 +175,8 @@
       </Option>
       <Option value="Extract by expression (Max Potential)" type="QString" name="component_description"/>
       <Option value="70.33171366395618" type="double" name="component_height"/>
-      <Option value="1196.024551247661" type="double" name="component_pos_x"/>
-      <Option value="711.1018902554807" type="double" name="component_pos_y"/>
+      <Option value="1090.6912179143278" type="double" name="component_pos_x"/>
+      <Option value="727.1018902554807" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:extractbyexpression_1" type="QString" name="id"/>
@@ -296,8 +296,8 @@
       </Option>
       <Option value="Extract by expression (Non-Null Values)" type="QString" name="component_description"/>
       <Option value="48.784883847896026" type="double" name="component_height"/>
-      <Option value="1439.7324719222179" type="double" name="component_pos_x"/>
-      <Option value="1054.8602251494235" type="double" name="component_pos_y"/>
+      <Option value="1421.0658052555511" type="double" name="component_pos_x"/>
+      <Option value="992.1935584827569" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:extractbyexpression_5" type="QString" name="id"/>
@@ -317,8 +317,8 @@
           </Option>
           <Option value="Hospital Catchments (Populated Areas)" type="QString" name="component_description"/>
           <Option value="50.48190361754654" type="double" name="component_height"/>
-          <Option value="1577.1379880486868" type="double" name="component_pos_x"/>
-          <Option value="1165.483325071722" type="double" name="component_pos_y"/>
+          <Option value="1423.8046547153535" type="double" name="component_pos_x"/>
+          <Option value="1104.1499917383887" type="double" name="component_pos_y"/>
           <Option value="200" type="double" name="component_width"/>
           <Option type="invalid" name="default_value"/>
           <Option value="false" type="bool" name="mandatory"/>
@@ -363,8 +363,8 @@
       </Option>
       <Option value="Field calculator potential" type="QString" name="component_description"/>
       <Option value="30" type="double" name="component_height"/>
-      <Option value="1121.3530555555556" type="double" name="component_pos_x"/>
-      <Option value="499.27472222222224" type="double" name="component_pos_y"/>
+      <Option value="1073.3530555555558" type="double" name="component_pos_x"/>
+      <Option value="537.9413888888889" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:fieldcalculator_1" type="QString" name="id"/>
@@ -428,8 +428,8 @@
       </Option>
       <Option value="Maximum Potential" type="QString" name="component_description"/>
       <Option value="45.47970975544206" type="double" name="component_height"/>
-      <Option value="1130.1453832113034" type="double" name="component_pos_x"/>
-      <Option value="592.1271945589384" type="double" name="component_pos_y"/>
+      <Option value="1087.4787165446369" type="double" name="component_pos_x"/>
+      <Option value="621.4605278922718" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:fieldcalculator_2" type="QString" name="id"/>
@@ -476,6 +476,71 @@
         </Option>
       </Option>
     </Option>
+    <Option type="Map" name="native:fieldcalculator_3">
+      <Option value="true" type="bool" name="active"/>
+      <Option name="alg_config"/>
+      <Option value="native:fieldcalculator" type="QString" name="alg_id"/>
+      <Option value="" type="QString" name="color"/>
+      <Option type="Map" name="comment">
+        <Option value="" type="QString" name="color"/>
+        <Option value="" type="QString" name="component_description"/>
+        <Option value="60" type="double" name="component_height"/>
+        <Option value="1117.3333333333333" type="double" name="component_pos_x"/>
+        <Option value="159" type="double" name="component_pos_y"/>
+        <Option value="100" type="double" name="component_width"/>
+        <Option value="true" type="bool" name="outputs_collapsed"/>
+        <Option value="true" type="bool" name="parameters_collapsed"/>
+      </Option>
+      <Option value="Field calculator (Distance > 0)" type="QString" name="component_description"/>
+      <Option value="44.66666666666666" type="double" name="component_height"/>
+      <Option value="917.3333333333333" type="double" name="component_pos_x"/>
+      <Option value="196.66666666666669" type="double" name="component_pos_y"/>
+      <Option value="200" type="double" name="component_width"/>
+      <Option name="dependencies"/>
+      <Option value="native:fieldcalculator_3" type="QString" name="id"/>
+      <Option name="outputs"/>
+      <Option value="true" type="bool" name="outputs_collapsed"/>
+      <Option value="true" type="bool" name="parameters_collapsed"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELD_LENGTH">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_NAME">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="Distance" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_PRECISION">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_TYPE">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="0" type="int" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FORMULA">
+          <Option type="Map">
+            <Option value="2" type="int" name="source"/>
+            <Option value="CASE&#xa;when &quot;Distance&quot; = 0 then 1&#xa;else &quot;Distance&quot; &#xa;END" type="QString" name="static_value"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option value="qgis:distancematrix_1" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
     <Option type="Map" name="native:joinattributestable_1">
       <Option value="true" type="bool" name="active"/>
       <Option name="alg_config"/>
@@ -493,8 +558,8 @@
       </Option>
       <Option value="Join input weight to distance matrix by field value" type="QString" name="component_description"/>
       <Option value="56.047000000000004" type="double" name="component_height"/>
-      <Option value="953.4840433493694" type="double" name="component_pos_x"/>
-      <Option value="325.8849353137155" type="double" name="component_pos_y"/>
+      <Option value="889.4840433493694" type="double" name="component_pos_x"/>
+      <Option value="329.8849353137155" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:joinattributestable_1" type="QString" name="id"/>
@@ -528,7 +593,7 @@
         </Option>
         <Option type="List" name="INPUT">
           <Option type="Map">
-            <Option value="qgis:distancematrix_1" type="QString" name="child_id"/>
+            <Option value="native:fieldcalculator_3" type="QString" name="child_id"/>
             <Option value="OUTPUT" type="QString" name="output_name"/>
             <Option value="1" type="int" name="source"/>
           </Option>
@@ -570,8 +635,8 @@
       </Option>
       <Option value="Join target weight by field value" type="QString" name="component_description"/>
       <Option value="40.66666666666669" type="double" name="component_height"/>
-      <Option value="997.8155" type="double" name="component_pos_x"/>
-      <Option value="419.812" type="double" name="component_pos_y"/>
+      <Option value="965.8155" type="double" name="component_pos_x"/>
+      <Option value="441.1453333333333" type="double" name="component_pos_y"/>
       <Option value="201.33333333333337" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:joinattributestable_2" type="QString" name="id"/>
@@ -647,8 +712,8 @@
       </Option>
       <Option value="Join max potential to towns" type="QString" name="component_description"/>
       <Option value="69.33894251463131" type="double" name="component_height"/>
-      <Option value="1276.631343370293" type="double" name="component_pos_x"/>
-      <Option value="835.776636041566" type="double" name="component_pos_y"/>
+      <Option value="1105.9646767036265" type="double" name="component_pos_x"/>
+      <Option value="854.4433027082326" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:joinattributestable_3" type="QString" name="id"/>
@@ -779,76 +844,16 @@
   <Option type="Map" name="designerParameterValues">
     <Option value="1" type="int" name="Alpha"/>
     <Option value="2" type="int" name="Beta"/>
-    <Option value="towns_54b77a4b_4030_4514_8fb7_fe47001a06d5" type="QString" name="InputFeatures"/>
-    <Option value="townName" type="QString" name="InputID"/>
-    <Option value="Population" type="QString" name="InputWeightField"/>
+    <Option value="netowns_3c39dcea_3ac2_47b7_a39e_c50feecff0d4" type="QString" name="InputFeatures"/>
+    <Option value="NAME" type="QString" name="InputID"/>
+    <Option value="popE" type="QString" name="InputWeightField"/>
     <Option value="1" type="int" name="Lambda"/>
-    <Option value="hospitals_b0a9b922_a2ed_4552_ae66_f97aa771ac3f" type="QString" name="TargetFeatures"/>
-    <Option value="NAME" type="QString" name="TargetID"/>
-    <Option value="BEDS" type="QString" name="TargetWeight"/>
+    <Option value="centroids_test_7bb512f8_5deb_4a11_b8cd_a2a23bd7cf5e" type="QString" name="TargetFeatures"/>
+    <Option value="ZIP" type="QString" name="TargetID"/>
+    <Option value="sumBEDS" type="QString" name="TargetWeight"/>
     <Option value="true" type="bool" name="VERBOSE_LOG"/>
     <Option value="20" type="double" name="k"/>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:aggregate_1:Aggregate">
-      <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
-        </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:extractbyexpression_1:Extracted">
-      <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
-        </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:extractbyexpression_2:gt">
-      <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
-        </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
-        </Option>
-      </Option>
-    </Option>
     <Option type="QgsProcessingOutputLayerDefinition" name="native:extractbyexpression_5:Hospital Catchments (Populated Areas)">
-      <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
-        </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="native:fieldcalculator_1:Potential">
-      <Option type="Map">
-        <Option type="Map" name="create_options">
-          <Option value="System" type="QString" name="fileEncoding"/>
-        </Option>
-        <Option type="Map" name="sink">
-          <Option value="true" type="bool" name="active"/>
-          <Option value="1" type="int" name="type"/>
-          <Option value="TEMPORARY_OUTPUT" type="QString" name="val"/>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="QgsProcessingOutputLayerDefinition" name="qgis:distancematrix_1:Distance Matrix Output">
       <Option type="Map">
         <Option type="Map" name="create_options">
           <Option value="System" type="QString" name="fileEncoding"/>
@@ -945,7 +950,7 @@
       <Option value="false" type="bool" name="default_to_all_fields"/>
       <Option value="Input Weight Field" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
-      <Option value="" type="QString" name="help"/>
+      <Option value="An exponent altering the potential of the input features to generate movement towards the service (target)" type="QString" name="help"/>
       <Option name="metadata"/>
       <Option value="InputWeightField" type="QString" name="name"/>
       <Option value="field" type="QString" name="parameter_type"/>
@@ -999,7 +1004,7 @@
       <Option value="false" type="bool" name="default_to_all_fields"/>
       <Option value="Target Weight" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
-      <Option value="" type="QString" name="help"/>
+      <Option value="A field which determines the &quot;attractiveness&quot; of the target field" type="QString" name="help"/>
       <Option name="metadata"/>
       <Option value="TargetWeight" type="QString" name="name"/>
       <Option value="field" type="QString" name="parameter_type"/>
