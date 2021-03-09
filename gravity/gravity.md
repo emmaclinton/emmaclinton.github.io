@@ -17,7 +17,7 @@ The first step in this process was to create a model to preprocess the [hospital
 After the HSA data was filtered, the next step was to group the hospitals by town, essentially creating a single centroid for all the hospitals that fall within each zip code. The [town and population data](https://gis4dev.github.io/lessons/assets/netown.gpkg) from the American Community Survey 2018 5-year average was collected and packaged by Joe Holler. This [model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Preprocess_Filtered_Target_Features.model3) sums the number of beds available in the centroids and retains the ZIP code, the hospital name, and the sum of the beds in the attribute table.
 
 ![Target Data Preprocessing Model](/assets/target_preprocess.png)
-*Target layer data preprocessing model (still Homeland Security data-specific)*
+*Target layer data preprocessing model (hardcoded; Homeland Security data-specific)*
 
 Once the data was preprocessed, the [spatial interaction model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/GravityModelUsingDistMatrix.model3) could be implemented. This model takes an input layer (in our case, the towns of New England) and a destination layer (the hospital clusters created in the model above). It converts their geometries into centroids and then runs a distance matrix which calculates the distance between each of the inputs and each of the destinations. The parameter "k", which can be adjusted, determines the number of destinations that will be assessed as a possible service destination for the inputs. The default value of k is 20. The input weight values (town population) and target weight values (number of beds) are then joined as attributes to the distance matrix.
 
@@ -36,7 +36,13 @@ Here is a link to the [map](assets/) comparing the model output to the Dartmouth
 
 The results of this model differ from those of the [Dartmouth Health Atlas Hospital Services Areas](https://atlasdata.dartmouth.edu/downloads/supplemental#boundaries) (HSAs). This may be due to several factors. For instance, it is possible that our k value does not match with that used to generate the HSAs. It is also possible that the parameters in our potential model are weighted differently than those used when creating the Dartmouth HSAs (i.e. different exponent values for the alpha, beta, and lambda parameters). Our exclusions of hospitals may have also impacted our results, as the Dartmouth Health Atlas hospital exclusions likely differed from ours.
 
-A useful addition to the model is the prevention of edge cases of a distance of 0 between a town centroid and a hospital to avoid any chance of a 0 in the denominator of the potential calculation. This is done using a field calculation CASE statement and the idea for this method is attributed to Maja Cannavo.
+A useful addition to the model is the prevention of edge cases of a distance of 0 between a town centroid and a hospital to avoid any chance of a 0 in the denominator of the potential calculation. This is done using a field calculation CASE statement and the idea for this method is attributed to [Maja Cannavo](https://majacannavo.github.io/geog323/portfolio/gravity/gravity.html).
 
 
 ACKNOWLEDGEMENTS: I would like to thank Joseph Holler and the members of GEOG0323 Spring 2021 for their [insights, questions, and answers regarding this project](https://github.com/GIS4DEV/GIS4DEV.github.io/issues).
+
+DATA SOURCES:
+
+Population by town for Northeastern US compiled by Joseph Holler using the TidyCensus package in R (2018 American Community Survey 5-year estimates): [town and population data](https://gis4dev.github.io/lessons/assets/netown.gpkg)
+US hospital data courtesy of the Department of Homeland Security: https://hifld-geoplatform.opendata.arcgis.com/datasets/6ac5e325468c4cb9b905f1728d6fbf0f_0
+Hospital service areas layer courtesy of the the Dartmouth Atlas of Health Care: https://atlasdata.dartmouth.edu/downloads/supplemental#boundaries
