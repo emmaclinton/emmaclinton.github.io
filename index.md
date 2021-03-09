@@ -14,7 +14,7 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 ## Blog Posts
 
 1.  [What is Open Source GIScience?](blogs/open-source.md)
-2.  another future blog
+2.  [GIS: Tool or Science?](blogs/gis_as_science.md)
 
 The course website is found [here](https://gis4dev.github.io).
 
