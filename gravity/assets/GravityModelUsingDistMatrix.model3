@@ -175,8 +175,8 @@
       </Option>
       <Option value="Extract by expression (Max Potential)" type="QString" name="component_description"/>
       <Option value="70.33171366395618" type="double" name="component_height"/>
-      <Option value="1090.6912179143278" type="double" name="component_pos_x"/>
-      <Option value="727.1018902554807" type="double" name="component_pos_y"/>
+      <Option value="1085.8162748641073" type="double" name="component_pos_x"/>
+      <Option value="701.1021939876372" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:extractbyexpression_1" type="QString" name="id"/>
@@ -214,7 +214,7 @@
         <Option value="true" type="bool" name="outputs_collapsed"/>
         <Option value="true" type="bool" name="parameters_collapsed"/>
       </Option>
-      <Option value="Extract by expression (input > 0)" type="QString" name="component_description"/>
+      <Option value="Extract by expression (input  weight > 0)" type="QString" name="component_description"/>
       <Option value="41.97272163488778" type="double" name="component_height"/>
       <Option value="397.6820341159212" type="double" name="component_pos_x"/>
       <Option value="59.453195450539496" type="double" name="component_pos_y"/>
@@ -254,7 +254,7 @@
         <Option value="true" type="bool" name="outputs_collapsed"/>
         <Option value="true" type="bool" name="parameters_collapsed"/>
       </Option>
-      <Option value="Extract by expression target" type="QString" name="component_description"/>
+      <Option value="Extract by expression (target weight >0)" type="QString" name="component_description"/>
       <Option value="44.931419585916956" type="double" name="component_height"/>
       <Option value="372.9947179190881" type="double" name="component_pos_x"/>
       <Option value="685.5920133941169" type="double" name="component_pos_y"/>
@@ -294,7 +294,7 @@
         <Option value="true" type="bool" name="outputs_collapsed"/>
         <Option value="true" type="bool" name="parameters_collapsed"/>
       </Option>
-      <Option value="Extract by expression (Non-Null Values)" type="QString" name="component_description"/>
+      <Option value="Extract by expression (Non-Null Values of Input Weight)" type="QString" name="component_description"/>
       <Option value="48.784883847896026" type="double" name="component_height"/>
       <Option value="1421.0658052555511" type="double" name="component_pos_x"/>
       <Option value="992.1935584827569" type="double" name="component_pos_y"/>
@@ -428,8 +428,8 @@
       </Option>
       <Option value="Maximum Potential" type="QString" name="component_description"/>
       <Option value="45.47970975544206" type="double" name="component_height"/>
-      <Option value="1087.4787165446369" type="double" name="component_pos_x"/>
-      <Option value="621.4605278922718" type="double" name="component_pos_y"/>
+      <Option value="1079.3538114609357" type="double" name="component_pos_x"/>
+      <Option value="603.5857367081293" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:fieldcalculator_2" type="QString" name="id"/>
@@ -712,8 +712,8 @@
       </Option>
       <Option value="Join max potential to towns" type="QString" name="component_description"/>
       <Option value="69.33894251463131" type="double" name="component_height"/>
-      <Option value="1105.9646767036265" type="double" name="component_pos_x"/>
-      <Option value="854.4433027082326" type="double" name="component_pos_y"/>
+      <Option value="1091.3398475529646" type="double" name="component_pos_x"/>
+      <Option value="808.9438342395065" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:joinattributestable_3" type="QString" name="id"/>
