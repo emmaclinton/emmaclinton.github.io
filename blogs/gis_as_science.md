@@ -24,45 +24,4 @@ Regardless of how you categorize GIS, in terms of the reproducibility crisis cur
 
 Replicability is a hallmark of good science (National Academies of Sciences, Engineering, and Medicine, 2019), and as science is intended to be a communal effort to increase human understanding of the world around us and solve pressing problems, it goes without saying that reproducibility and replicability should always be emphasized when "doing science." The example we considered in class of the [ESRI tool](https://www.esri.com/en-us/covid-19/response) designed to determine the best locations of COVID testing sites was an example of how the use of highly useful technology can be limited by gatekeeping (be it financial or otherwise) and therefore not be truly communal or available to be evaluated or confirmed by the greater community.
 
-Science is a process of building knowledge upon previous knowledge. Without clear methods and provision of data for checking analyses, simple yet important mistakes might not be caught, or methods may not be replicated with different data in order to determine the bounds within which a scientific theory applies (as we discussed in class yesterday).
-
-
-- “Science is a mode of inquiry that aims to pose questions about the world, arriving at the answers and assessing their degree of certainty through a communal effort designed to ensure that they are well-grounded”
-- Describe, explain, predict, or intervene
-
-Different scientific disciplines are distinguished by the  types of tools, methods and techniques
-
-Progress = desire for understanding is guided by core principles and methods
-
-Reproducibility = enhanced integrity
-
-**Science is a communal enterprise**
-- Clear methods and results means understanding how to interpret the results, how to build on them, and how to check them
-Science is durable and mutable: change is inevitable as scientists develop better methods for measuring and observing the world
-- Knowledge is built on previous studies
-
-Ease tension between replicability and discover (novel results could be reproduced)
-- This is good for advancement of body of scientific knowledge
-
-Reproducibility and Replicability
-
-- Large amounts of data and computing resources
-    - Democratization of data and computation —> new ways to conduct research
-- Pressure to publish
-    - Pressure to overstate the importance of results?
-    - OpenSource checking removes this bias (easy to reproduce)
-- Checking minor mistakes in code that can lead to error in results
-- A lack of data code and method descriptions certainly exists
-- Reproducible research: provides complete digital compendium of data and code to reproduce analysis
-
-A: The terms are used with no distinction between them.
-* B1:  “Reproducibility” refers to instances in which the original re- searcher’s data and computer codes are used to regenerate the results, while “replicability” refers to instances in which a re- searcher collects new data to arrive at the same scientific findings as a previous study.
-* B2:  “Reproducibility” refers to independent researchers arriving at the same results using their own data and methods, while “rep- licability” refers to a different team arriving at the same results using the original author’s artifacts.
-Results can be checked
-Support original results
-Same result in specific study context
-Can the result be replicated in broader context
-
-CompSci:
-- Reproducible = can be checked bc data code and methods are available
-- DEPENDS ON ACTION BY ANOTHER RESEARCHER
+Science is a process of building knowledge upon previous knowledge. Without clear methods and provision of data for checking analyses, important mistakes in methods might not be caught. Methods that are not clearly described or available may not be able to be replicated with different data in order to determine the bounds within which a scientific theory applies (as we discussed in class yesterday). In addition, using open source software and available data reduces the threat of bias due to current pressures to overstate the importance of results. There should certainly be more emphasis on reproducibility and replicability in scientific review processes, and projects that provide the resources for reproducing or replicating results should be lauded for their efforts. There should also be greater esteem afforded to those who go to the efforts of reproducing the results of a study to determine their validity. 
