@@ -917,13 +917,13 @@
     </Option>
     <Option type="Map" name="InputFeatures">
       <Option type="List" name="data_types">
-        <Option value="2" type="int"/>
+        <Option value="-1" type="int"/>
       </Option>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
       <Option value="Input Features" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
-      <Option value="The features that represent the &quot;demand&quot; for the service of the target features" type="QString" name="help"/>
+      <Option value="" type="QString" name="help"/>
       <Option name="metadata"/>
       <Option value="InputFeatures" type="QString" name="name"/>
       <Option value="source" type="QString" name="parameter_type"/>

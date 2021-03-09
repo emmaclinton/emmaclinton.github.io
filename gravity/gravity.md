@@ -29,14 +29,14 @@ After potential has been calculated for each input-target pair, the maximum pote
 
 The maximum potential data is then joined back to the input layer (in our case, towns) and this information is aggregated to form hospital service area 'catchments' comprised of all towns that are served by a hospital cluster target point.
 
-![Spatial Interaction Model](/assets/GravityModel.png)
+![Spatial Interaction Model](/assets/GravityModel2.png)
 *Spatial Interaction Model*
 
 Here is a link to the [map](assets/) comparing the model output to the Dartmouth Health Atlas Hospital Service Areas!
 
 The results of this model differ from those of the [Dartmouth Health Atlas Hospital Services Areas](https://atlasdata.dartmouth.edu/downloads/supplemental#boundaries) (HSAs). This may be due to several factors. For instance, it is possible that our k value does not match with that used to generate the HSAs. It is also possible that the parameters in our potential model are weighted differently than those used when creating the Dartmouth HSAs (i.e. different exponent values for the alpha, beta, and lambda parameters). Our exclusions of hospitals may have also impacted our results, as the Dartmouth Health Atlas hospital exclusions likely differed from ours.
 
-A useful addition to the model is the prevention of edge cases of a distance of 0 between a town centroid and a hospital to avoid any chance of a 0 in the denominator of the potential calculation. This is done using a field calculation CASE statement and the idea for this method is attributed to Maja Cannavo. 
+A useful addition to the model is the prevention of edge cases of a distance of 0 between a town centroid and a hospital to avoid any chance of a 0 in the denominator of the potential calculation. This is done using a field calculation CASE statement and the idea for this method is attributed to Maja Cannavo.
 
 
 ACKNOWLEDGEMENTS: I would like to thank Joseph Holler and the members of GEOG0323 Spring 2021 for their [insights, questions, and answers regarding this project](https://github.com/GIS4DEV/GIS4DEV.github.io/issues).
