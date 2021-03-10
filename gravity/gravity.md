@@ -31,7 +31,7 @@ After potential has been calculated for each input-target pair, the maximum pote
 
 The maximum potential data is then joined back to the input layer (in our case, towns) and this information is aggregated to form hospital service area 'catchments' comprised of all towns that are served by a hospital cluster target point.
 
-![Spatial Interaction Model](/assets/GravityModel2.png)
+![Spatial Interaction Model](/assets/GravityModel3.png)
 [*Spatial Interaction Model*](/assets/GravityModelUsingDistMatrix.model3)
 
 Here is a link to the [map](assets/) comparing the model output to the Dartmouth Health Atlas Hospital Service Areas!
