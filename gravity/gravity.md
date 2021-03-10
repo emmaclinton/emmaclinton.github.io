@@ -12,11 +12,13 @@ In this exercise, we analyzed the interactions between hospital clusters and tow
 The first step in this process was to create a model to preprocess the [hospitals data](https://hifld-geoplatform.opendata.arcgis.com/datasets/6ac5e325468c4cb9b905f1728d6fbf0f_0), which is sourced from the Department of Homeland Security. This data contains the locations of hospitals in the United States and US Territories. This [model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Hospital_Preprocess_Model.model3) takes these hospitals and removes hospitals that lack data on number of beds, hospitals that are closed, and hospitals that are not categorized as children's hospitals, women's hospitals, or general acute care facilities (i.e. hospitals that do not provide a normal ICU for public care).
 
 ![Hospital Preprocess Model](/assets/hospital_preprocess.png)
+
 *Homeland Security hospital data preprocessing model*
 
 After the HSA data was filtered, the next step was to group the hospitals by town, essentially creating a single centroid for all the hospitals that fall within each zip code. The [town and population data](https://gis4dev.github.io/lessons/assets/netown.gpkg) from the American Community Survey 2018 5-year average was collected and packaged by Joe Holler. This [model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Preprocess_Filtered_Target_Features.model3) sums the number of beds available in the centroids and retains the ZIP code, the hospital name, and the sum of the beds in the attribute table.
 
 ![Target Data Preprocessing Model](/assets/target_model.png)
+
 *Target layer data preprocessing model*
 
 Once the data was preprocessed, the [spatial interaction model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/GravityModelUsingDistMatrix.model3) could be implemented. This model takes an input layer (in our case, the towns of New England) and a destination layer (the hospital clusters created in the model above). It converts their geometries into centroids and then runs a distance matrix which calculates the distance between each of the inputs and each of the destinations. The parameter "k", which can be adjusted, determines the number of destinations that will be assessed as a possible service destination for the inputs. The default value of k is 20. The input weight values (town population) and target weight values (number of beds) are then joined as attributes to the distance matrix.
