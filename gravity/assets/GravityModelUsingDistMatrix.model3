@@ -23,7 +23,33 @@
       <Option value="200" type="double" name="component_width"/>
       <Option name="dependencies"/>
       <Option value="native:aggregate_1" type="QString" name="id"/>
-      <Option name="outputs"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="Hospital Catchments">
+          <Option value="native:aggregate_1" type="QString" name="child_id"/>
+          <Option value="" type="QString" name="color"/>
+          <Option type="Map" name="comment">
+            <Option value="" type="QString" name="color"/>
+            <Option value="" type="QString" name="component_description"/>
+            <Option value="60" type="double" name="component_height"/>
+            <Option value="0" type="double" name="component_pos_x"/>
+            <Option value="0" type="double" name="component_pos_y"/>
+            <Option value="100" type="double" name="component_width"/>
+            <Option value="true" type="bool" name="outputs_collapsed"/>
+            <Option value="true" type="bool" name="parameters_collapsed"/>
+          </Option>
+          <Option value="Hospital Catchments" type="QString" name="component_description"/>
+          <Option value="30" type="double" name="component_height"/>
+          <Option value="1588.0949019274876" type="double" name="component_pos_x"/>
+          <Option value="931.8660558999651" type="double" name="component_pos_y"/>
+          <Option value="200" type="double" name="component_width"/>
+          <Option type="invalid" name="default_value"/>
+          <Option value="false" type="bool" name="mandatory"/>
+          <Option value="Hospital Catchments" type="QString" name="name"/>
+          <Option value="OUTPUT" type="QString" name="output_name"/>
+          <Option value="true" type="bool" name="outputs_collapsed"/>
+          <Option value="true" type="bool" name="parameters_collapsed"/>
+        </Option>
+      </Option>
       <Option value="true" type="bool" name="outputs_collapsed"/>
       <Option value="true" type="bool" name="parameters_collapsed"/>
       <Option type="Map" name="params">
@@ -275,73 +301,6 @@
           <Option type="Map">
             <Option value="TargetFeatures" type="QString" name="parameter_name"/>
             <Option value="0" type="int" name="source"/>
-          </Option>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="Map" name="native:extractbyexpression_5">
-      <Option value="true" type="bool" name="active"/>
-      <Option name="alg_config"/>
-      <Option value="native:extractbyexpression" type="QString" name="alg_id"/>
-      <Option value="" type="QString" name="color"/>
-      <Option type="Map" name="comment">
-        <Option value="" type="QString" name="color"/>
-        <Option value="" type="QString" name="component_description"/>
-        <Option value="60" type="double" name="component_height"/>
-        <Option value="1928.3420434732468" type="double" name="component_pos_x"/>
-        <Option value="1103.1824973150424" type="double" name="component_pos_y"/>
-        <Option value="100" type="double" name="component_width"/>
-        <Option value="true" type="bool" name="outputs_collapsed"/>
-        <Option value="true" type="bool" name="parameters_collapsed"/>
-      </Option>
-      <Option value="Extract by expression (Non-Null Values of Input Weight)" type="QString" name="component_description"/>
-      <Option value="48.784883847896026" type="double" name="component_height"/>
-      <Option value="1421.0658052555511" type="double" name="component_pos_x"/>
-      <Option value="992.1935584827569" type="double" name="component_pos_y"/>
-      <Option value="200" type="double" name="component_width"/>
-      <Option name="dependencies"/>
-      <Option value="native:extractbyexpression_5" type="QString" name="id"/>
-      <Option type="Map" name="outputs">
-        <Option type="Map" name="Hospital Catchments (Populated Areas)">
-          <Option value="native:extractbyexpression_5" type="QString" name="child_id"/>
-          <Option value="" type="QString" name="color"/>
-          <Option type="Map" name="comment">
-            <Option value="" type="QString" name="color"/>
-            <Option value="" type="QString" name="component_description"/>
-            <Option value="60" type="double" name="component_height"/>
-            <Option value="0" type="double" name="component_pos_x"/>
-            <Option value="0" type="double" name="component_pos_y"/>
-            <Option value="100" type="double" name="component_width"/>
-            <Option value="true" type="bool" name="outputs_collapsed"/>
-            <Option value="true" type="bool" name="parameters_collapsed"/>
-          </Option>
-          <Option value="Hospital Catchments (Populated Areas)" type="QString" name="component_description"/>
-          <Option value="50.48190361754654" type="double" name="component_height"/>
-          <Option value="1423.8046547153535" type="double" name="component_pos_x"/>
-          <Option value="1104.1499917383887" type="double" name="component_pos_y"/>
-          <Option value="200" type="double" name="component_width"/>
-          <Option type="invalid" name="default_value"/>
-          <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Hospital Catchments (Populated Areas)" type="QString" name="name"/>
-          <Option value="OUTPUT" type="QString" name="output_name"/>
-          <Option value="true" type="bool" name="outputs_collapsed"/>
-          <Option value="true" type="bool" name="parameters_collapsed"/>
-        </Option>
-      </Option>
-      <Option value="true" type="bool" name="outputs_collapsed"/>
-      <Option value="true" type="bool" name="parameters_collapsed"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="EXPRESSION">
-          <Option type="Map">
-            <Option value="'SumInputWeight' + '> 0'" type="QString" name="expression"/>
-            <Option value="3" type="int" name="source"/>
-          </Option>
-        </Option>
-        <Option type="List" name="INPUT">
-          <Option type="Map">
-            <Option value="native:aggregate_1" type="QString" name="child_id"/>
-            <Option value="OUTPUT" type="QString" name="output_name"/>
-            <Option value="1" type="int" name="source"/>
           </Option>
         </Option>
       </Option>
@@ -736,7 +695,7 @@
         <Option type="List" name="FIELDS_TO_COPY">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
-            <Option type="List" name="static_value">
+            <Option type="StringList" name="static_value">
               <Option value="" type="QString"/>
             </Option>
           </Option>
@@ -749,8 +708,9 @@
         </Option>
         <Option type="List" name="INPUT">
           <Option type="Map">
-            <Option value="InputFeatures" type="QString" name="parameter_name"/>
-            <Option value="0" type="int" name="source"/>
+            <Option value="native:extractbyexpression_2" type="QString" name="child_id"/>
+            <Option value="OUTPUT" type="QString" name="output_name"/>
+            <Option value="1" type="int" name="source"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_2">
@@ -886,7 +846,7 @@
     <Option value="Aggregated catchments for the service areas of each target point, based on the input-target relationships with the highest potential of interaction" type="QString" name="native:extractbyexpression_5:Hospital Catchments (Populated Areas)"/>
   </Option>
   <Option name="modelVariables"/>
-  <Option value="MIddlebury" type="QString" name="model_group"/>
+  <Option value="MIddlebury Gravity" type="QString" name="model_group"/>
   <Option value="Gravity Model Using Distance Matrix" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
     <Option type="Map" name="Alpha">
@@ -923,7 +883,7 @@
       <Option type="invalid" name="defaultGui"/>
       <Option value="Input Features" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
-      <Option value="" type="QString" name="help"/>
+      <Option value="The features that represent the &quot;demand&quot; for the service of the target features" type="QString" name="help"/>
       <Option name="metadata"/>
       <Option value="InputFeatures" type="QString" name="name"/>
       <Option value="source" type="QString" name="parameter_type"/>
@@ -1023,16 +983,16 @@
       <Option value="k" type="QString" name="name"/>
       <Option value="number" type="QString" name="parameter_type"/>
     </Option>
-    <Option type="Map" name="native:extractbyexpression_5:Hospital Catchments (Populated Areas)">
+    <Option type="Map" name="native:aggregate_1:Hospital Catchments">
       <Option value="true" type="bool" name="create_by_default"/>
       <Option value="-1" type="int" name="data_type"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option value="Hospital Catchments (Populated Areas)" type="QString" name="description"/>
+      <Option value="Hospital Catchments" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
       <Option value="" type="QString" name="help"/>
       <Option name="metadata"/>
-      <Option value="native:extractbyexpression_5:Hospital Catchments (Populated Areas)" type="QString" name="name"/>
+      <Option value="native:aggregate_1:Hospital Catchments" type="QString" name="name"/>
       <Option value="sink" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="supports_append"/>
       <Option value="true" type="bool" name="supports_non_file_outputs"/>
