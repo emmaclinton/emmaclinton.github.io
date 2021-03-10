@@ -32,9 +32,9 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Gravity_Model_Hospital_Catchments_1.js"></script>
-        <script src="data/Hospital_Catchments_DartmouthAtlas_2.js"></script>
-        <script src="data/Hospital_Clusters_Summed_NE_3.js"></script>
+        <script src="data/Hospital_Catchments_DartmouthAtlas_1.js"></script>
+        <script src="data/HospitalCatchments_NE_2.js"></script>
+        <script src="data/HospitalClusters_byZIP_3.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -56,7 +56,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://emmaclinton.github.io" target="_blank">Emma Clinton</a> &middot; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://emmaclinton.github.io" target="_blank">Emma Clinton</a> &middot;<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var measureControl = new L.Control.Measure({
             position: 'topleft',
@@ -89,7 +89,65 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_Gravity_Model_Hospital_Catchments_1(feature, layer) {
+        function pop_Hospital_Catchments_DartmouthAtlas_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">HSA_Name</th>\
+                        <td>' + (feature.properties['HSA_Name'] !== null ? autolinker.link(feature.properties['HSA_Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Population</th>\
+                        <td>' + (feature.properties['Population'] !== null ? autolinker.link(feature.properties['Population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Hospital_Catchments_DartmouthAtlas_1_0() {
+            return {
+                pane: 'pane_Hospital_Catchments_DartmouthAtlas_1',
+                opacity: 1,
+                color: 'rgba(22,88,192,0.36470588235294116)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(55,126,184,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Hospital_Catchments_DartmouthAtlas_1');
+        map.getPane('pane_Hospital_Catchments_DartmouthAtlas_1').style.zIndex = 401;
+        map.getPane('pane_Hospital_Catchments_DartmouthAtlas_1').style['mix-blend-mode'] = 'normal';
+        var layer_Hospital_Catchments_DartmouthAtlas_1 = new L.geoJson(json_Hospital_Catchments_DartmouthAtlas_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Hospital_Catchments_DartmouthAtlas_1',
+            layerName: 'layer_Hospital_Catchments_DartmouthAtlas_1',
+            pane: 'pane_Hospital_Catchments_DartmouthAtlas_1',
+            onEachFeature: pop_Hospital_Catchments_DartmouthAtlas_1,
+            style: style_Hospital_Catchments_DartmouthAtlas_1_0,
+        });
+        bounds_group.addLayer(layer_Hospital_Catchments_DartmouthAtlas_1);
+        map.addLayer(layer_Hospital_Catchments_DartmouthAtlas_1);
+        function pop_HospitalCatchments_NE_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -122,9 +180,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Gravity_Model_Hospital_Catchments_1_0() {
+        function style_HospitalCatchments_NE_2_0() {
             return {
-                pane: 'pane_Gravity_Model_Hospital_Catchments_1',
+                pane: 'pane_HospitalCatchments_NE_2',
                 opacity: 1,
                 color: 'rgba(193,154,23,1.0)',
                 dashArray: '',
@@ -135,79 +193,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Gravity_Model_Hospital_Catchments_1');
-        map.getPane('pane_Gravity_Model_Hospital_Catchments_1').style.zIndex = 401;
-        map.getPane('pane_Gravity_Model_Hospital_Catchments_1').style['mix-blend-mode'] = 'normal';
-        var layer_Gravity_Model_Hospital_Catchments_1 = new L.geoJson(json_Gravity_Model_Hospital_Catchments_1, {
+        map.createPane('pane_HospitalCatchments_NE_2');
+        map.getPane('pane_HospitalCatchments_NE_2').style.zIndex = 402;
+        map.getPane('pane_HospitalCatchments_NE_2').style['mix-blend-mode'] = 'normal';
+        var layer_HospitalCatchments_NE_2 = new L.geoJson(json_HospitalCatchments_NE_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Gravity_Model_Hospital_Catchments_1',
-            layerName: 'layer_Gravity_Model_Hospital_Catchments_1',
-            pane: 'pane_Gravity_Model_Hospital_Catchments_1',
-            onEachFeature: pop_Gravity_Model_Hospital_Catchments_1,
-            style: style_Gravity_Model_Hospital_Catchments_1_0,
+            dataVar: 'json_HospitalCatchments_NE_2',
+            layerName: 'layer_HospitalCatchments_NE_2',
+            pane: 'pane_HospitalCatchments_NE_2',
+            onEachFeature: pop_HospitalCatchments_NE_2,
+            style: style_HospitalCatchments_NE_2_0,
         });
-        bounds_group.addLayer(layer_Gravity_Model_Hospital_Catchments_1);
-        map.addLayer(layer_Gravity_Model_Hospital_Catchments_1);
-        function pop_Hospital_Catchments_DartmouthAtlas_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">HSA_Name</th>\
-                        <td>' + (feature.properties['HSA_Name'] !== null ? autolinker.link(feature.properties['HSA_Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Population</th>\
-                        <td>' + (feature.properties['Population'] !== null ? autolinker.link(feature.properties['Population'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Hospital_Catchments_DartmouthAtlas_2_0() {
-            return {
-                pane: 'pane_Hospital_Catchments_DartmouthAtlas_2',
-                opacity: 1,
-                color: 'rgba(22,88,192,0.36470588235294116)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 3.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(55,126,184,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Hospital_Catchments_DartmouthAtlas_2');
-        map.getPane('pane_Hospital_Catchments_DartmouthAtlas_2').style.zIndex = 402;
-        map.getPane('pane_Hospital_Catchments_DartmouthAtlas_2').style['mix-blend-mode'] = 'normal';
-        var layer_Hospital_Catchments_DartmouthAtlas_2 = new L.geoJson(json_Hospital_Catchments_DartmouthAtlas_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Hospital_Catchments_DartmouthAtlas_2',
-            layerName: 'layer_Hospital_Catchments_DartmouthAtlas_2',
-            pane: 'pane_Hospital_Catchments_DartmouthAtlas_2',
-            onEachFeature: pop_Hospital_Catchments_DartmouthAtlas_2,
-            style: style_Hospital_Catchments_DartmouthAtlas_2_0,
-        });
-        bounds_group.addLayer(layer_Hospital_Catchments_DartmouthAtlas_2);
-        map.addLayer(layer_Hospital_Catchments_DartmouthAtlas_2);
-        function pop_Hospital_Clusters_Summed_NE_3(feature, layer) {
+        bounds_group.addLayer(layer_HospitalCatchments_NE_2);
+        map.addLayer(layer_HospitalCatchments_NE_2);
+        function pop_HospitalClusters_byZIP_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -229,16 +229,16 @@
                         <td>' + (feature.properties['ZIP'] !== null ? autolinker.link(feature.properties['ZIP'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Total_Beds</th>\
-                        <td>' + (feature.properties['Total_Beds'] !== null ? autolinker.link(feature.properties['Total_Beds'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Beds</th>\
+                        <td>' + (feature.properties['Beds'] !== null ? autolinker.link(feature.properties['Beds'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Hospital_Clusters_Summed_NE_3_0() {
+        function style_HospitalClusters_byZIP_3_0() {
             return {
-                pane: 'pane_Hospital_Clusters_Summed_NE_3',
+                pane: 'pane_HospitalClusters_byZIP_3',
                 radius: 2.0,
                 opacity: 1,
                 color: 'rgba(255,255,255,1.0)',
@@ -252,26 +252,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Hospital_Clusters_Summed_NE_3');
-        map.getPane('pane_Hospital_Clusters_Summed_NE_3').style.zIndex = 403;
-        map.getPane('pane_Hospital_Clusters_Summed_NE_3').style['mix-blend-mode'] = 'normal';
-        var layer_Hospital_Clusters_Summed_NE_3 = new L.geoJson(json_Hospital_Clusters_Summed_NE_3, {
+        map.createPane('pane_HospitalClusters_byZIP_3');
+        map.getPane('pane_HospitalClusters_byZIP_3').style.zIndex = 403;
+        map.getPane('pane_HospitalClusters_byZIP_3').style['mix-blend-mode'] = 'normal';
+        var layer_HospitalClusters_byZIP_3 = new L.geoJson(json_HospitalClusters_byZIP_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Hospital_Clusters_Summed_NE_3',
-            layerName: 'layer_Hospital_Clusters_Summed_NE_3',
-            pane: 'pane_Hospital_Clusters_Summed_NE_3',
-            onEachFeature: pop_Hospital_Clusters_Summed_NE_3,
+            dataVar: 'json_HospitalClusters_byZIP_3',
+            layerName: 'layer_HospitalClusters_byZIP_3',
+            pane: 'pane_HospitalClusters_byZIP_3',
+            onEachFeature: pop_HospitalClusters_byZIP_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Hospital_Clusters_Summed_NE_3_0(feature));
+                return L.circleMarker(latlng, style_HospitalClusters_byZIP_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Hospital_Clusters_Summed_NE_3);
-        map.addLayer(layer_Hospital_Clusters_Summed_NE_3);
+        bounds_group.addLayer(layer_HospitalClusters_byZIP_3);
+        map.addLayer(layer_HospitalClusters_byZIP_3);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -304,7 +304,7 @@
             };
             abstract.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Hospital_Clusters_Summed_NE_3.png" /> Hospital_Clusters_Summed_NE': layer_Hospital_Clusters_Summed_NE_3,'<img src="legend/Hospital_Catchments_DartmouthAtlas_2.png" /> Hospital_Catchments_DartmouthAtlas': layer_Hospital_Catchments_DartmouthAtlas_2,'<img src="legend/Gravity_Model_Hospital_Catchments_1.png" /> Gravity_Model_Hospital_Catchments': layer_Gravity_Model_Hospital_Catchments_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/HospitalClusters_byZIP_3.png" /> HospitalClusters_byZIP': layer_HospitalClusters_byZIP_3,'<img src="legend/HospitalCatchments_NE_2.png" /> HospitalCatchments_NE': layer_HospitalCatchments_NE_2,'<img src="legend/Hospital_Catchments_DartmouthAtlas_1.png" /> Hospital_Catchments_DartmouthAtlas': layer_Hospital_Catchments_DartmouthAtlas_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
