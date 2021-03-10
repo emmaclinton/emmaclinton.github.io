@@ -13,15 +13,15 @@ The first step in this process was to create a model to preprocess the [hospital
 
 ![Hospital Preprocess Model](/assets/hospital_preprocess.png)
 
-[*Homeland Security hospital data preprocessing model*](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Hospital_Preprocess_Model.model3)
+[*Homeland Security hospital data preprocessing model*](assets/Hospital_Preprocess_Model.model3)
 
-After the HSA data was filtered, the next step was to group the hospitals by town, essentially creating a single centroid for all the hospitals that fall within each zip code. The [town and population data](https://gis4dev.github.io/lessons/assets/netown.gpkg) from the American Community Survey 2018 5-year average was collected and packaged by Joe Holler. This [model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Preprocess_Filtered_Target_Features.model3) sums the number of beds available in the centroids and retains the ZIP code, the hospital name, and the sum of the beds in the attribute table.
+After the HSA data was filtered, the next step was to group the hospitals by town, essentially creating a single centroid for all the hospitals that fall within each zip code. The [town and population data](https://gis4dev.github.io/lessons/assets/netown.gpkg) from the American Community Survey 2018 5-year average was collected and packaged by Joe Holler. This [model](assets/Preprocess_Filtered_Target_Features.model3) sums the number of beds available in the centroids and retains the ZIP code, the hospital name, and the sum of the beds in the attribute table.
 
 ![Target Data Preprocessing Model](/assets/target_model.png)
 
-[*Target layer data preprocessing model*](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/Preprocess_Filtered_Target_Features.model3)
+[*Target layer data preprocessing model*](assets/Preprocess_Filtered_Target_Features.model3)
 
-Once the data was preprocessed, the [spatial interaction model](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/GravityModelUsingDistMatrix.model3) could be implemented. This model takes an input layer (in our case, the towns of New England) and a destination layer (the hospital clusters created in the model above). It converts their geometries into centroids and then runs a distance matrix which calculates the distance between each of the inputs and each of the destinations. The parameter "k", which can be adjusted, determines the number of destinations that will be assessed as a possible service destination for the inputs. The default value of k is 20. The input weight values (town population) and target weight values (number of beds) are then joined as attributes to the distance matrix.
+Once the data was preprocessed, the [spatial interaction model](/assets/GravityModelUsingDistMatrix.model3) could be implemented. This model takes an input layer (in our case, the towns of New England) and a destination layer (the hospital clusters created in the model above). It converts their geometries into centroids and then runs a distance matrix which calculates the distance between each of the inputs and each of the destinations. The parameter "k", which can be adjusted, determines the number of destinations that will be assessed as a possible service destination for the inputs. The default value of k is 20. The input weight values (town population) and target weight values (number of beds) are then joined as attributes to the distance matrix.
 
 The potential for interaction between a source and a destination can be calculated as **(inputWeight)^λ * (targetWeight)^α / (distance)^β**. The potential for interaction increases as the weights of the numerator values increase, and decreases as distance increases in the denominator. Initially, input and target features with weights of 0 are excluded from the analysis using the Extract by Expression tool.
 
@@ -32,7 +32,7 @@ After potential has been calculated for each input-target pair, the maximum pote
 The maximum potential data is then joined back to the input layer (in our case, towns) and this information is aggregated to form hospital service area 'catchments' comprised of all towns that are served by a hospital cluster target point.
 
 ![Spatial Interaction Model](/assets/GravityModel2.png)
-[*Spatial Interaction Model*](https://github.com/emmaclinton/emmaclinton.github.io/blob/main/gravity/assets/GravityModelUsingDistMatrix.model3)
+[*Spatial Interaction Model*](/assets/GravityModelUsingDistMatrix.model3)
 
 Here is a link to the [map](assets/) comparing the model output to the Dartmouth Health Atlas Hospital Service Areas!
 
