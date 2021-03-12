@@ -15,6 +15,7 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 
 1.  [What is Open Source GIScience?](blogs/open-source.md)
 2.  [GIS: Tool or Science?](blogs/gis_as_science.md)
+3.  [Managing Error and Uncertainty](blogs/error-and-uncertainty.md)
 
 The course website is found [here](https://gis4dev.github.io).
 
