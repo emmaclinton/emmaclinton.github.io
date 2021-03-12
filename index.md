@@ -2,7 +2,7 @@
 title: Main Page
 layout: default
 ---
-# Emma Clinton Open Source GIS Portfolio
+# [Emma Clinton Open Source GIS Portfolio](https://emmaclinton.github.io/)
 Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GIS course at Middlebury College.
 
 ## GIScience Analyses
