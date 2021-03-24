@@ -99,8 +99,8 @@ Tables to Include:
 
 Table 1. Site Measurements (CHaMP_Data_MFJD Site ID from Site_x attribute: CBW05583-275954)
 
- Variable | Value | Source
- :-: | :-: | :-:
+ |Variable | Value | Source|
+ |:-: | :-: | :-:|
 | Bankfull Width | 15.1702 m | BFWdth_AVG from CHaMP_Data_MFJD |
 | Bankfull Average Depth | 0.4629 m | DpthBf_Avg from CHaMP_Data_MFJD |
 | Bankfull Maximum Depth | 1.0406 m | DpthBF_Max from CHaMP_Data_MFJD |
