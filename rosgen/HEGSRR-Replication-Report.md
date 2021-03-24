@@ -56,6 +56,7 @@ We then digitized the banks three separate times, each time in a new vector map,
 
 ![River Centerline](/results/maps/river_center.png)
 ![Valley Centerline](/results/maps/valley_lines.png)
+_Maps of the slope produced by the above model, shown with the digitized bank lines and bank centerlines (first map) and digitized valley edges and valley centerline (second map)._
 
 In order to find the centerlines (and centerline lengths) of the river and the valley, we used [this model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/center_line_length.gxm), also created by Joe Holler.
 
@@ -68,6 +69,7 @@ Finally, the R script plotted the cross-sectional profile with flood prone area 
 We then classified our river using the [RCS diagram](https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1275) provided by the EPA according to [this criteria](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/3-Classifying.pdf).
 
 ![EPA Rosgen Class Image](/results/figures/epa.png)
+_EPA rendition of the RCS classification process._
 
 Level I classification was determined using entrenchment ratio, width/depth ratio, and sinuosity. Level II was determined using calculated slope value and channel material (taken from SubD50 attribute).
 
@@ -104,8 +106,11 @@ Table 3. Rosgen Level II Classification
 | Level II Stream Type | C3 |
 
 ![Long Profile](/results/figures/long_prof.png)
+_R output of longitudinal stream profile._
 ![Cross-sectional Profile](/results/figures/x_section.png)
+_R output of cross-sectional profile of transect very near to study point._
 ![Slope Profile](/results/figures/slope.png)
+_R output of cross-sectional stream profile with 2x bankfull depth shown as black line._
 
 ## Unplanned Deviations from the Protocol
 
