@@ -133,7 +133,7 @@ Table 3. Rosgen Level II Classification
 
 ## Unplanned Deviations from the Protocol
 
-The only deviation from the protocol was re-calculating slope as a general value from the start point to the end point of the longitudinal profile. In the original code, the slope value was calculated as the average slope value between each point derived from the reach centerline. Due to digitizing errors, there were some outliers of much higher elevation that were marked higher up the banks than they should have been. This skewed the results of the slope average, resulting in a slope of 1.715. Re-calculating slope as the slope between the beginning and end points accounted for some of the digitizing uncertainty and yielded a much more believable value of 0.0066833.
+The only deviation from the protocol was re-calculating slope as a general value from the start point to the end point of the longitudinal profile. In the original code, the slope value was calculated as the average slope value between each point derived from the reach centerline. Due to digitizing errors, there were some outliers of much higher elevation that were marked higher up the banks than they should have been, as can be seen in the slope profile above. This skewed the results of the slope average, resulting in a slope of 1.715. Re-calculating slope as the slope between the beginning and end points accounted for some of the digitizing uncertainty and yielded a much more believable value of 0.0066833.
 
 ## Results/ Discussion
 
