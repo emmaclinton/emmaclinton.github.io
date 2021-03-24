@@ -19,7 +19,7 @@ Replication Materials Available at: [RE-rosgen](/RE-rosgen)
 Created: `DD Month YYYY`
 Revised: `DD Month YYYY`
 
-## Abstract
+## Abstract / Introduction
 
 There is much appeal in developing and utilizing a standard and quantifiable method of stream classification. Standardizing the way streams are classified allows communication across disciplines regarding river systems and their predicted behaviors, their past behaviors, and the best ways in which to manage or restore them. The Rosgen Classification System (RCS), probably the most common method for stream classification in North America, is one such method of stream taxonomy. The RCS classifies streams based on physical metrics that are informed by empirical field data (Kasprak et al., 2016). The RCS involves classifying streams based on directly measurable variables, ranging from very broad to very reach-specific characteristics (Rosgen, 1994). Kasprak et al. (2016) attempted to replicate the RCS classification system, which is normally based on empirical field-based data, using geographic data and on a watershed scale.
 
@@ -27,9 +27,11 @@ Our replication study focuses on the first two levels of stream classifications:
 
 Kasprak et al. (2016) utilized the RCS to classify 33 reach stream types in the John Day River (located in Oregon in the Columbia River Valley). In this study, they used DEM data and expert-generated ground-based assessment data in a GIS to assign a Level I and Level II classification to different reaches in the John Day River.
 
-Our study attempts to replicate the results of Kasprak et al. (2016) using open source GIS and statistical software (GRASS and R, respectively). We use original CHaMP data used in the Kasprak study in conjuction with DEM LiDAR data from **(XXXXXXX)** to extrapolate Level I and Level II classifications for a randomly assigned reach in the John Day River. Our study attempts a reach-level classification and uses DEM data with a lower spatial resolution than that used in the original study. We also use the open source platforms GRASS and R, which were not the platforms used in the original study.
+Our study attempts to replicate the results of Kasprak et al. (2016) using open source GIS and statistical software (GRASS and R, respectively). We use original CHaMP data from the [Columbia Habitat Monitoring Program](http://www.champmonitoring.org) that was used in the Kasprak study in conjuction with DEM LiDAR data from **(XXXXXXX)** to extrapolate Level I and Level II classifications for a randomly assigned reach in the John Day River. Our study attempts a reach-level classification and uses DEM data with a lower spatial resolution than that used in the original study. We also use the open source platforms GRASS and R, which were not the platforms used in the original study.
 
-### Sample
+### Sampling
+
+We were randomly assigned a single site from the original study to analyze.
 
 ![Randomly Assigned Sample Point](/results/maps/JD_map.png)
 
@@ -136,7 +138,7 @@ Discuss a response to the following prompt: Quantifying uncertainty in geomorphi
 In this case, the results of our analysis did not align with those of Kasprak et al. (2016). If this were a reproduction study, we would have had access to the same data and software platforms as those used in the original study. However, this was replication attempt and our data and methods differed from those used by the original study. Still, it is assumed that the RCS should produce the same or very similar results in stream classification due to the quantifiable nature of the variables upon which the classification is based. There are many factors to which we may attribute the discrepancy between our results and those of Kasprak et al. (2016), as mentioned above. There were several instances in which we introduced uncertainty into our analysis (e.g. digitization process, lower resolution data).
 
 ## Data
-1. [CHaMP_Data_MFJD from [Columbia Habitat Monitoring Program](http://www.champmonitoring.org))](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public)
+1. [CHaMP_Data_MFJD from Columbia Habitat Monitoring Program](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public)
 2. [GRASS outputs (bank centerline, valley centerline, cross-sectional profile textfile, cross-sectional points textfile, longitudinal profile textfile and longitudinal points textfile)](https://github.com/emmaclinton/RE-rosgen/tree/main/data/derived/public)
 
 ## Models and R script
