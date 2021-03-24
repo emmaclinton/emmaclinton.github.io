@@ -3,12 +3,12 @@ title: Main Page
 layout: default
 ---
 # [Emma Clinton Open Source GIS Portfolio](https://emmaclinton.github.io/)
-Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GIS course at Middlebury College. I am a Conservation Biology major interested in applied biogeography for best use land planning, and I'm very excited to learn more GIS techniques using Open Source software platforms! 
+Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GIS course at Middlebury College. I am a Conservation Biology major interested in applied biogeography for best use land planning, and I'm very excited to learn more GIS techniques using Open Source software platforms!
 
 ## GIScience Analyses
 
 1. [Gravity Model of Spatial Interaction](gravity/gravity.md)
-2. [Rosgen Stream Classification in GRASS/R](/RE-Rosgen/docs/report/HEGSRR-Replication_Report.md)
+2. [Rosgen Stream Classification in GRASS/R](https://emmaclinton.github.io//RE-Rosgen/docs/report/HEGSRR-Replication_Report.md)
 
 
 ## Blog Posts
