@@ -111,6 +111,7 @@ Table 1. Site Measurements (CHaMP_Data_MFJD Site ID from Site_x attribute: CBW05
 | Median Channel Material Particle Diameter | 71 mm | SubD50 from CHaMP_Data_MFJD |
 
 Table 2. Rosgen Level I Classification
+
 Criteria | Value
  :-: | :-:
 | Entrenchment Ratio | 4.6143 |
@@ -119,8 +120,9 @@ Criteria | Value
 | Level I Stream Type | C |
 
 Table 3. Rosgen Level II Classification
+
  Criteria | Value
- :-: | :-: 
+ :-: | :-:
 | Slope | 0.0066833|
 | Channel Material | Cobble |
 | Level II Stream Type | C3 |
