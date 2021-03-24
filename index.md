@@ -8,7 +8,7 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 ## GIScience Analyses
 
 1. [Gravity Model of Spatial Interaction](gravity/gravity.md)
-2. [Rosgen Stream Classification in GRASS/R](https://emmaclinton.github.io/RE-Rosgen/docs/report/HEGSRR-Replication_Report.md)
+2. [Rosgen Stream Classification in GRASS/R](RE-Rosgen/docs/report/HEGSRR-Replication-Report.md)
 
 
 ## Blog Posts
