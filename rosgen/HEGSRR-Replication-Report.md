@@ -133,8 +133,9 @@ In this case, the results of our analysis did not align with those of Kasprak et
 
 ## Data
 1. [CHaMP_Data_MFJD from Columbia Habitat Monitoring Program](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public)
-2. [GRASS outputs (bank centerline, valley centerline, cross-sectional profile textfile, cross-sectional points textfile, longitudinal profile textfile and longitudinal points textfile)](https://github.com/emmaclinton/RE-rosgen/tree/main/data/derived/public)
-3. The metadata details are [here](https://github.com/emmaclinton/RE-rosgen/blob/main/data/data_metadata.csv)
+2. [John Day Watershed zipfile](https://geography.middlebury.edu/jholler/data/rosgenrr/JohnDayWShed.zip)
+3. [GRASS outputs (bank centerline, valley centerline, cross-sectional profile textfile, cross-sectional points textfile, longitudinal profile textfile and longitudinal points textfile)](https://github.com/emmaclinton/RE-rosgen/tree/main/data/derived/public)
+4. The metadata details are [here](https://github.com/emmaclinton/RE-rosgen/blob/main/data/data_metadata.csv)
 
 ## Models and R script
 1. [Visualization GRASS Model (Made by Joe Holler)](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm)
