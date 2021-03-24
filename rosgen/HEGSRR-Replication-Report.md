@@ -50,15 +50,15 @@ The instructions for the work in GRASS can be found [here](https://github.com/em
 
 ![Shaded DEM](/results/maps/river_reach_DEM.png)![Slope](/results/maps/river_reach_slope.png)
 
-_An image of the shaded DEM and slope produced by the above model, shown with the data point and buffer._
+_Images of the shaded DEM and slope produced by the above model, shown with the data point and buffer._
 
 We then digitized the banks three separate times, each time in a new vector map, and did the same for the valley edges. In each new layer, the banks or valley edges of the river were digitized as new vector lines at 1:1500 scale. Two of the digitizations for both the banks and the valley layers were done using the slope layer, and the third used a hillshaded DEM as reference.
 
+In order to find the centerlines (and centerline lengths) of the river and the valley, we used [this model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/center_line_length.gxm), also created by Joe Holler.
+
 ![River Centerline](/results/maps/river_center.png)
 ![Valley Centerline](/results/maps/valley_lines.png)
-_Maps of the slope produced by the above model, shown with the digitized bank lines and bank centerlines (first map) and digitized valley edges and valley centerline (second map)._
-
-In order to find the centerlines (and centerline lengths) of the river and the valley, we used [this model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/center_line_length.gxm), also created by Joe Holler.
+_Maps of the slope produced by the [first model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), shown with the digitized bank lines and bank centerlines (first map) and digitized valley edges and valley centerline (second map)._
 
 We then created the longitudinal profile of our river reach and extracted the profile as a series of longitudinal points in a textfile with the elevation data corresponding to the point coordinates. We also extracted the cross-sectional profile of a transect very near to the CHaMP point we had been assigned, and transformed that transect into a series of points, which we extracted, along with elevation data of the points, as a textfile. (Again, instructions can be found [here](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/1-Research_Protocol_GRASS.pdf).
 
