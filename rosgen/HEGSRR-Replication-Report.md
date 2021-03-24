@@ -129,6 +129,7 @@ Table 3. Rosgen Level II Classification
 
 ![Long Profile](/results/figures/long_prof.png)
 ![Cross-sectional Profile](/results/figures/x_section.png)
+![Slope Profile](/results/figures/slope.png)
 
 ## Unplanned Deviations from the Protocol
 
