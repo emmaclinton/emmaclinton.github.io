@@ -50,7 +50,7 @@ The instructions for the work in GRASS can be found [here](https://github.com/em
 
 ![Shaded DEM](/results/maps/river_reach_DEM.png)![Slope](/results/maps/river_reach_slope.png)
 
-_Images of the shaded DEM and slope produced by the above model, shown with the data point and buffer._
+_Images of the shaded DEM and slope produced by the above model, shown with the reach buffer and river centerline._
 
 We then digitized the banks three separate times, each time in a new vector map, and did the same for the valley edges. In each new layer, the banks or valley edges of the river were digitized as new vector lines at 1:1500 scale. Two of the digitizations for both the banks and the valley layers were done using the slope layer, and the third used a hillshaded DEM as reference.
 
