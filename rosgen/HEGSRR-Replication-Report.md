@@ -48,9 +48,9 @@ Level II Variables:
 
 In this replication study, the open source software platforms GRASS and R are used to replicate the Rosgen river classification for a specific reach of the John Day River up to Level II. Note that in order to complete this analysis using MacOS, the software platforms [The Unarchiver](https://theunarchiver.com/) and [XCode](https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2Fmore%2F&rv=1) are required.
 
-This replication study is an attempt to use Open Source GIS to replicate the methods of (Rosgen, 1994) and compare our results to those of the Rosgen (1994) replication by Kasprak et al. (2016). Kasprak et al. (2016) used different DEM data and software platforms ([River Bathymetry Tool](https://essa.com/explore-essa/tools/river-bathymetry-toolkit-rbt/)) than we used in our analysis. The scope of the analysis was also different in the original study, which looked at reaches on the watershed scale. Instead, we focused only on a single, randomly assigned reach. In this procedure, each member of the team was assigned a random study site that was used in the original experimental setup. Study sites came from the [CHaMP](/data/raw/public/CHaMP_Data_MFJD.shp) datafile. This instance looks at the site with the loc_id of 7 (CBW05583-275954).
+This replication study is an attempt to use Open Source GIS to replicate the methods of (Rosgen, 1994) and compare our results to those of the Rosgen (1994) replication by Kasprak et al. (2016). Kasprak et al. (2016) used different DEM data and software platforms ([River Bathymetry Tool](https://essa.com/explore-essa/tools/river-bathymetry-toolkit-rbt/)) than we used in our analysis. The scope of the analysis was also different in the original study, which looked at reaches on the watershed scale. Instead, we focused only on a single, randomly assigned reach. In this procedure, each member of the team was assigned a random study site that was used in the original experimental setup. Study sites came from the [CHaMP](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public) datafile. This instance looks at the site with the loc_id of 7 (CBW05583-275954).
 
-The instructions for the work in GRASS can be found [here](/procedure/protocols/1-Research_Protocol_GRASS.pdf). Finding the centerlines of the river reach and corresponding valley was completed in GRASS. The first step in this process was to define the "reach" area for the point assigned for study and preprocess/create our layers to use in our digitization process. To do this, we used [this model](/procedure/code/visualize.gxm), created by Joe Holler.
+The instructions for the work in GRASS can be found [here](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/1-Research_Protocol_GRASS.pdf). Finding the centerlines of the river reach and corresponding valley was completed in GRASS. The first step in this process was to define the "reach" area for the point assigned for study and preprocess/create our layers to use in our digitization process. To do this, we used [this model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), created by Joe Holler.
 
 ![Shaded DEM](/results/maps/river_reach_DEM.png)![Slope](/results/maps/river_reach_slope.png)
 
@@ -61,24 +61,20 @@ We then digitized the banks three separate times, each time in a new vector map,
 ![River Centerline](/results/maps/river_center.png)
 ![Valley Centerline](/results/maps/valley_lines.png)
 
-In order to find the centerlines (and centerline lengths) of the river and the valley, we used [this model](/procedure/code/center_line_length.gxm), also created by Joe Holler.
+In order to find the centerlines (and centerline lengths) of the river and the valley, we used [this model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/center_line_length.gxm), also created by Joe Holler.
 
 We then extracted the longitudinal profile of our river reach, extracted them as longitudinal points in a textfile, and extracted the elevation data corresponding to the elevation point coordinates. We also extracted the cross-sectional profile of a transect very near to the CHaMP point we had been assigned, and transformed that transect into a series of points, which we extracted, along with elevation data of the points, as a textfile. (Again, instructions can be found [here](/procedure/protocols/1-Research_Protocol_GRASS.pdf)).
 
-Once we had the outputs for the centerlines of the rivers and valleys, we took the textfile data regarding the cross-sectional profile points and the longitudinal profile points into R. [This script](/procedure/code/2-ProfileViewer.Rmd), created by Zach Hilgendorf, was used to extract a longitudinal profile and cross-sectional profile of the river reach using the data from the textfiles exported from GRASS. The script also calculates and plots the slope of the reach. However, the slope was calculated as an average of slopes between consecutive points along the transect, and due to digitizing errors (e.g. marking the slope as higher up the bank than it should have been) led to some of the slopes being far steeper than others. Therefore, the slope between the first point and the last point in the reach was manually calculated  and compared to the average slope value.
+Once we had the outputs for the centerlines of the rivers and valleys, we took the textfile data regarding the cross-sectional profile points and the longitudinal profile points into R. [This script](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/2-ProfileViewer.Rmd), created by Zach Hilgendorf, was used to extract a longitudinal profile and cross-sectional profile of the river reach using the data from the textfiles exported from GRASS. The script also calculates and plots the slope of the reach. However, the slope was calculated as an average of slopes between consecutive points along the transect, and due to digitizing errors (e.g. marking the slope as higher up the bank than it should have been) led to some of the slopes being far steeper than others. Therefore, the slope between the first point and the last point in the reach was manually calculated  and compared to the average slope value.
 
 Finally, the R script plotted the cross-sectional profile with flood prone area demarkated by a black line (flood-prone area here defined as twice the bankfull depth).
 
-We then classified our river using the [RCS diagram](https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1275) provided by the EPA. Level I classification was determined using entrenchment ratio, width/depth ratio, and sinuosity. Level II was determined using calculated slope value and channel material (taken from SubD50 attribute).
+We then classified our river using the [RCS diagram](https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1275) provided by the EPA according to [this criteria](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/3-Classifying.pdf). 
 
-Why use GRASS? - GRASS is good at fixing datasets w geometry errors
+![EPA Rosgen Class Image](/results/figures/epa.png)
 
 
-Differences from the Original Study: Identify any ways in which the replication is planned to depart from the original study -- a) location, b) sampling, c) data, d) measures/variable construction, d) analytical techniques.
-1.	Provide the motivation for each change that is made to the original study.
-2.	State how the differences identified above may influence the expected size/direction of the effect of the original study
-3.	List any testable hypotheses associated with each change. If a hypothesis is directional, state the direction
-4.	Outline any initial analyses that were taken to assess whether the differences identified above will influence the outcome of the replication attempt.
+Level I classification was determined using entrenchment ratio, width/depth ratio, and sinuosity. Level II was determined using calculated slope value and channel material (taken from SubD50 attribute).
 
 Assessment Criteria: Identify the criteria that will define whether the replication attempt was successful (e.g., matched statistical significance, direction of effect, similar magnitude of effect) (comparing our results to Rosgen/Kasprak)
 - Reproducible documentation of methods, where documentation includes:
@@ -154,6 +150,9 @@ Discuss a response to the following prompt: Quantifying uncertainty in geomorphi
 ## Conclusions
 
 In this case, the results of our analysis did not align with those of Kasprak et al. (2016). If this were a reproduction study, we would have had access to the same data and software platforms as those used in the original study. However, this was replication attempt and our data and methods differed from those used by the original study. Still, it is assumed that the RCS should produce the same or very similar results in stream classification due to the quantifiable nature of the variables upon which the classification is based. There are many factors to which we may attribute the discrepancy between our results and those of Kasprak et al. (2016), as mentioned above. There were several instances in which we introduced uncertainty into our analysis (e.g. digitization process, lower resolution data).
+
+## Data
+[CHaMP_Data_MFJD](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public)
 
 ## References
 
