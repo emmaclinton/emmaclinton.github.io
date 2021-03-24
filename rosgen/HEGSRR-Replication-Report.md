@@ -136,7 +136,7 @@ Discuss a response to the following prompt: Quantifying uncertainty in geomorphi
 In this case, the results of our analysis did not align with those of Kasprak et al. (2016). If this were a reproduction study, we would have had access to the same data and software platforms as those used in the original study. However, this was replication attempt and our data and methods differed from those used by the original study. Still, it is assumed that the RCS should produce the same or very similar results in stream classification due to the quantifiable nature of the variables upon which the classification is based. There are many factors to which we may attribute the discrepancy between our results and those of Kasprak et al. (2016), as mentioned above. There were several instances in which we introduced uncertainty into our analysis (e.g. digitization process, lower resolution data).
 
 ## Data
-1. [CHaMP_Data_MFJD](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public)
+1. [CHaMP_Data_MFJD from [Columbia Habitat Monitoring Program](http://www.champmonitoring.org))](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public)
 2. [GRASS outputs (bank centerline, valley centerline, cross-sectional profile textfile, cross-sectional points textfile, longitudinal profile textfile and longitudinal points textfile)](https://github.com/emmaclinton/RE-rosgen/tree/main/data/derived/public)
 
 ## Models and R script
