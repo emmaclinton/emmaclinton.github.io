@@ -108,9 +108,9 @@ Table 3. Rosgen Level II Classification
 ![Long Profile](/results/figures/long_prof.png)
 _R output of longitudinal stream profile._
 ![Cross-sectional Profile](/results/figures/x_section.png)
-_R output of cross-sectional profile of transect very near to study point._
-![Slope Profile](/results/figures/slope.png)
 _R output of cross-sectional stream profile with 2x bankfull depth shown as black line._
+![Slope Profile](/results/figures/slope.png)
+_R output of longitudinal stream profile indicating slope changes between points._
 
 ## Unplanned Deviations from the Protocol
 
