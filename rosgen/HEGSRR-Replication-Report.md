@@ -46,12 +46,12 @@ In this replication study, the open source software platforms GRASS and R were u
 This replication study was an attempt to use Open Source GIS to replicate the methods of (Rosgen, 1994) and compare our results to those of the Rosgen (1994) replication by Kasprak et al. (2016). Kasprak et al. (2016) used different DEM data and software platforms ([River Bathymetry Tool](https://essa.com/explore-essa/tools/river-bathymetry-toolkit-rbt/)) than we used in our analysis. The scope of the analysis was also different in the original study, which looked at reaches on the watershed scale. Instead, we focused only on a single, randomly assigned reach. In this procedure, each member of the team was assigned a random study site that was used in the original experimental setup. Study sites came from the [CHaMP](https://github.com/emmaclinton/RE-rosgen/tree/main/data/raw/public) datafile. This instance looks at the site with the loc_id of 7 (CBW05583-275954).
 
 ![Randomly Assigned Sample Point](/results/maps/JD_map.png)
-_Randomly assigned sample point (CBW05583-275954)._
+_(Fig. 1) Randomly assigned sample point (CBW05583-275954)._
 
 The instructions for the work in GRASS can be found [here](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/1-Research_Protocol_GRASS.pdf). Finding the centerlines of the river reach and corresponding valley was completed in GRASS. The first step in this process was to define the "reach" area for the point assigned for study and preprocess/create our layers to use in our digitization process. To do this, we used [this model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), created by Joe Holler.
 
 ![Shaded DEM](/results/maps/river_reach_DEM.png)![Slope](/results/maps/river_reach_slope.png)
-_Images of the shaded DEM and slope produced by the above model, shown with the reach buffer and river centerline._
+_(Figs. 2a and 2b) Images of the shaded DEM (2a) and slope (2b) produced by the above model, shown with the reach buffer and river centerline._
 
 We then digitized the banks three separate times, each time in a new vector map, and did the same for the valley edges. In each new layer, the banks or valley edges of the river were digitized as new vector lines at 1:1500 scale. Two of the digitizations for both the banks and the valley layers were done using the slope layer, and the third used a hillshaded DEM as reference.
 
@@ -59,7 +59,7 @@ In order to find the centerlines (and centerline lengths) of the river and the v
 
 ![River Centerline](/results/maps/river_center.png)
 ![Valley Centerline](/results/maps/valley_lines.png)
-_Maps of the slope produced by the [first model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), shown with the digitized bank lines and bank centerlines (first map) and digitized valley edges and valley centerline (second map)._
+_(Figs. 3a and 3b) Maps of the slope produced by the [first model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), shown with the digitized bank lines and bank centerlines (first map, 2a) and digitized valley edges and valley centerline (second map, 2b)._
 
 We then created the longitudinal profile of our river reach and extracted the profile as a series of longitudinal points in a textfile with the elevation data corresponding to the point coordinates. We also extracted the cross-sectional profile of a transect very near to the CHaMP point we had been assigned, and transformed that transect into a series of points, which we extracted, along with elevation data of the points, as a textfile. (Again, instructions can be found [here](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/1-Research_Protocol_GRASS.pdf).
 
@@ -70,7 +70,7 @@ Finally, the R script plotted the cross-sectional profile with flood prone area 
 We then classified our river using the [RCS diagram](https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1275) provided by the EPA according to [this criteria](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/3-Classifying.pdf).
 
 ![EPA Rosgen Class Image](/results/figures/epa.png)
-_EPA rendition of the RCS classification process._
+_(Fig. 4) EPA rendition of the RCS classification process._
 
 Level I classification was determined using entrenchment ratio, width/depth ratio, and sinuosity. Level II was determined using calculated slope value and channel material (taken from SubD50 attribute).
 
@@ -107,21 +107,21 @@ Table 3. Rosgen Level II Classification
 | Level II Stream Type | C3 |
 
 ![Long Profile](/results/figures/long_prof.png)
-_R output of longitudinal stream profile._
+_(Fig. 5) R output of longitudinal stream profile._
 ![Cross-sectional Profile](/results/figures/x_section.png)
-_R output of cross-sectional stream profile with 2x bankfull depth shown as black line._
+_(Fig. 6) R output of cross-sectional stream profile with 2x bankfull depth shown as black line._
 ![Slope Profile](/results/figures/slope.png)
-_R output of longitudinal stream profile indicating slope changes between points._
+_(Fig. 7) R output of longitudinal stream profile indicating slope changes between points._
 
 ## Unplanned Deviations from the Protocol
 
-The only deviation from the protocol was re-calculating slope as a general value from the start point to the end point of the longitudinal profile. In the original code, the slope value was calculated as the average slope value between each point derived from the reach centerline. Due to digitizing errors, there were some outliers of much higher elevation that were marked higher up the banks than they should have been, as can be seen in the longitudinal slope profile above. This skewed the results of the slope average, resulting in a slope of 1.715. Re-calculating slope as the slope between the beginning and end points accounted for some of the digitizing uncertainty and yielded a much more credible value of 0.0066833 that aligns with the RCS.
+The only deviation from the protocol was re-calculating slope as a general value from the start point to the end point of the longitudinal profile. In the original code, the slope value was calculated as the average slope value between each point derived from the reach centerline. Due to digitizing errors, there were some outliers of much higher elevation that were marked higher up the banks than they should have been, as can be seen in the longitudinal slope profile above (Fig. 7). This skewed the results of the slope average, resulting in a slope of 1.715. Re-calculating slope as the slope between the beginning and end points accounted for some of the digitizing uncertainty and yielded a much more credible value of 0.0066833 that aligns with the RCS.
 
 ## Results/ Discussion
 
 Our results differed from those of Kasprak et al. (2016). The original study found that this river reach (CBW05583-275954) was of the type B3c, while our analysis led to the conclusion that this reach is type C3 (Table 3). Although the Level I classification is not the same (Table 2), the entrenchment ratio value seems to be the main factor that results in our classification being different from that of the original study (Table 2). There are several factors that may be causing this discrepancy. It is important to consider that we are introducing a great deal of uncertainty in this digitization process, no matter how carefully we attempted to pick out the banks and valley edges in this data. One factor that caused some inconsistencies in slope and potentially in the centerline calculations was that all digitization was done at 1:1500 scale. At that resolution, it was difficult to very accurately pick out and trace the banks of the river. Perhaps if there were a way to automate this digitization to ensure that it was based on clear, data-driven elevational differences, this would account for some of this uncertainty. The fact that this digitization was done by a novice instead of an expert in stream geomorphology also introduced uncertainty into this process.
 
-Another potential driver of the difference in our results was the fact that we used different materials and methods than those in the original study. Like Kasprak et al. (2016), we used GIS to test the RCS. However, we used original models and code in the platforms GRASS and R, while they used the [River Bathymetry Toolkit](https://essa.com/explore-essa/tools/river-bathymetry-toolkit-rbt/) to determine the values of river classification criteria. In addition, our data differed from that used in Kasprak et al. (2016). Our study used [Camp Creek LiDAR DEM data](https://github.com/emmaclinton/RE-rosgen/blob/main/data/metadata/Camp_Creek_Lidar_Report_2008.pdf), which had a resolution of 1m x 1m. Conversely, Kasprak et al. (2016) used DEM data with 0.1m grid resolution. This difference in resolution is another potential source of uncertainty in our digitization process and in our slope calculations. We also did not have access to high-resolution topographic data nor to on-the-ground photographs of the site to check the accuracy or validity of our assessment, and did not "check" our results in that way. In addition, we used different methods to pick out our bankfull water surface, relying on the CHaMP data for average bankfull width rather than using the [CHaMP Topo Toolbar](https://sites.google.com/a/northarrowresearch.com/champtools/) to derive a bankfull water surface as Kasprak et al. (2016) did.
+Another potential driver of the difference in our results was the fact that we used different materials and methods than those in the original study. Like Kasprak et al. (2016), we used GIS to test the RCS. However, we used original models and code in the platforms GRASS and R, while they used the [River Bathymetry Toolkit](https://essa.com/explore-essa/tools/river-bathymetry-toolkit-rbt/) to determine the values of river classification criteria. In addition, our data differed from that used in Kasprak et al. (2016). Our study used [Camp Creek LiDAR DEM data](https://github.com/emmaclinton/RE-rosgen/blob/main/data/metadata/Camp_Creek_Lidar_Report_2008.pdf), which had a resolution of 1m x 1m. Conversely, Kasprak et al. (2016) used DEM data with 0.1m grid resolution. This difference in resolution is another potential source of uncertainty in our digitization process and in our slope calculations. There are also errors in our data, as evidenced in Fig. 2a by the vertical lines in the shaded DEM in Fig. 2a. We also did not have access to high-resolution topographic data nor to on-the-ground photographs of the site to check the accuracy or validity of our assessment, and did not "check" our results in that way. In addition, we used different methods to pick out our bankfull water surface, relying on the CHaMP data for average bankfull width rather than using the [CHaMP Topo Toolbar](https://sites.google.com/a/northarrowresearch.com/champtools/) to derive a bankfull water surface as Kasprak et al. (2016) did.
 
 Aside from the entrenchment ratio, the sinuosity value is slightly lower than those of both B and C RCS stream types (typically >1.2, whereas our value was 1.0173 [Table 3]). The calculated sinuosity only aligns with that of an RCS Class A stream. This may be due to the approximated centerlines extrapolated from the digitized banks and valley edges losing some of the variability reflected in the banks. Additionally, although there is little temporal separation between our study and Kasprak et al. (2016), it is interesting to give some consideration here the impact of time on changes in fluvial form and behavior.
 
