@@ -69,29 +69,13 @@ Once we had the outputs for the centerlines of the rivers and valleys, we took t
 
 Finally, the R script plotted the cross-sectional profile with flood prone area demarkated by a black line (flood-prone area here defined as twice the bankfull depth).
 
-We then classified our river using the [RCS diagram](https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1275) provided by the EPA according to [this criteria](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/3-Classifying.pdf). 
+We then classified our river using the [RCS diagram](https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1275) provided by the EPA according to [this criteria](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/3-Classifying.pdf).
 
 ![EPA Rosgen Class Image](/results/figures/epa.png)
 
-
 Level I classification was determined using entrenchment ratio, width/depth ratio, and sinuosity. Level II was determined using calculated slope value and channel material (taken from SubD50 attribute).
 
-Assessment Criteria: Identify the criteria that will define whether the replication attempt was successful (e.g., matched statistical significance, direction of effect, similar magnitude of effect) (comparing our results to Rosgen/Kasprak)
-- Reproducible documentation of methods, where documentation includes:
-- Annotated flowchart of final parameter values (use last page of RSC_EPA_2005 PDF)
-
-## Replication Results (majority of discussion is about how accurate/certain they were compared to Kasprak)
-
-
-Figures to Include:
-- map of the study site shaded elevation
-- map of the study site slope
-- Map of the study site stream/river centerlines and final mean centerline
-- Map of the study site valley centerlines and final mean centerline
-- Longitudinal profile graph with elevation and slope
-- Cross-sectional profile graph
-
-Tables to Include:
+## Replication Results
 
 Table 1. Site Measurements (CHaMP_Data_MFJD Site ID from Site_x attribute: CBW05583-275954)
 
