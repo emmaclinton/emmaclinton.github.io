@@ -59,7 +59,7 @@ In order to find the centerlines (and centerline lengths) of the river and the v
 
 ![River Centerline](/results/maps/river_center.png)
 ![Valley Centerline](/results/maps/valley_lines.png)
-_(Figs. 3a and 3b) Maps of the slope produced by the [first model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), shown with the digitized bank lines and bank centerlines (first map, 2a) and digitized valley edges and valley centerline (second map, 2b)._
+_(Figs. 3a and 3b) Maps of the slope produced by the [first model](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/code/visualize.gxm), shown with the digitized bank lines and bank centerlines (first map, 3a) and digitized valley edges and valley centerline (second map, 3b)._
 
 We then created the longitudinal profile of our river reach and extracted the profile as a series of longitudinal points in a textfile with the elevation data corresponding to the point coordinates. We also extracted the cross-sectional profile of a transect very near to the CHaMP point we had been assigned, and transformed that transect into a series of points, which we extracted, along with elevation data of the points, as a textfile. (Again, instructions can be found [here](https://github.com/emmaclinton/RE-rosgen/blob/main/procedure/protocols/1-Research_Protocol_GRASS.pdf).
 
