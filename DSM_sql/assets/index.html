@@ -55,7 +55,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://emmaclinton.github.io" target="_blank">Emma Clinton</a> &middot; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var measureControl = new L.Control.Measure({
             position: 'topleft',
@@ -106,61 +106,15 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ward_name</th>\
+                        <th scope="row">Ward Name</th>\
                         <td>' + (feature.properties['ward_name'] !== null ? autolinker.link(feature.properties['ward_name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ward_code'] !== null ? autolinker.link(feature.properties['ward_code'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['district_n'] !== null ? autolinker.link(feature.properties['district_n'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['district_c'] !== null ? autolinker.link(feature.properties['district_c'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['region_nam'] !== null ? autolinker.link(feature.properties['region_nam'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['region_cod'] !== null ? autolinker.link(feature.properties['region_cod'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['areasqkm'] !== null ? autolinker.link(feature.properties['areasqkm'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['flooa_area'] !== null ? autolinker.link(feature.properties['flooa_area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['pctflood'] !== null ? autolinker.link(feature.properties['pctflood'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['totalpop_'] !== null ? autolinker.link(feature.properties['totalpop_'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['male_'] !== null ? autolinker.link(feature.properties['male_'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['female_'] !== null ? autolinker.link(feature.properties['female_'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
+                      <th scope="row">Population Density</th>\
                         <td colspan="2">' + (feature.properties['popdensity'] !== null ? autolinker.link(feature.properties['popdensity'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">rescount</th>\
-                        <td>' + (feature.properties['rescount'] !== null ? autolinker.link(feature.properties['rescount'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">greenres</th>\
-                        <td>' + (feature.properties['greenres'] !== null ? autolinker.link(feature.properties['greenres'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">greenpct</th>\
+                        <th scope="row">Percent of Residences within .25km of Greenspace</th>\
                         <td>' + (feature.properties['greenpct'] !== null ? autolinker.link(feature.properties['greenpct'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -176,7 +130,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(254,235,226,1.0)',
@@ -191,7 +145,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(252,191,193,1.0)',
@@ -206,7 +160,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(249,134,171,1.0)',
@@ -221,7 +175,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(227,73,152,1.0)',
@@ -236,7 +190,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(179,24,134,1.0)',
@@ -251,7 +205,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(105,15,120,1.0)',
@@ -305,7 +259,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0, 
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(124,194,92,0.32941176470588235)',
