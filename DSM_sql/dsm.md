@@ -13,11 +13,15 @@ Data in OSM is organized in the form of **tags**, which consist of a _key_ and a
 
 **METHODS**
 
+The first step in this analysis is to pick out the residential buildings within the city. Here, we are defining residential buildings as any point/polygon
+that is not listed as an amenity and is listed as a building.
+
 ```
 /* Create a table of points that are residential buildings*/
-/* Here, we are defining residential buildings as any point/polygon that is not listed as an amenity and listed as a building*/
--- by default, PostGIS doesn't seem to know what type of geometry it's getting,
---so we type-cast it with ::geometry(multipolygon,32737)  where the parameters are the geometry type and SRID
+
+-- By default, PostGIS doesn't seem to know what type of geometry it's getting,
+-- so we type-cast it with ::geometry(multipolygon,32737)  where the parameters
+-- are the geometry type and SRID
 
 CREATE TABLE respoint AS
 SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
@@ -39,6 +43,49 @@ ALTER TABLE respoint
 DROP COLUMN amenity;
 }
 ```
+
+We then repeat this process of picking out residences with the polygon features to ensure our analysis captures all residences.
+
+```
+
+CREATE TABLE respoly AS
+SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(polygon,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM public.planet_osm_polygon
+WHERE amenity IS NULL
+AND building IS NOT NULL;
+
+ALTER TABLE respoly
+ADD COLUMN res real;
+
+UPDATE respoly
+SET res = 1
+WHERE building = 'yes' OR building = 'residential';
+
+DELETE FROM respoly
+WHERE res IS NULL;
+```
+
+When using SQL, it's best to simplify, simplify. Here, we convert these complex polygons to their centroids for ease of analysis, then merge these features with the points layer to create a single layer of residences.
+
+```
+/* Now, convert the polygons to centroids to simplify the geometries. */
+
+CREATE TABLE respoly_centroids AS
+SELECT osm_id, building, osm_user, osm_uid, osm_version, osm_timestamp, st_centroid(geom)::geometry(point,32737) as geom
+FROM respoly;
+
+/* Union the points together to create one point-based table of residences*/
+
+CREATE TABLE uni_residences AS
+SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM respoint
+UNION
+SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM respoly_centroids;
+
+```
+
+
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 
