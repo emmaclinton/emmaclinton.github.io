@@ -222,11 +222,11 @@ Here is a [link to a web map of our final results](/assets/index.html).
 DATA SOURCES:
 
 REFERENCES:
-Bhanjee, S. and Zhang, C. (2018). Mapping latest patterns of urban sprawl in Dar es Salaam, Tanzania. _Papers in Applied Geography_, 4(2):1-13. [http://dx.doi.org/10.1080/23754931.2018.1471413](http://dx.doi.org/10.1080/23754931.2018.1471413). 
+Bhanjee, S. and Zhang, C. (2018). Mapping latest patterns of urban sprawl in Dar es Salaam, Tanzania. _Papers in Applied Geography_, 4(2):1-13. [http://dx.doi.org/10.1080/23754931.2018.1471413](http://dx.doi.org/10.1080/23754931.2018.1471413).
 
 Kombe, J.W.M. (1994). The demise of public urban land management and the emergence of informal land markets in Tanzania: A case of Dar-es-Salaam city. _Habitat International_, 18(1):23-43. [https://www.sciencedirect.com/science/article/pii/019739759490037X?via%3Dihub](https://www.sciencedirect.com/science/article/pii/019739759490037X?via%3Dihub).
 
-Msuya, I., Moshi, I., and Levira, F. (2020). Dar es Salaam: the unplanned     urban sprawl threatening neighborhood sustainability. Centre for Sustainable, Healthy and Learning Cities and Neighborhoods. http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/
+Msuya, I., Moshi, I., and Levira, F. (2020). Dar es Salaam: the unplanned     urban sprawl threatening neighborhood sustainability. Centre for Sustainable, Healthy and Learning Cities and Neighborhoods. [http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/](http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/).
 
 
 
