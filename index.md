@@ -9,6 +9,7 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 
 1. [Gravity Model of Spatial Interaction](gravity/gravity.md)
 2. [Rosgen Stream Classification in GRASS/R](rosgen/HEGSRR-Replication-Report.md)
+3. [SQL Query Analysis with OSM Data: Greenspace Access in Dar es Salaam](DSM_sql/dsm.md)
 
 
 ## Blog Posts
