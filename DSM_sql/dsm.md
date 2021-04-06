@@ -11,9 +11,11 @@ The data used in this analysis comes from [OpenStreetMap](https://www.openstreet
 
 Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest.
 
+Data for this analysis were downloaded and provided by Joseph Holler.
+
 **METHODS**
 
-Our goals are to A) create a layer of points that are residential buildings in Dar es Salaam, B) determine how many residences are contained within each ward, C) pick out greenspaces and buffer them by our 0.25km distance of accessibility, and D) determine how many residences in each ward fall within the greenspace buffers. This will enable us to run our final calculation of percent of residences within an accessible distance of a greenspace per each ward. Although we realize that a network analysis would be a far more accurate way to determine greenspace access in a city, we use a buffer for simplicity (this is our first SQL analysis, after all!). 
+Our goals are to A) create a layer of points that are residential buildings in Dar es Salaam, B) determine how many residences are contained within each ward, C) pick out greenspaces and buffer them by our 0.25km distance of accessibility, and D) determine how many residences in each ward fall within the greenspace buffers. This will enable us to run our final calculation of percent of residences within an accessible distance of a greenspace per each ward. Although we realize that a network analysis would be a far more accurate way to determine greenspace access in a city, we use a buffer for simplicity (this is our first SQL analysis, after all!).
 
 The first step in this analysis is to pick out the residential buildings within the city. Here, we are defining residential buildings as any point/polygon
 that is not listed as an amenity and is listed as a building.
@@ -209,8 +211,11 @@ SET greenpct= CAST(@greenres AS float) / CAST(@rescount AS float)*100;
 ```
 
 **RESULTS**
+
+Our results show that the majority of wards with high greenspace access are located near the coast in the most well-developed and organized area of the city. This aligns well with the findings of recent studies. For instance, [a recent study](http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/) found that the rates of development in Dar es Salaam are outpacing the capacity of the government to promote sustainable neighborhood development. This may mean that, among other things, neighborhood planning does not incorporate greenspace access.
+
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
-_Fig. 1._ A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
+**Fig. 1.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
 
 Here is a [link to a web map of our final results](/assets/index.html).
 
