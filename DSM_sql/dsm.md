@@ -24,7 +24,8 @@ that is not listed as an amenity and is listed as a building.
 -- are the geometry type and SRID
 
 CREATE TABLE respoint AS
-SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(point,32737) AS geom,
+  osm_user, osm_uid, osm_version, osm_timestamp
 FROM public.planet_osm_point
 WHERE amenity IS NULL
 AND building IS NOT NULL;
@@ -49,7 +50,8 @@ We then repeat this process of picking out residences with the polygon features 
 ```
 
 CREATE TABLE respoly AS
-SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(polygon,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(polygon,32737) AS geom,
+  osm_user, osm_uid, osm_version, osm_timestamp
 FROM public.planet_osm_polygon
 WHERE amenity IS NULL
 AND building IS NOT NULL;
@@ -71,17 +73,34 @@ When using SQL, it's best to simplify, simplify. Here, we convert these complex 
 /* Now, convert the polygons to centroids to simplify the geometries. */
 
 CREATE TABLE respoly_centroids AS
-SELECT osm_id, building, osm_user, osm_uid, osm_version, osm_timestamp, st_centroid(geom)::geometry(point,32737) as geom
+SELECT osm_id, building, osm_user, osm_uid, osm_version, osm_timestamp,
+  st_centroid(geom)::geometry(point,32737) AS geom
 FROM respoly;
 
 /* Union the points together to create one point-based table of residences*/
 
 CREATE TABLE uni_residences AS
-SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) AS geom,
+  osm_user, osm_uid, osm_version, osm_timestamp
 FROM respoint
 UNION
-SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) AS geom,
+  osm_user, osm_uid, osm_version, osm_timestamp
 FROM respoly_centroids;
+
+```
+Our analysis will eventually be visually represented using the wards. We therefore need to join identifying information about the wards to the residences point layer, using the spatial relationship between residential points and wards to assign a "ward_name" value to residential points
+
+```
+/* Join the wards data to the uni_residences table. */
+
+ALTER TABLE uni_residences
+ADD COLUMN ward_name text;
+
+UPDATE uni_residences
+SET ward_name= ward_census.ward_name
+FROM ward_census
+WHERE st_intersects(uni_residences.geom, st_transform(ward_census.utmgeom,32737));
 
 ```
 
@@ -89,6 +108,6 @@ FROM respoly_centroids;
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 
-Here is a [link to a web map of our final results](/assets/index.html)
+Here is a [link to a web map of our final results](/assets/index.html). 
 
 DATA SOURCES:
