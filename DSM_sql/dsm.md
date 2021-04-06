@@ -209,8 +209,168 @@ SET greenpct= CAST(@greenres AS float) / CAST(@rescount AS float)*100;
 ```
 
 
+
+
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 
 Here is a [link to a web map of our final results](/assets/index.html).
 
 DATA SOURCES:
+
+
+
+And if you'd rather see the code all in one place:
+
+```
+/* Create a table of points that are residential buildings*/
+/* Here, we are defining residential buildings as any point/polygon that is not listed as an amenity and listed as a building*/
+-- By default, PostGIS doesn't seem to know what type of geometry it's getting,
+-- so we type-cast it with ::geometry(multipolygon,32737)  where the parameters are the geometry type and SRID
+
+CREATE TABLE respoint AS
+SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM public.planet_osm_point
+WHERE amenity IS NULL
+AND building IS NOT NULL;
+
+ALTER TABLE respoint
+ADD COLUMN res real;
+
+UPDATE respoint
+SET res = 1
+WHERE building = 'yes' OR building = 'residential';
+
+DELETE FROM respoint
+WHERE res IS NULL;
+
+ALTER TABLE respoint
+DROP COLUMN amenity;
+
+CREATE TABLE respoly AS
+SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(polygon,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM public.planet_osm_polygon
+WHERE amenity IS NULL
+AND building IS NOT NULL;
+
+ALTER TABLE respoly
+ADD COLUMN res real;
+
+UPDATE respoly
+SET res = 1
+WHERE building = 'yes' OR building = 'residential';
+
+DELETE FROM respoly
+WHERE res IS NULL;
+____________________________________________________________________________________________________________
+/* Now, convert the polygons to centroids to simplify the geometries. */
+
+CREATE TABLE respoly_centroids AS
+SELECT osm_id, building, osm_user, osm_uid, osm_version, osm_timestamp, st_centroid(geom)::geometry(point,32737) as geom
+FROM respoly;
+
+/* Union the points together to create one point-based table of residences*/
+
+CREATE TABLE uni_residences AS
+SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM respoint
+UNION
+SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM respoly_centroids;
+
+___________________________________________________________________________________________________________
+
+/* Join the wards data to the uni_residences table. */
+
+ALTER TABLE uni_residences
+ADD COLUMN ward_name text;
+
+UPDATE uni_residences
+SET ward_name= ward_census.ward_name
+FROM ward_census
+WHERE st_intersects(uni_residences.geom, st_transform(ward_census.utmgeom,32737));
+
+____________________________________________________________________________________________________________
+
+
+/* Count the number of residences per ward */
+
+/* Alter table "ward census" by adding counts of the residences contained within each ward:*/
+
+ALTER TABLE ward_census
+ADD COLUMN rescount int;
+
+update ward_census
+    set rescount = (select count(*) from uni_residences where uni_residences.ward_name = ward_census.ward_name);
+
+/* to test a subset of the data and look at the table: */
+
+SELECT *
+FROM uni_residences
+LIMIT 250;
+____________________________________________________________________________________________________________
+
+/* Time to consider greenspace! */
+
+/* Filter by public accessibility */
+
+CREATE TABLE greenspace_access AS
+SELECT osm_id, access, "natural", leisure, landuse, st_transform(way,32737)::geometry(polygon,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM public.planet_osm_polygon
+WHERE access = 'yes' OR access = 'permissive' OR access IS NULL;
+
+/* Filter by type of greenspace, based on OSM key values */
+
+ALTER TABLE greenspace_access
+ADD COLUMN green_ real;
+
+UPDATE greenspace_access
+SET green_ = 1 WHERE leisure = 'common' OR leisure = 'dog_park'
+OR leisure = 'garden' OR landuse = 'greenfield' OR landuse = 'grass'
+OR leisure = 'nature_reserve' OR leisure = 'park' OR leisure = 'pitch'
+OR landuse = 'recreation_ground' OR landuse = 'village_green' OR landuse = 'forest'
+OR "natural" = 'wood' OR "natural" = 'grassland' OR landuse = 'allotments'
+OR "natural" = 'shrub';
+
+DELETE FROM greenspace_access
+WHERE green_ IS NULL;
+
+/* Buffer the greenspaces by an accessible amount of distance (in our case, .25 km)*/
+CREATE TABLE greenbuffer AS
+SELECT osm_id, st_buffer(geom, 250)::geometry(polygon,32737) as geom from greenspace_access;
+
+/* Intersect the points with the greenspace buffer to differentiate points that are within a buffer from those that are not */
+ALTER TABLE uni_residences
+ADD COLUMN green int;
+
+UPDATE uni_residences
+SET green = 1
+FROM greenbuffer
+WHERE st_intersects(uni_residences.geom, st_transform(greenbuffer.geom,32737));
+
+____________________________________________________________________________________________________________
+
+/* Count the number of greenspace accessible residences per ward */
+
+/* Alter table "ward census" by adding counts of the residences contained within each ward:*/
+
+ALTER TABLE ward_census
+ADD COLUMN greenres int;
+
+update ward_census
+    set greenres = (select count(*) from uni_residences where uni_residences.ward_name = ward_census.ward_name AND uni_residences.green = 1);
+
+    /* to test a subset of the data and look at the table: */
+
+SELECT *
+    FROM uni_residences
+    LIMIT 250;
+
+____________________________________________________________________________________________________________
+/* Calculate the percentage of the residences in each ward that are within .25km of a publicly accessible greenspace */
+
+ALTER TABLE ward_census
+ADD COLUMN greenpct real;
+
+UPDATE ward_census
+SET greenpct= CAST(@greenres AS float) / CAST(@rescount AS float)*100;
+```
