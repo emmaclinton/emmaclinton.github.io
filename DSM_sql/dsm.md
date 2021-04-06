@@ -3,7 +3,7 @@ layout: page
 title: Greenspace Access in PostGIS using Open Street Map Data
 ---
 
-In this analysis, we attempt to use SQL queries in PostGIS to answer a simple spatial question about environmental justice in Dar es Salaam, Tanzania. [Drew An-Pham](https://daptx.github.io/) and I collaborated on this lab. We attempt to answer a simple spatial question about access to greenspaces in this growing city. Our question: what percent of city wards are within 0.25 km of a public greenspace? 
+In this analysis, we attempt to use SQL queries in PostGIS to answer a simple spatial question about environmental justice in Dar es Salaam, Tanzania. [Drew An-Pham](https://daptx.github.io/) and I collaborated on this lab. Here, we attempt to answer a simple spatial question about access to greenspaces in this growing city: What percent of residences are within 0.25 km of a public greenspace in each of the public administrative wards? 
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 
