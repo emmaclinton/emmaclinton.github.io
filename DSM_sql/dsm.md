@@ -127,7 +127,7 @@ LIMIT 250;
 
 ```
 
-Next, we need to define and pick out our greenspaces. We will first filter by public accessibility, and then by greenspace type, using the key="value" format. 
+Next, we need to define and pick out our greenspaces. We will first filter by public accessibility, and then by greenspace type, using the key="value" format.
 
 ```
 /* Time to consider greenspace! */
@@ -156,7 +156,57 @@ DELETE FROM greenspace_access
 WHERE green_ IS NULL;
 
 ```
+We can then buffer these greenspaces and pick out the residential points that fall within them.
 
+```
+/* Buffer the greenspaces by an accessible amount of distance (in our case, .25 km)*/
+CREATE TABLE greenbuffer AS
+SELECT osm_id, st_buffer(geom, 250)::geometry(polygon,32737) as geom from greenspace_access;
+
+/* Intersect the points with the greenspace buffer to differentiate points that are within a buffer from those that are not */
+
+ALTER TABLE uni_residences
+ADD COLUMN green int;
+
+UPDATE uni_residences
+SET green = 1
+FROM greenbuffer
+WHERE st_intersects(uni_residences.geom, st_transform(greenbuffer.geom,32737));
+
+```
+We then repeat the process of counting points within polygons that we used above to determine the number of points in each buffer.
+
+```
+/* Count the number of greenspace-accessible residences per ward */
+
+/* Alter table "ward census" by adding counts of the residences contained within each ward: */
+
+ALTER TABLE ward_census
+ADD COLUMN greenres int;
+
+update ward_census
+    set greenres = (select count(*) from uni_residences where uni_residences.ward_name = ward_census.ward_name AND uni_residences.green = 1);
+
+    /* to test a subset of the data and look at the table: */
+
+SELECT *
+    FROM uni_residences
+    LIMIT 250;
+
+```
+
+And there we have it! We can now calculate the percent of residences within 0.25km of greenspaces per ward:
+
+```
+/* Calculate the percentage of the residences in each ward that are within .25km of a publicly accessible greenspace */
+
+ALTER TABLE ward_census
+ADD COLUMN greenpct real;
+
+UPDATE ward_census
+SET greenpct= CAST(@greenres AS float) / CAST(@rescount AS float)*100;
+
+```
 
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
