@@ -212,7 +212,7 @@ SET greenpct= CAST(@greenres AS float) / CAST(@rescount AS float)*100;
 
 **RESULTS**
 
-Our results show that the majority of wards with high greenspace access are located near the coast in the most well-developed and organized area of the city. This aligns well with the findings of recent studies. For instance, [a recent study](http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/) found that the rates of development in Dar es Salaam are outpacing the capacity of the government to promote sustainable neighborhood development. [Kombe (1994)](https://www.researchgate.net/publication/248523777_Understanding_land_markets_in_African_urban_areas_The_case_of_Dar_es_Salaam_Tanzania) cite the emergence of an informal land market as the main driver of the rapid development and mismanagement of land in Dar es Salaam. This has led to informal, unplanned developments as the city grows outwards from its center [(Bhanjee and Zhang, 2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania). It is probable that these unplanned developments involve little consideration of public greenspace access.
+Our results show that the majority of wards with high greenspace access are located near the coast in the most well-developed and organized area of the city. This aligns well with the findings of recent studies. For instance, [a recent study by the Centre for Sustainable Cities](http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/) found that the rates of development in Dar es Salaam are outpacing the capacity of the government to promote sustainable neighborhood development. [Kombe (1994)](https://www.researchgate.net/publication/248523777_Understanding_land_markets_in_African_urban_areas_The_case_of_Dar_es_Salaam_Tanzania) cite the emergence of an informal land market as the main driver of the rapid development and mismanagement of land in Dar es Salaam. This has led to informal, unplanned developments as the city grows outwards from its center [(Bhanjee and Zhang, 2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania). It is probable that these unplanned developments involve little consideration of public greenspace access.
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 **Fig. 1.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
@@ -220,6 +220,13 @@ Our results show that the majority of wards with high greenspace access are loca
 Here is a [link to a web map of our final results](/assets/index.html).
 
 DATA SOURCES:
+
+REFERENCES:
+Bhanjee, S. and Zhang, C. (2018). Mapping latest patterns of urban sprawl in Dar es Salaam, Tanzania. _Papers in Applied Geography_, 4(2):1-13. [http://dx.doi.org/10.1080/23754931.2018.1471413](http://dx.doi.org/10.1080/23754931.2018.1471413). 
+
+Kombe, J.W.M. (1994). The demise of public urban land management and the emergence of informal land markets in Tanzania: A case of Dar-es-Salaam city. _Habitat International_, 18(1):23-43. [https://www.sciencedirect.com/science/article/pii/019739759490037X?via%3Dihub](https://www.sciencedirect.com/science/article/pii/019739759490037X?via%3Dihub).
+
+Msuya, I., Moshi, I., and Levira, F. (2020). Dar es Salaam: the unplanned     urban sprawl threatening neighborhood sustainability. Centre for Sustainable, Healthy and Learning Cities and Neighborhoods. http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/
 
 
 
