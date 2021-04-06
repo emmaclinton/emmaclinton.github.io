@@ -7,11 +7,13 @@ In this analysis, we attempt to use SQL queries in PostGIS to answer a simple sp
 
 **DATA**
 
-The data used in this analysis came from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a Tanzanian mapping project aimed at collecting data regarding flood risk in Dar es Salaam.
+The data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a Tanzanian mapping project aimed at collecting data regarding flood risk in Dar es Salaam.
 
 Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest.
 
 **METHODS**
+
+Our goals are to A) create a layer of points that are residential buildings in Dar es Salaam, B) determine how many residences are contained within each ward, C) pick out greenspaces and buffer them by our 0.25km distance of accessibility, and D) determine how many residences in each ward fall within the greenspace buffers. This will enable us to run our final calculation of percent of residences within an accessible distance of a greenspace per each ward.
 
 The first step in this analysis is to pick out the residential buildings within the city. Here, we are defining residential buildings as any point/polygon
 that is not listed as an amenity and is listed as a building.
@@ -89,7 +91,7 @@ SELECT DISTINCT osm_id, building, st_transform(geom,32737)::geometry(point,32737
 FROM respoly_centroids;
 
 ```
-Our analysis will eventually be visually represented using the wards. We therefore need to join identifying information about the wards to the residences point layer, using the spatial relationship between residential points and wards to assign a "ward_name" value to residential points
+Our analysis will eventually be visually represented using the wards. We therefore need to join identifying information about the wards to the residences point layer, using the spatial relationship between residential points and wards to assign a "ward_name" value to residential points.
 
 ```
 /* Join the wards data to the uni_residences table. */
@@ -104,10 +106,61 @@ WHERE st_intersects(uni_residences.geom, st_transform(ward_census.utmgeom,32737)
 
 ```
 
+In order to determine the final percent of residences with access to greenspace, we need to calculate a total value for the number of residences per ward. This code runs that count function and groups count values by ward name.
+
+```
+/* Count the number of residences per ward */
+
+/* Alter table "ward census" by adding counts of the residences contained within each ward:*/
+
+ALTER TABLE ward_census
+ADD COLUMN rescount int;
+
+update ward_census
+    set rescount = (select count(*) from uni_residences where uni_residences.ward_name = ward_census.ward_name);
+
+/* to test a subset of the data and look at the table: */
+
+SELECT *
+FROM uni_residences
+LIMIT 250;
+
+```
+
+Next, we need to define and pick out our greenspaces. We will first filter by public accessibility, and then by greenspace type, using the key="value" format. 
+
+```
+/* Time to consider greenspace! */
+
+/* Filter by public accessibility */
+
+CREATE TABLE greenspace_access AS
+SELECT osm_id, access, "natural", leisure, landuse, st_transform(way,32737)::geometry(polygon,32737) as geom, osm_user, osm_uid, osm_version, osm_timestamp
+FROM public.planet_osm_polygon
+WHERE access = 'yes' OR access = 'permissive' OR access IS NULL;
+
+/* Filter by type of greenspace, based on OSM key values */
+
+ALTER TABLE greenspace_access
+ADD COLUMN green_ real;
+
+UPDATE greenspace_access
+SET green_ = 1 WHERE leisure = 'common' OR leisure = 'dog_park'
+OR leisure = 'garden' OR landuse = 'greenfield' OR landuse = 'grass'
+OR leisure = 'nature_reserve' OR leisure = 'park' OR leisure = 'pitch'
+OR landuse = 'recreation_ground' OR landuse = 'village_green' OR landuse = 'forest'
+OR "natural" = 'wood' OR "natural" = 'grassland' OR landuse = 'allotments'
+OR "natural" = 'shrub';
+
+DELETE FROM greenspace_access
+WHERE green_ IS NULL;
+
+```
+
 
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 
-Here is a [link to a web map of our final results](/assets/index.html). 
+Here is a [link to a web map of our final results](/assets/index.html).
 
 DATA SOURCES:
