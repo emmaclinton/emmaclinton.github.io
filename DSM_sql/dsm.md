@@ -13,7 +13,7 @@ Data in OSM is organized in the form of **tags**, which consist of a _key_ and a
 
 **METHODS**
 
-Our goals are to A) create a layer of points that are residential buildings in Dar es Salaam, B) determine how many residences are contained within each ward, C) pick out greenspaces and buffer them by our 0.25km distance of accessibility, and D) determine how many residences in each ward fall within the greenspace buffers. This will enable us to run our final calculation of percent of residences within an accessible distance of a greenspace per each ward.
+Our goals are to A) create a layer of points that are residential buildings in Dar es Salaam, B) determine how many residences are contained within each ward, C) pick out greenspaces and buffer them by our 0.25km distance of accessibility, and D) determine how many residences in each ward fall within the greenspace buffers. This will enable us to run our final calculation of percent of residences within an accessible distance of a greenspace per each ward. Although we realize that a network analysis would be a far more accurate way to determine greenspace access in a city, we use a buffer for simplicity (this is our first SQL analysis, after all!). 
 
 The first step in this analysis is to pick out the residential buildings within the city. Here, we are defining residential buildings as any point/polygon
 that is not listed as an amenity and is listed as a building.
@@ -208,10 +208,9 @@ SET greenpct= CAST(@greenres AS float) / CAST(@rescount AS float)*100;
 
 ```
 
-
-
-
+**RESULTS**
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
+_Fig. 1._ A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
 
 Here is a [link to a web map of our final results](/assets/index.html).
 
