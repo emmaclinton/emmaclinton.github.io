@@ -7,7 +7,7 @@ In this analysis, we attempt to use SQL queries in PostGIS to answer a simple sp
 
 **DATA**
 
-The greenspace and residential data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a community-based, Tanzanian mapping project aimed at collecting open data regarding flood risk in Dar es Salaam. Many contributors to this dataset are local university students. The data for the wards was downloaded from [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards).
+The greenspace and residential data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that many of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a community-based, Tanzanian mapping project aimed at collecting open data regarding flood risk in Dar es Salaam. The data for the wards was downloaded from [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards). Many contributors to this dataset are local university students.
 
 OSM Data for this analysis were downloaded and provided by Joseph Holler using [osm2pgsql](https://osm2pgsql.org/).
 
@@ -234,7 +234,7 @@ It is probable that these unplanned developments involve little consideration of
 >therefore further prioritize the maintenance and
 >conservation of greenspace."
 
-To improve urban resiliency and environemental justice in Dar es Salaaam, there should be a greater focus on development of accessible greenspaces. 
+To improve urban resiliency and environmental justice in Dar es Salaaam, there should be a greater focus on development of accessible greenspaces.
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 **Fig. 2.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
