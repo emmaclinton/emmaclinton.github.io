@@ -229,7 +229,7 @@ ACKNOWLEDGEMENTS: I would like to thank Drew An-Pham for working with me on this
 
 DATA SOURCES:
 
-OpenStreetMap contributors. (2021) Planet dump [Data file from $date of database dump$]. Retrieved from [https://planet.openstreetmap.org](https://planet.openstreetmap.org).
+OpenStreetMap contributors (2021). Retrieved from [https://planet.openstreetmap.org](https://planet.openstreetmap.org).
 
 REFERENCES:
 
