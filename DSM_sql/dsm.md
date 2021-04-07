@@ -225,8 +225,11 @@ It is probable that these unplanned developments involve little consideration of
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 **Fig. 2.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
 
+ACKNOWLEDGEMENTS: I would like to thank Drew An-Pham for working with me on this analysis. I would also like to thank Joe Holler for assistance with data acquisition and programming. In addition,  map data in this analysis is copyrighted by OpenStreetMap contributors and available from [https://www.openstreetmap.org](https://www.openstreetmap.org).
 
 DATA SOURCES:
+
+OpenStreetMap contributors. (2021) Planet dump [Data file from $date of database dump$]. Retrieved from [https://planet.openstreetmap.org](https://planet.openstreetmap.org).
 
 REFERENCES:
 
