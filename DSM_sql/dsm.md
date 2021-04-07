@@ -234,7 +234,7 @@ It is probable that these unplanned developments involve little consideration of
 >therefore further prioritize the maintenance and
 >conservation of greenspace."
 
-To improve urban resiliency and environmental justice in Dar es Salaaam, there should be a greater focus on development of accessible greenspaces.
+To improve urban resiliency and environmental justice in Dar es Salaam, there should be a greater focus on development of accessible greenspaces.
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 **Fig. 2.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
