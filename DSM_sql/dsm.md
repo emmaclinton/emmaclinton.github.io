@@ -222,7 +222,7 @@ Our results show that the majority of wards with high greenspace access are loca
 **Fig. 1.** A map of planned/unplanned development in Dar es Salaam (adapted from [Bhanjee and Zhang (2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania)).
 
 
-It is probable that these unplanned developments involve little consideration of public greenspace access. This explains the pattern of generally decreased greenspace access and prevalence as distance from the city center increases. A more centralized form of development with greater government and planning activity would be highly useful to rectify the lack of greenspace access in areas away from the coastal and urban center. 
+It is probable that these unplanned developments involve little consideration of public greenspace access. This explains the pattern of generally decreased greenspace access and prevalence as distance from the city center increases. A more centralized form of development with greater government and planning activity would be highly useful to rectify the lack of greenspace access in areas away from the coastal and urban center.
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 **Fig. 2.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
@@ -232,6 +232,7 @@ ACKNOWLEDGEMENTS: I would like to thank Drew An-Pham for working with me on this
 DATA SOURCES:
 
 Greenspaces and residences: OpenStreetMap contributors (2021). Retrieved from [https://planet.openstreetmap.org](https://planet.openstreetmap.org).
+
 Wards: [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards).
 
 REFERENCES:
