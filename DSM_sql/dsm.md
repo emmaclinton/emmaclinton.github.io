@@ -7,11 +7,13 @@ In this analysis, we attempt to use SQL queries in PostGIS to answer a simple sp
 
 **DATA**
 
-The data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a Tanzanian mapping project aimed at collecting data regarding flood risk in Dar es Salaam.
+The greenspace and residential data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a community-based, Tanzanian mapping project aimed at collecting open data regarding flood risk in Dar es Salaam.
 
 Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest.
 
-Data for this analysis were downloaded and provided by Joseph Holler.
+The data for the wards was downloaded from [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards) (see above for detail on this organization).
+
+OSM Data for this analysis were downloaded and provided by Joseph Holler.
 
 **METHODS**
 
@@ -229,7 +231,8 @@ ACKNOWLEDGEMENTS: I would like to thank Drew An-Pham for working with me on this
 
 DATA SOURCES:
 
-OpenStreetMap contributors (2021). Retrieved from [https://planet.openstreetmap.org](https://planet.openstreetmap.org).
+Greenspaces and residences: OpenStreetMap contributors (2021). Retrieved from [https://planet.openstreetmap.org](https://planet.openstreetmap.org).
+Wards: [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards). 
 
 REFERENCES:
 
