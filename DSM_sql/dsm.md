@@ -7,11 +7,7 @@ In this analysis, we attempt to use SQL queries in PostGIS to answer a simple sp
 
 **DATA**
 
-The greenspace and residential data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a community-based, Tanzanian mapping project aimed at collecting open data regarding flood risk in Dar es Salaam. Many contributors to this dataset are local university students. 
-
-Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest.
-
-The data for the wards was downloaded from [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards) (see above for detail on this organization).
+The greenspace and residential data used in this analysis comes from [OpenStreetMap](https://www.openstreetmap.org/#map=15/-6.8564/39.1488), or OSM. OSM is a public mapping effort aimed at creating open spatial data. Open data free and can be used for any purpose as long as the data source and contributors are given credit ([OSM](https://www.openstreetmap.org/about)). These data are collected by local parties (which can be individuals, organizations, enterprises, etc.), and the information around collection is contained in the data with a unique identifier and timestamp for each user. This information can be used to determine who was involved in the collection of the data, as the objectives of private users may differ from those of corporations or organizations. In our case, it appears that the majority of the main contributors to this dataset in this area are members of [RamaniHuria](https://ramanihuria.org/en/), a community-based, Tanzanian mapping project aimed at collecting open data regarding flood risk in Dar es Salaam. Many contributors to this dataset are local university students. The data for the wards was downloaded from [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data:geonode:dar_es_salaam_administrative_wards).
 
 OSM Data for this analysis were downloaded and provided by Joseph Holler using [osm2pgsql](https://osm2pgsql.org/).
 
@@ -23,6 +19,8 @@ For this analysis, we accessed data through a PostGIS database using the Databas
 
 The first step in this analysis is to pick out the residential buildings within the city. Here, we are defining residential buildings as any point/polygon
 that is not listed as an amenity and is listed as a building.
+
+Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest. We use these keys to pick out the residential and greenspace features we want to use in our analysis. 
 
 ```
 /* Create a table of points that are residential buildings*/
