@@ -20,7 +20,7 @@ For this analysis, we accessed data through a PostGIS database using the Databas
 The first step in this analysis is to pick out the residential buildings within the city. Here, we are defining residential buildings as any point/polygon
 that is not listed as an amenity and is listed as a building.
 
-Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest. We use these keys to pick out the residential and greenspace features we want to use in our analysis. 
+Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest. We use these keys to pick out the residential and greenspace features we want to use in our analysis.
 
 ```
 /* Create a table of points that are residential buildings*/
@@ -222,7 +222,19 @@ Our results show that the majority of wards with high greenspace access (and the
 **Fig. 1.** A map of planned/unplanned development in Dar es Salaam (adapted from [Bhanjee and Zhang (2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania)).
 
 
-It is probable that these unplanned developments involve little consideration of public greenspace access. This explains the pattern of generally decreased greenspace access and prevalence as distance from the city center increases. A more centralized form of development with greater government and planning activity would be highly useful to rectify the lack of greenspace access in areas away from the coastal and urban center.
+It is probable that these unplanned developments involve little consideration of public greenspace access. This explains the pattern of generally decreased greenspace access and prevalence as distance from the city center increases. A more centralized form of development with greater government involvement and organized planning activity, preferably with community participation, would be highly useful to rectify the lack of greenspace access in areas away from the coastal and urban center. [A recent study](http://dcc.go.tz/storage/app/uploads/public/5db/aef/cf8/5dbaefcf875ec366483118.pdf) from the Helmholtz Centre for Environmental Research and ICLEI Local Governments for Sustainability states that
+
+>"Protecting and enhancing urban greenspaces
+>provides huge benefits
+>related to DSM’s growth. For example, it improves
+>community health, reduces the city’s vulnerability
+>to climate change, and it likely saves future costs
+>for water supply, for sustainable livelihoods,
+>and for a truly enjoyable city. Authorities should
+>therefore further prioritize the maintenance and
+>conservation of greenspace."
+
+To improve urban resiliency and environemental justice in Dar es Salaaam, there should be a greater focus on development of accessible greenspaces. 
 
 ![Percent of Residences with Access to Greenspace by Ward](/assets/wardPct_DSM.png)
 **Fig. 2.** A map of percent of residences within 0.25km of a greenspace in Dar es Salaam.
@@ -238,6 +250,9 @@ Wards: [RamaniHuria](https://geonode.resilienceacademy.ac.tz/layers/geonode_data
 REFERENCES:
 
 Bhanjee, S. and Zhang, C. (2018). Mapping latest patterns of urban sprawl in Dar es Salaam, Tanzania. _Papers in Applied Geography_, 4(2):1-13. [http://dx.doi.org/10.1080/23754931.2018.1471413](http://dx.doi.org/10.1080/23754931.2018.1471413).
+
+Karutz R., Berghöfer A., Moore L.R., and van Wyk, E. (2019). A Thematic Atlas of Nature’s Benefits to Dar es Salaam.
+Leipzig and Cape Town: Helmholtz Centre for Environmental Research and ICLEI Africa Secretariat. 78 pages. [http://dcc.go.tz/storage/app/uploads/public/5db/aef/cf8/5dbaefcf875ec366483118.pdf](http://dcc.go.tz/storage/app/uploads/public/5db/aef/cf8/5dbaefcf875ec366483118.pdf).
 
 Kombe, J.W.M. (1994). The demise of public urban land management and the emergence of informal land markets in Tanzania: A case of Dar-es-Salaam city. _Habitat International_, 18(1):23-43. [https://www.sciencedirect.com/science/article/pii/019739759490037X?via%3Dihub](https://www.sciencedirect.com/science/article/pii/019739759490037X?via%3Dihub).
 
