@@ -30,7 +30,7 @@ The original study was published without data or code, but has detailed narrativ
 
 ### Data Description and Variables
 
-##*Access and Assets Data:*
+*Access and Assets Data:*
  Demographic and Health Survey data are a product of the United States Agency for International Development (USAID). Variables contained in this dataset are used to represent adaptive capacity (access + assets) in the Malcomb et al.’s (2014) study. These data come from survey questionnaires with large sample sizes.
 The DHS data used in our study were collected in 2010. In Malawi, the provenance of the DHA data dates back as far as 1992, but has not been collected consistently every year. Each point in the household dataset represents a cluster of households with each cluster corresponding to some form of census enumeration units, such as villages in rural areas or city blocks in urban areas [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf). This means that each household in each cluster has the same GPS data. This data is collected by trained [USAID](https://www.usaid.gov/) staff using GPS receivers.
 Missing data is a common occurrence in this dataset as a result of negligence or incorrect naming. However, according to the [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf), these issues are easily rectified and typically sites for which data does not exist are recollected. Sometimes, however, missing information is coded in as such or assigned a proxy location.
@@ -71,8 +71,9 @@ The DHS website acknowledges the high potential for inconsistent or incomplete d
 1. Take the values and round them to 2 decimal places
 1. Put data in 4 classes based on break values
 
-##*Livelihood Zones Data:*
-The Livelihood zone data is created by aggregating general regions where similar crops are grown and similar ecological patterns exist. This data exists originally at the household level and was aggregated into Livelihood Zones. To construct the aggregation used for “Livelihood Sensitivity” in this analysis, we use these household points from the FEWSnet data that had previously been aggregated into livelihood zones. The four Livelihood Sensitivity categories are 1) Percent of food from own farm (6%); 2) Percent of income from wage labor (6%); 3) Percent of income from cash crops (4%); and 4) Disaster coping strategy (4%). In the original R script, household data from the DHS survey was used as a proxy for the specific data points in the livelihood sensitivity analysis (transformation: Join with DHS clusters to apply LHZ FNID variables). With this additional FEWSnet data at the household level, we can construct these four livelihood sensitivity categories using existing variables (Table 1).
+*Livelihood Zones Data:*
+
+The livelihood zone data is created by aggregating general regions where similar crops are grown and similar ecological patterns exist. This data exists originally at the household level and was aggregated into Livelihood Zones. To construct the aggregation used for “Livelihood Sensitivity” in this analysis, we use these household points from the FEWSnet data that had previously been aggregated into livelihood zones. The four Livelihood Sensitivity categories are 1) Percent of food from own farm (6%); 2) Percent of income from wage labor (6%); 3) Percent of income from cash crops (4%); and 4) Disaster coping strategy (4%). In the original R script, household data from the DHS survey was used as a proxy for the specific data points in the livelihood sensitivity analysis (transformation: Join with DHS clusters to apply LHZ FNID variables). With this additional FEWSnet data at the household level, we can construct these four livelihood sensitivity categories using existing variables (Table 1).
 
 **Table 2.** Constructing livelihood sensitivity categories
 
@@ -84,7 +85,7 @@ The Livelihood zone data is created by aggregating general regions where similar
 | Disaster coping strategy  | 4%  | Self-employment & small business and trade: (firewood + sale of wild food + grass + mats + charcoal) / total sources of cash * 100 |
 
 
-##*Physical Exposure Data:*
+*Physical Exposure Data*:
 **Flood Data:** This dataset stems from work collected by multiple agencies and funneled into the PREVIEW Global Risk Data Platform, “an effort to share spatial information on global risk from natural hazards.” The dataset was designed by UNEP/GRID-Europe for the Global Assessment Report on Risk Reduction (GAR), using global data. A flood estimation value is assigned via an index of 1 (low) to 5 (extreme)
 **Drought Data:**This dataset uses the Standardized Precipitation Index to measure annual drought exposure across the globe. The Standardized Precipitation Index draws on data from a “global monthly gridded precipitation dataset” from the University of East Anglia’s Climatic Research Unit, and was modeled in GIS using methodology from Brad Lyon at Columbia University. The dataset draws on 2010 population information from the LandScanTM Global Population Database at the Oak Ridge National Laboratory.  Drought exposure is reported as the expected average annual (2010) population exposed. The data were compiled by UNEP/GRID-Europe for the Global Assessment Report on Risk Reduction (GAR). The data use the WGS 1984 datum, span the years 1980-2001, and are reported in raster format with spatial resolution 1/24 degree x 1/24 degree.
 
@@ -105,13 +106,13 @@ Outline the data used in the study, including:
 
 This part may be compiled collaboratively as a group!
 
-### Analytical Specification
+## Analytical Specification
 
 The original study was conducted using ArcGIS and STATA, but does not state which versions of these software were used.
 The replication study will use R.
 
-## Materials and Procedure
-The steps outlined below mirror the steps used in the [R Code for this project](/RP-Malcomb/procedure/code/RP-Malcomb-jh.Rmd).
+### Materials and Procedure
+The steps outlined below mirror the steps used in the [R Code for this project](https://github.com/emmaclinton/RP-Malcomb/blob/main/procedure/code/RP-Malcomb-jh.Rmd).
 
 *Process Adaptive Capacity*
 1. Bring in DHS Data [Households Level] (vector)
@@ -156,17 +157,12 @@ Put data in 4 classes based on break values
 1. Create a mask
 2. Reclassify the flood layer (quintiles, currently binary)
 3. Reclassify the drought values (quantile [from 0 - 1 in intervals of 0.2 =5])
-4. AGGREGATE: Create final vulnerability layer using envi. vulnerability score and ta_capacity
+4. AGGREGATE: Create final vulnerability layer using environmental vulnerability score and ta_capacity.
 
-
-Figures to Include:
-- map of resilience by traditional authority in 2010, analagous to figure 4 of the original study
-- map of vulnerability in Malawi, analagous to figure 5 of the original study
-- map of difference between your figure 4 and the original figure 4
-- map of difference between your figure 5 and the original figure 5
+We then georeferenced maps from the original study using QGIS in order to compare the results generated by our R script to those found in Malcomb et al. (2014). We ran a Spearman's Rho correlation test between the two maps of Figs. 4 and 5 to determine the differences in results.
 
 ## Unplanned Deviations from the Protocol
-Our first pass at creating a workflow before seeing the data outlined several areas of uncertainty. For instance, we were unsure of at what level of organization the DHS data came in (household level, village level, or district level). We were also unsure of the factors outlined below, which are ultimate sources of uncertainty in our replication analysis. 
+Our first pass at creating a workflow before seeing the data outlined several areas of uncertainty. For instance, we were unsure of at what level of organization the DHS data came in (household level, village level, or district level). We were also unsure of the factors outlined below, which are ultimate sources of uncertainty in our replication analysis.
 
 In this protocol, it was unclear how exactly the livelihood zones data were divided into the four categories of livelihood sensitivity. This is a large source of uncertainty in our analysis. In addition, the original study states that it broke the data into quintiles by assigning values of 0-5 to the data. This would actually result in six classes, or sextiles. We decided to use quintiles and assigned values of 1-5 when normalizing our data. It is also unclear how binary data in the original study was normalized on a 1-5 scale. For binary variables (e.g. sex), we assigned a value of 1 to the presumed lower-risk option (e.g. male) and a value of 2 to the higher-risk (e.g. female).
 
@@ -176,7 +172,25 @@ Summarize changes and uncertainties between
 - your interpretation and plan for the workflow based on reading the paper
 - your final workflow after accessing the data and code and completing the code
 
-## Discussion
+### Discussion
+
+Our replication analysis yielded slightly different results than those generated in the original study. **Fig. 1** shows the results of our replication analysis in terms of access and assets in 2010 on the Traditional Authority level of organization.
+**Fig. 2** shows the difference between our results and those generated by Malcomb et al. (2014)
+
+![Results (TA Adaptive Capacity)](/maps/ac_2010.png)
+_(Fig. 1) Access and assets (adaptive capacity) scores from our results._
+
+![Results (TA Adaptive Capacity)](/maps/ac_2010.png)
+_(Fig. 2) Difference in access and assets (adaptive capacity) scores (reproduction score - original study score)._
+
+Figures to Include:
+map of your reproduction results for figure 4
+map of your reproduction results for figure 5
+map to visualize the difference of results for figure 4
+map to visualize the difference of results for figure 5
+table to quantify the difference of results for figure 4
+scatterplot graph to visualize the difference of results for figure 5
+spearman’s rho correlation results for figure 4 and for figure 5
 
 Provide a summary and interpretation of the key findings of the replication *vis-a-vis* the original study results. If the attempt was a failure, discuss possible causes of the failure. In this replication, any failure is probably due to practical causes, which may include:
 - lack of data
