@@ -12,7 +12,7 @@ Original study *by* Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vuln
 Replication Authors:
 Your Name, Joseph Holler, Kufre Udoh, Open Source GIScience students of Fall 2019 and Spring 2021
 
-Replication Materials Available at: [github repository name](github repository link)
+Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RP-Malcomb)
 
 Created: `04 April 2021`
 Revised: `06 April 2021`
@@ -180,7 +180,7 @@ Our replication analysis yielded slightly different results than those generated
 ![Results (TA Adaptive Capacity)](/maps/ac_2010.png)
 _(Fig. 1) Access and assets (adaptive capacity) scores from our results._
 
-![Results (TA Adaptive Capacity)](/maps/ac_2010.png)
+![Results (TA Adaptive Capacity)](/maps/fig4compare.png)
 _(Fig. 2) Difference in access and assets (adaptive capacity) scores (reproduction score - original study score)._
 
 Figures to Include:
