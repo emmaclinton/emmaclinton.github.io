@@ -42,21 +42,21 @@ The DHS website acknowledges the high potential for inconsistent or incomplete d
 | ------------- | ------------- |
 | HHID | "Case Identification" |
 | HV001 | "Cluster number" |
-|HV002 | Household number |
+| HV002 | Household number |
 | HV246A |"Cattle own" |
-|HV246D | "Goats own"|
-|HV246E | "Sheep own" |
-|HV246G | "Pigs own" |
-| HV248 |"Number of sick people 18-59"|
-| HV245 | "Hectares for agricultural land"|
-|HV271 | "Wealth index factor score (5 decimals)"|
-|HV251 | "Number of orphans and vulnerable children"|
-|HV207 | “Has Radio” |
-| HV243A | “Has a Mobile Telephone”|
-|HV219 | Sex of Head of Household”|
-|HV226 | “Type of Cooking Fuel” |
-| HV206 |"Has electricty” |
- |HV204 |“Time to get to Water Source”|
+| HV246D | "Goats own"|
+| HV246E | "Sheep own" |
+| HV246G | "Pigs own" |
+| HV248 | "Number of sick people 18-59" |
+| HV245 | "Hectares for agricultural land" |
+| HV271 | "Wealth index factor score (5 decimals)" |
+| HV251 | "Number of orphans and vulnerable children" |
+| HV207 | “Has Radio” |
+| HV243A | “Has a Mobile Telephone” |
+| HV219 | "Sex of Head of Household” |
+| HV226 | “Type of Cooking Fuel” |
+| HV206 | "Has electricty” |
+| HV204 | “Time to get to Water Source” |
 
 **Variable Transformations**
 1. Eliminate households with null and/or missing values
