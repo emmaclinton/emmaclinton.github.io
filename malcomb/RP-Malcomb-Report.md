@@ -203,7 +203,7 @@ There are some differences between the two. Compared to Malcomb et al. (2014), o
 ![Results (Vulnerability](/maps/vulnerability.png)
 _(Fig. 3) Final vulnerability score from our results._
 
-![Results (Vulnerability Comparison](/maps/vfig5comp.png)
+![Results (Vulnerability Comparison](/maps/fig5comp.png)
 _(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
 
 ![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
