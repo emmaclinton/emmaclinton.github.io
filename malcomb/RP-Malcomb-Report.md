@@ -213,7 +213,7 @@ _(Fig. 3) Final vulnerability score comparison between our results and those of 
 
 The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
 
-Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study.
+Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study. Any discrepancies in our data are likely due to practical errors.
 
 With that being said, there is also a great deal of uncertainty involved in the original study itself. Tate (2013) details a framework of uncertainty in vulnerability modeling. When Malcomb et al. (2014) is compared to this framework, there are several possible sources of subjectivity/uncertainty involved. For instance, the indicators of uncertainty used in this study were mostly normative (relying on expert opinion) or practical (meaning that the data available for use were used; this is interesting because it is likely that the experts interviewed for opinions were involved in the generation of a great deal of this data).
 
@@ -222,20 +222,19 @@ The normalization process was standardized for all variables but highly dependen
 Additionally, the study makes no mention of uncertainty analysis, sensitivity analysis, or validation, meaning that areas where the model are most and least reliable are not highlighted in the results (Tate, 2013).
 
 
-Provide a summary and interpretation of the key findings of the replication *vis-a-vis* the original study results. If the attempt was a failure, discuss possible causes of the failure. In this replication, any failure is probably due to practical causes, which may include:
-- lack of data
-- lack of code
-- lack of details in the original analysis
-- uncertainties due to manner in which data has been used
-
 ## Conclusion
 
 Restate the key findings and discuss their broader societal implications or contributions to theory.
 Do the research findings suggest a need for any future research?
 
+## Acknowledgements/Collaborations
+I would like to thank my lab group—Drew An-Pham, Maja Cannavo, Jacob Freedman, Nick Nonnenmacher, and Alitzel Villanueva—for all of their assistance with designing and updating our workflow, assistance with coding quirks (especially Jacob and Maja!), and collaborative compilation of description of data sources, variables, and variable transformations. 
+
 ## References
 
-Include any referenced studies or materials in the [AAG Style of author-date referencing](https://www.tandf.co.uk//journals/authors/style/reference/tf_USChicagoB.pdf).
+Tate, E. 2013. Uncertainty Analysis for a Social Vulnerability Index. Annals of the Association of American Geographers 103 (3):526–543. [doi:10.1080/00045608.2012.700616.](doi:10.1080/00045608.2012.700616)
+
+Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. Applied Geography 48:17–30. [DOI:10.1016/j.apgeog.2014.01.004](DOI:10.1016/j.apgeog.2014.01.004)
 
 ####  Report Template References & License
 
