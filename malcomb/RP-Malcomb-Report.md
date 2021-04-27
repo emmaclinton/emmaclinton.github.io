@@ -14,8 +14,8 @@ Your Name, Joseph Holler, Kufre Udoh, Open Source GIScience students of Fall 201
 
 Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RP-Malcomb)
 
-Created: `04 April 2021`
-Revised: `06 April 2021`
+Created: `24 April 2021`
+Revised: `27 April 2021`
 
 ## Abstract
 
@@ -31,9 +31,12 @@ The original study was published without data or code, but has detailed narrativ
 ### Data Description and Variables
 
 *Access and Assets Data:*
- Demographic and Health Survey data are a product of the United States Agency for International Development (USAID). Variables contained in this dataset are used to represent adaptive capacity (access + assets) in the Malcomb et al.’s (2014) study. These data come from survey questionnaires with large sample sizes.
-The DHS data used in our study were collected in 2010. In Malawi, the provenance of the DHA data dates back as far as 1992, but has not been collected consistently every year. Each point in the household dataset represents a cluster of households with each cluster corresponding to some form of census enumeration units, such as villages in rural areas or city blocks in urban areas [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf). This means that each household in each cluster has the same GPS data. This data is collected by trained [USAID](https://www.usaid.gov/) staff using GPS receivers.
+ Demographic and Health Survey data are a product of the United States Agency for International Development ([USAID](https://www.usaid.gov/)). Variables contained in this dataset are used to represent adaptive capacity (access + assets) in Malcomb et al.’s (2014) study. These data come from survey questionnaires with large sample sizes. The DHS data used in our study were collected in 2010. In Malawi, the DHA data dates back as far as 1992, but data has not been collected consistently every year.
+
+ Each point in the household dataset represents a cluster of households, with each cluster corresponding to some form of census enumeration units, such as villages in rural areas or city blocks in urban areas [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf). This means that each household in each cluster has the same GPS data. This data is collected by trained [USAID](https://www.usaid.gov/) staff using GPS receivers.
+
 Missing data is a common occurrence in this dataset as a result of negligence or incorrect naming. However, according to the [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf), these issues are easily rectified and typically sites for which data does not exist are recollected. Sometimes, however, missing information is coded in as such or assigned a proxy location.
+
 The DHS website acknowledges the high potential for inconsistent or incomplete data in such broad and expansive survey sets. Missing survey data (responses) are never estimated or made up; they are instead coded as a special response indicating the absence of data. As well, there are clear policies in place to ensure the data’s accuracy. More information about data validity can be found on the [DHS’s Data Quality and Use site](https://www.dhsprogram.com/data/Data-Quality-and-Use.cfm). In this analysis, we use the variables listed in **Table 1** to determine the average adaptive capacity of each TA area. Data transformations are outlined below.
 
 
