@@ -246,10 +246,6 @@ It is also important to acknowledge the inherent sources of uncertainty in the o
 
 There is potential for future research on multiple fronts. It would be beneficial to try and recreate the original results from the original code or by acquiring more thoroughly documented methods. Another possibility would be performing an uncertainty analysis on our methods to determine the impacts of our modeling decisions on the uncertainty of our model.
 
-
-Restate the key findings and discuss their broader societal implications or contributions to theory.
-Do the research findings suggest a need for any future research?
-
 ## Acknowledgements/Collaborations
 I would like to thank my lab group—Drew An-Pham, Maja Cannavo, Jacob Freedman, Nick Nonnenmacher, and Alitzel Villanueva—for all of their assistance with designing and updating our workflow, assistance with coding quirks, and collaborative compilation of description of data sources, variables, and variable transformations. I would also like to thank Vincent Falardeau for supplementing code for **Fig. 2**.
 
