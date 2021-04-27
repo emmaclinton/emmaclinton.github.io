@@ -39,7 +39,7 @@ Missing data is a common occurrence in this dataset as a result of negligence or
 
 The DHS website acknowledges the high potential for inconsistent or incomplete data in such broad and expansive survey sets. Missing survey data (responses) are never estimated or made up; they are instead coded as a special response indicating the absence of data. As well, there are clear policies in place to ensure the data’s accuracy. More information about data validity can be found on the [DHS’s Data Quality and Use site](https://www.dhsprogram.com/data/Data-Quality-and-Use.cfm). In this analysis, we use the variables listed in **Table 1** to determine the average adaptive capacity of each TA area. Data transformations are outlined below.
 
-Metadata source: Burgert, C. R., Zachary, B., Colston, J. The DHS Program—Data. (2010). The DHS Program--USAID. Retrieved April 19, 2021, from [https://dhsprogram.com/Data/)](https://dhsprogram.com/Data/)
+Metadata source: Burgert, C. R., Zachary, B., Colston, J. The DHS Program—Data. (2010). The DHS Program--USAID. Retrieved April 19, 2021, from [https://dhsprogram.com/Data/)](https://dhsprogram.com/Data/) ([file in metadata called DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf](https://github.com/emmaclinton/RP-Malcomb/blob/main/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf))
 
 **Table 1.** DHS variables used in this analysis.
 
@@ -84,7 +84,7 @@ The four Livelihood Sensitivity categories are 1) Percent of food from own farm 
 
 The LHZ data variables are outlined in **Table 2**. The four categories used to determine livelihood sensitivity were ranked from 1-5 based on percent rank values and then weighted using values taken from Malcomb et al. (2014).
 
-Metadata source: Malawi Baseline Livelihood Profiles, Version 1* (September 2005). Made by Malawi National Vulnerability Assessment Committee in collaboration with the SADC FANR Vulnerability Assessment Committee (file in metadata called mw_baseline_rural_en_2005.pdf)
+Metadata source: Malawi Baseline Livelihood Profiles, Version 1* (September 2005). Made by Malawi National Vulnerability Assessment Committee in collaboration with the SADC FANR Vulnerability Assessment Committee ([file in metadata called mw_baseline_rural_en_2005.pdf](https://github.com/emmaclinton/RP-Malcomb/blob/main/data/metadata/mw_baseline_rural_en_2005.pdf))
 
 
 **Table 2.** Constructing livelihood sensitivity categories
@@ -117,7 +117,6 @@ Global estimated risk index for flood hazard
 1.Reproject, clip, and resample based on bounding box (dimensions: xmin = 35.9166666666658188, xmax = 32.6666666666658330,  ymin = -9.3333333333336554, ymax = -17.0833333333336270) and resolution of blank raster we created: resolution is 1/24 degree x 1/24 degree
 1. Use bilinear resampling for drought to average continuous population exposure values
 1. Use nearest-neighbor resampling for flood risk to preserve integer values
-
 
 
 *Malawi Traditional Authorities:*
@@ -252,7 +251,7 @@ Restate the key findings and discuss their broader societal implications or cont
 Do the research findings suggest a need for any future research?
 
 ## Acknowledgements/Collaborations
-I would like to thank my lab group—Drew An-Pham, Maja Cannavo, Jacob Freedman, Nick Nonnenmacher, and Alitzel Villanueva—for all of their assistance with designing and updating our workflow, assistance with coding quirks (especially Jacob and Maja!), and collaborative compilation of description of data sources, variables, and variable transformations.
+I would like to thank my lab group—Drew An-Pham, Maja Cannavo, Jacob Freedman, Nick Nonnenmacher, and Alitzel Villanueva—for all of their assistance with designing and updating our workflow, assistance with coding quirks, and collaborative compilation of description of data sources, variables, and variable transformations. I would also like to thank Vincent Falardeau for supplementing code for **Fig. 2**.
 
 ## References
 
