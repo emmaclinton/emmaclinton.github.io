@@ -187,7 +187,7 @@ There are some clear differences between the two. Compared to Malcomb et al. (20
 
 **Table 3.** Spearman's rho correlation test results.
 
-  | 1 | 2 | 3 | 4 |
+  | | 1 | 2 | 3 | 4 |
   | ------------- | ------------- | ------------- |------------- | ------------- |
 | 1 | 34 | 5 | 0 | 0 |
 | ------------- | ------------- | ------------- |------------- | ------------- |
