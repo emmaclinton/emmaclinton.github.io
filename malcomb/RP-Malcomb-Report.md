@@ -107,7 +107,7 @@ Outline the data used in the study, including:
 
 This part may be compiled collaboratively as a group!
 
-## Analytical Specification
+### Analytical Specification
 
 The original study was conducted using ArcGIS and STATA, but does not state which versions of these software were used.
 The replication study will use R.
@@ -211,7 +211,7 @@ _(Fig. 3) Final vulnerability score comparison between our results and those of 
 _(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot._
 
 
-The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors. 
+The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
 
 Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study.
 
