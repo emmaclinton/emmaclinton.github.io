@@ -39,7 +39,7 @@ Missing data is a common occurrence in this dataset as a result of negligence or
 
 The DHS website acknowledges the high potential for inconsistent or incomplete data in such broad and expansive survey sets. Missing survey data (responses) are never estimated or made up; they are instead coded as a special response indicating the absence of data. As well, there are clear policies in place to ensure the data’s accuracy. More information about data validity can be found on the [DHS’s Data Quality and Use site](https://www.dhsprogram.com/data/Data-Quality-and-Use.cfm). In this analysis, we use the variables listed in **Table 1** to determine the average adaptive capacity of each TA area. Data transformations are outlined below.
 
-Metadata source: Burgert, C. R., Zachary, B., Colston, J. The DHS Program—Data. (2010). The DHS Program--USAID. Retrieved April 19, 2021, from https://dhsprogram.com/Data/
+Metadata source: Burgert, C. R., Zachary, B., Colston, J. The DHS Program—Data. (2010). The DHS Program--USAID. Retrieved April 19, 2021, from [https://dhsprogram.com/Data/)](https://dhsprogram.com/Data/)
 
 **Table 1.** DHS variables used in this analysis.
 
@@ -102,7 +102,13 @@ Metadata source: Malawi Baseline Livelihood Profiles, Version 1* (September 2005
 
 **Drought Data:**This dataset uses the Standardized Precipitation Index to measure annual drought exposure across the globe. The Standardized Precipitation Index draws on data from a “global monthly gridded precipitation dataset” from the University of East Anglia’s Climatic Research Unit, and was modeled in GIS using methodology from Brad Lyon at Columbia University. The dataset draws on 2010 population information from the LandScanTM Global Population Database at the Oak Ridge National Laboratory.  Drought exposure is reported as the expected average annual (2010) population exposed. The data were compiled by UNEP/GRID-Europe for the Global Assessment Report on Risk Reduction (GAR). The data use the WGS 1984 datum, span the years 1980-2001, and are reported in raster format with spatial resolution 1/24 degree x 1/24 degree.
 
-Metadata source: Global Risk Data Platform: Data-Download. (2013). Global Risk Data Platform. 
+Metadata source: Global Risk Data Platform: Data-Download. (2013). Global Risk Data Platform.
+
+Drought: Physical exposition to droughts events 1980-2001
+[https://preview.grid.unep.ch/index.php?preview=data&events=droughts&evcat=4&lang=eng](https://preview.grid.unep.ch/index.php?preview=data&events=droughts&evcat=4&lang=eng)
+
+Global estimated risk index for flood hazard
+[https://preview.grid.unep.ch/index.php?preview=data&events=floods&evcat=5&lang=eng](https://preview.grid.unep.ch/index.php?preview=data&events=floods&evcat=5&lang=eng. )
 
 **Variable Transformations**
 1. Load in UNEP raster
@@ -111,6 +117,7 @@ Metadata source: Global Risk Data Platform: Data-Download. (2013). Global Risk D
 1.Reproject, clip, and resample based on bounding box (dimensions: xmin = 35.9166666666658188, xmax = 32.6666666666658330,  ymin = -9.3333333333336554, ymax = -17.0833333333336270) and resolution of blank raster we created: resolution is 1/24 degree x 1/24 degree
 1. Use bilinear resampling for drought to average continuous population exposure values
 1. Use nearest-neighbor resampling for flood risk to preserve integer values
+
 
 
 *Malawi Traditional Authorities:*
