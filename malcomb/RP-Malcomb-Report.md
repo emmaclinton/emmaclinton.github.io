@@ -186,7 +186,7 @@ _(Fig. 2) Difference in access and assets (adaptive capacity) scores (difference
 
 There are some differences between the two. Compared to Malcomb et al. (2014), our analysis seems to have generally provided lower adaptive capacity values than those in the original study. This may be due to a modification made to the code in which a line multiplying capacity values by 20 to make them more similar to the values of Malcomb et al. (20140 was removed. However, it may also be due to the sources of uncertainty outlined above: particularly the organization into quintiles and the uncertainty surrounding the timing of aggregation to the TA level. However, as indicated in **Table 3**, the rho value is relatively close to 1, indicating a positive correlation between the values of the two maps.
 
-**Table 3.** Spearman's rho correlation test results. (rho = 0.7856613).
+**Table 3.** Spearman's rho correlation test results. (rho = 0.7856613). The results of the original study are shown on the x axis (columns), while the results of the reproduction are shown on the y axis (rows).
 
   | | 1 | 2 | 3 | 4 |
   | ------------- | ------------- | ------------- |------------- | ------------- |
@@ -207,10 +207,13 @@ _(Fig. 3) Final vulnerability score from our results._
 _(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
 
 ![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
+
 _(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot._
 
 
 The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. The  Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study and it is possible that our values are very different from those assigned by Malcomb et al. (2014).
+
+Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study. 
 
 Figures to Include:
 map of your reproduction results for figure 4
