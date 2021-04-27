@@ -43,7 +43,7 @@ The DHS website acknowledges the high potential for inconsistent or incomplete d
 | ------------- | ------------- |
 | HHID | "Case Identification" |
 | HV001 | "Cluster number" |
-| HV002 | Household number |
+| HV002 | "Household number" |
 | HV246A |"Cattle own" |
 | HV246D | "Goats own"|
 | HV246E | "Sheep own" |
