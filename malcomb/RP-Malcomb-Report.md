@@ -223,7 +223,13 @@ Additionally, the study makes no mention of uncertainty analysis, sensitivity an
 
 
 ## Conclusion
-This reproduction analysis is an excellent example of why it is imperative to provide explicit methodology (and, preferably, access to code) when publishing academic work. This is especially important when publishing work with broad socioeconomic and social and environmental justice implications like climate vulnerability analyses .
+The fact that our final vulnerability values correlated only weakly with those of the original study is very telling. This reproduction analysis is an excellent example of why it is imperative to provide explicit methodology (and, preferably, access to code) when publishing academic work. This is especially important when publishing work with broad socioeconomic and social and environmental justice implications like climate vulnerability analyses.
+
+It is also important to acknowledge the inherent sources of uncertainty in the original study (mentioned above) introduce subjectivity into this work, meaning that conclusions are drawn and resources allotted based on potentially biased or incomplete sources of information.
+
+There is potential for future research on multiple fronts. It would be beneficial to try and recreate the original results from the original code or by acquiring more thoroughly documented methods. Another possibility would be performing an uncertainty analysis on our methods to determine the impacts of our modeling decisions on the uncertainty of our model. 
+
+
 
 
 Restate the key findings and discuss their broader societal implications or contributions to theory.
