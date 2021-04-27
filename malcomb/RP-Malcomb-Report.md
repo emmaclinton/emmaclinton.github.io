@@ -182,11 +182,11 @@ Our replication analysis yielded slightly different results than those generated
 _(Fig. 1) Access and assets (adaptive capacity) scores from our results._
 
 ![Results (TA Adaptive Capacity)](/maps/fig4compare.png)
-_(Fig. 2) Difference in access and assets (adaptive capacity) scores (reproduction score - original study score)._
+_(Fig. 2) Difference in access and assets (adaptive capacity) scores (difference = reproduction score - original study score)._
 
-There are some clear differences between the two. Compared to Malcomb et al. (2014), our analysis seems to have generally provided lower adaptive capacity values than those in the original study. This may be due to a modification made to the code in which a line multiplying capacity values by 20 was removed. However, it may also be due to the sources of uncertainty outlined above: particularly the organization into quintiles and the uncertainty surrounding the timing of aggregation to the TA level.
+There are some differences between the two. Compared to Malcomb et al. (2014), our analysis seems to have generally provided lower adaptive capacity values than those in the original study. This may be due to a modification made to the code in which a line multiplying capacity values by 20 to make them more similar to the values of Malcomb et al. (20140 was removed. However, it may also be due to the sources of uncertainty outlined above: particularly the organization into quintiles and the uncertainty surrounding the timing of aggregation to the TA level. However, as indicated in **Table 3**, the rho value is relatively close to 1, indicating a positive correlation between the values of the two maps.
 
-**Table 3.** Spearman's rho correlation test results.
+**Table 3.** Spearman's rho correlation test results. (rho = 0.7856613).
 
   | | 1 | 2 | 3 | 4 |
   | ------------- | ------------- | ------------- |------------- | ------------- |
@@ -197,6 +197,20 @@ There are some clear differences between the two. Compared to Malcomb et al. (20
 | 3 | 5 | 43 | 20 | 0 |
 | ------------- | ------------- | ------------- |------------- | ------------- |
 | 4 | 0  | 7 | 27  | 5 |
+
+
+
+![Results (Vulnerability](/maps/vulnerability.png)
+_(Fig. 3) Final vulnerability score from our results._
+
+![Results (Vulnerability Comparison](/maps/vulnerability.png)
+_(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
+
+![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
+_(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot._
+
+
+The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. The  Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study and it is possible that our values are very different from those assigned by Malcomb et al. (2014).
 
 Figures to Include:
 map of your reproduction results for figure 4
