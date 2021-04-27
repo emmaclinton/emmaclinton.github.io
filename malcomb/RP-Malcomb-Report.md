@@ -223,18 +223,21 @@ Additionally, the study makes no mention of uncertainty analysis, sensitivity an
 
 
 ## Conclusion
+This reproduction analysis is an excellent example of why it is imperative to provide explicit methodology (and, preferably, access to code) when publishing academic work. This is especially important when publishing work with broad socioeconomic and social and environmental justice implications like climate vulnerability analyses .
+
 
 Restate the key findings and discuss their broader societal implications or contributions to theory.
 Do the research findings suggest a need for any future research?
 
 ## Acknowledgements/Collaborations
-I would like to thank my lab group—Drew An-Pham, Maja Cannavo, Jacob Freedman, Nick Nonnenmacher, and Alitzel Villanueva—for all of their assistance with designing and updating our workflow, assistance with coding quirks (especially Jacob and Maja!), and collaborative compilation of description of data sources, variables, and variable transformations. 
+I would like to thank my lab group—Drew An-Pham, Maja Cannavo, Jacob Freedman, Nick Nonnenmacher, and Alitzel Villanueva—for all of their assistance with designing and updating our workflow, assistance with coding quirks (especially Jacob and Maja!), and collaborative compilation of description of data sources, variables, and variable transformations.
 
 ## References
 
+Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. Applied Geography 48:17–30. [DOI:10.1016/j.apgeog.2014.01.004](DOI:10.1016/j.apgeog.2014.01.004)
+
 Tate, E. 2013. Uncertainty Analysis for a Social Vulnerability Index. Annals of the Association of American Geographers 103 (3):526–543. [doi:10.1080/00045608.2012.700616.](doi:10.1080/00045608.2012.700616)
 
-Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. Applied Geography 48:17–30. [DOI:10.1016/j.apgeog.2014.01.004](DOI:10.1016/j.apgeog.2014.01.004)
 
 ####  Report Template References & License
 
