@@ -208,7 +208,7 @@ _(Fig. 3) Final vulnerability score comparison between our results and those of 
 
 ![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
 
-_(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot._
+_(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot (rho = 0.1859791)._
 
 
 The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
@@ -227,9 +227,7 @@ The fact that our final vulnerability values correlated only weakly with those o
 
 It is also important to acknowledge the inherent sources of uncertainty in the original study (mentioned above) introduce subjectivity into this work, meaning that conclusions are drawn and resources allotted based on potentially biased or incomplete sources of information.
 
-There is potential for future research on multiple fronts. It would be beneficial to try and recreate the original results from the original code or by acquiring more thoroughly documented methods. Another possibility would be performing an uncertainty analysis on our methods to determine the impacts of our modeling decisions on the uncertainty of our model. 
-
-
+There is potential for future research on multiple fronts. It would be beneficial to try and recreate the original results from the original code or by acquiring more thoroughly documented methods. Another possibility would be performing an uncertainty analysis on our methods to determine the impacts of our modeling decisions on the uncertainty of our model.
 
 
 Restate the key findings and discuss their broader societal implications or contributions to theory.
