@@ -38,6 +38,7 @@ The DHS website acknowledges the high potential for inconsistent or incomplete d
 
 
 **Table 1.** DHS variables used in this analysis.
+
 | Variable Code | Definition |
 | ------------- | ------------- |
 | HHID | "Case Identification" |
