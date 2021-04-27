@@ -215,6 +215,8 @@ The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhi
 
 Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study.
 
+With that being said, there is also a great deal of uncertainty involved in the original study itself. Tate (2013) details a framework of unceratinly in vulnerability modeling. When Malcomb et al. (2014) are compared to this framework, there are several possible sources of subjectivity/uncertainty involved, and no uncertainty analysis, sensitivity analysis, or validation. 
+
 
 Provide a summary and interpretation of the key findings of the replication *vis-a-vis* the original study results. If the attempt was a failure, discuss possible causes of the failure. In this replication, any failure is probably due to practical causes, which may include:
 - lack of data
