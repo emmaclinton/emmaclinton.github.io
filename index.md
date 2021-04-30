@@ -19,6 +19,7 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 2.  [GIS: Tool or Science?](blogs/gis_as_science.md)
 3.  [Managing Error and Uncertainty](blogs/error-and-uncertainty.md)
 4.  [Spatial Twitter](blogs/twitter-analysis.md)
+5. [Ethics of Volunteered Geographic Information](blogs/twitter-ethics.md)
 
 The course website is found [here](https://gis4dev.github.io).
 
