@@ -48,9 +48,9 @@ The replication study by Holler (2021) used R, including the rtweet, rehydratoR,
 
 The script needed to replicate the data search is included [here](https://github.com/emmaclinton/RE-Dorian/blob/main/procedure/code/01-tornado-search.R). This research searched for tweets from the week leading up to May 04, 2021 within 3,000 mi of Atlanta, GA, where a tornado watch was issued. The keywords included in this search were "tornado", "warning", "shelter", and "storm." Baseline data on Twitter activity to compare with the tornado tweets and to create the Normalized Tweet Difference Index (NTDI) as per Holler (2021) were also generated. The search for this baseline data was essentially the inverse of the search for the tornado data and excluded all tweets that contained the above keywords.
 
-[Tornado tweet ids for rehydration](twit/data/derived/public/GAtweetids.txt)
+[Tornado tweet ids for rehydration](https://github.com/emmaclinton/RE-Dorian/blob/main/data/derived/public/GAtweetids.txt)
 
-[Baseline tweet ids for rehydration](twit/data/derived/public/GAbaselineids.txt)
+[Baseline tweet ids for rehydration](https://github.com/emmaclinton/RE-Dorian/blob/main/data/derived/public/GAbaselineids.txt)
 
 [This script](https://github.com/emmaclinton/RE-Dorian/blob/main/procedure/code/02-analyze-tornado.r) contains the procedure for several analyses run on these tweets. First, tweets were analyzed temporally to determine when tornado-related activity was high. The script also details how the tweet contents were graphed to see which terms occurred most frequently, and they were also mapped and compared to [population density data](/data/derived/public/counties.RDS) from the US Census.
 
