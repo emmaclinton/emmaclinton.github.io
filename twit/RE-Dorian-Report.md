@@ -54,7 +54,7 @@ The script needed to replicate the data search is included [here](/procedure/cod
 
 [This script](/procedure/code/02-analyze-tornado.r) contains the procedure for several analyses run on these tweets. First, tweets were analyzed temporally to determine when tornado-related activity was high. The script also details how the tweet contents were graphed to see which terms occurred most frequently, and they were also mapped and compared to [population density data](/data/derived/public/counties.RDS) from the US Census.
 
-In [this script](/procedure/code/04-spatial-clustering-tornado.r), the NTDI (Holler, 2021) was created by comparing the tornado tweets to the baseline tweets using the formula NTDI = (tornado - base) / (tornado + base). A spatial cluster analysis was also implemented to reveal areas where Twitter activity differed significantly from the norm during the temporal range of the tornado warning.
+In [this script](/procedure/code/04-spatial-clustering-tornado.r), the NTDI (Holler, 2021) was created by comparing the tornado tweets to the baseline tweets using the formula NTDI = (tornado - base) / (tornado + base). A spatial cluster analysis using the G statistic was also implemented to reveal areas where Twitter activity differed significantly from the norm during the temporal duration of the tornado warning. The null hypothesis for this statistic states that there is no spatial clustering of the input features, and when clustering is found to be significantly high or low, this null hypothesis is rejected. These results were then mapped (**Fig. 4**). 
 
 ## Replication Results
 
