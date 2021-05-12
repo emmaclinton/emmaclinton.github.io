@@ -29,7 +29,7 @@ Holler (2021) is studying Twitter data for Hurricane Dorian on the Atlantic coas
 
 Reproducing and replicating spatial research of data regarding the social media implications of natural disasters continues to be relevant for many reasons. There are many ethical considerations regarding the sharing of private information and access to disaster data. This data also has potential for high utility regarding designing response networks in future disaster scenarios and getting help to those on the ground in future scenarios.
 
-In his replication study, I will analyze Twitter activity data regarding a recent hurricane outbreak using data from April 28, 2021 - May 04, 2021 in Georgia and several surrounding states to see how this severe storm influenced people's social media activity.
+In this replication study, I will analyze Twitter activity data regarding a recent hurricane outbreak using data from April 26, 2021 - May 04, 2021 in Georgia and several surrounding states to see how this severe storm influenced people's social media activity.
 
 
 ## Original Study Information
@@ -98,7 +98,7 @@ _Fig. 5. NOAA Tornado Warning (May 05)._
 
 When comparing **Fig 3** and **Fig. 4** with **Fig. 5**, it does appear that a great deal of Twitter activity paralleled the tornado tracks. These storms were severe and caused widespread dmamage, and many southern states were warned to be on alert for tornadoes on May 3-5, 2021. In some areas, storm activity resulted in significant property damage, several deaths, and extensive power outages (Victor and Jimenez, 2021).
 
-Power outages are important to consider in the context of Twitter analyses, because outages may mean that individuals who are impacted are unable to share information about their status or the situation evolving around them, leading to an incomplete picture of a disaster scenario (Crawford and Finn, 2014). It is also important to consider the human implications of such events when mapping natural disasters. There is a tendency to dissassociate data like these from the humans that produced them, especially when data are made anonymous and aggregate. However, it is essential to recognize the devastating impacts of such events and realize that the repercussions of events like tornadoes and severe storms extend far beyond the temporal bounds of the storm event itself. 
+Power outages are important to consider in the context of Twitter analyses, because outages may mean that individuals who are impacted are unable to share information about their status or the situation evolving around them, leading to an incomplete picture of a disaster scenario (Crawford and Finn, 2014). It is also important to consider the human implications of such events when mapping natural disasters. There is a tendency to dissassociate data like these from the humans that produced them, especially when data are made anonymous and aggregate. However, it is essential to recognize the devastating impacts of such events and realize that the repercussions of events like tornadoes and severe storms extend far beyond the temporal bounds of the storm event itself.
 
 Provide a summary and interpretation of your key findings in relation to your research question. Mention if findings confirm or contradict patterns observed by Wang et al (2016) or by Holler (2
 
