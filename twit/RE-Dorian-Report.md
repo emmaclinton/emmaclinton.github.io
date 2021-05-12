@@ -96,7 +96,9 @@ Summarize changes and uncertainties between
 
 _Fig. 5. NOAA Tornado Warning (May 05)._
 
-When comparing **Fig 3** and **Fig. 4** with **Fig. 5**, it does appear that a great deal of Twitter activity paralleled the tornado tracks
+When comparing **Fig 3** and **Fig. 4** with **Fig. 5**, it does appear that a great deal of Twitter activity paralleled the tornado tracks. These storms were severe and caused widespread dmamage, and many southern states were warned to be on alert for tornadoes on May 3-5, 2021. In some areas, storm activity resulted in significant property damage, several deaths, and extensive power outages (Victor and Jimenez, 2021).
+
+Power outages are important to consider in the context of Twitter analyses, because outages may mean that individuals who are impacted are unable to share information about their status or the situation evolving around them, leading to an incomplete picture of a disaster scenario (Crawford and Finn, 2014). It is also important to consider the human implications of such events when mapping natural disasters. There is a tendency to dissassociate data like these from the humans that produced them, especially when data are made anonymous and aggregate. However, it is essential to recognize the devastating impacts of such events and realize that the repercussions of events like tornadoes and severe storms extend far beyond the temporal bounds of the storm event itself. 
 
 Provide a summary and interpretation of your key findings in relation to your research question. Mention if findings confirm or contradict patterns observed by Wang et al (2016) or by Holler (2
 
@@ -106,6 +108,12 @@ Restate the key findings and discuss their broader societal implications or cont
 Do the research findings suggest a need for any future research?
 
 ## References
+
+Crawford, K., and M. Finn. 2014. The limits of crisis data: analytical and ethical challenges of using social and mobile data to understand disasters. GeoJournal 80 (4):491–502. DOI:10.1007/s10708-014-9597-z
+
+Victor, D., & Jimenez, J. (2021, May 04). Severe weather continues in south for third straight day. The New York Times. [https://www.nytimes.com/2021/05/04/us/tornado-storm-south.html](https://www.nytimes.com/2021/05/04/us/tornado-storm-south.html)
+
+Wang, Z., X. Ye, and M. H. Tsou. 2016. Spatial, temporal, and content analysis of Twitter for wildfire hazards. Natural Hazards 83 (1):523–540. DOI:10.1007/s11069-016-2329-6
 
 Include any referenced studies or materials in the [AAG Style of author-date referencing](https://www.tandf.co.uk//journals/authors/style/reference/tf_USChicagoB.pdf).
 
