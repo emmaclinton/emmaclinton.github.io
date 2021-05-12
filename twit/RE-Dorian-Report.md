@@ -109,8 +109,7 @@ These findings seem to confirm the findings of Wang et al. (2016) in that the ar
 
 ## Conclusion
 
-Restate the key findings and discuss their broader societal implications or contributions to theory.
-Do the research findings suggest a need for any future research?
+Similar to Wang et al. (2016) and Holler (2021), this replication analysis shows that Twitter activity during natural disasters spatially and temporally tracks the development and anticipation of the physical event itself. However, it is still necessary to acknowledge that there is a lack of spatial information in much Twitter data, leading to an incomplete picture of social media activity during such events. It would be interesting to analyze areas impacted by power outages to see how Twitter activity tracks in places that may not have had access to service during these storm events.
 
 ## References
 
