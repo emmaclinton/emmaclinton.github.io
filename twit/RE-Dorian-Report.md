@@ -61,21 +61,25 @@ In [this script](/procedure/code/04-spatial-clustering-tornado.r), the NTDI (Hol
 The temporal analysis of tweet activity in the region yielded the results shown in **Fig. 1.** There was clearly an increase in tornado-related Twitter activity around May 4.
 
 ![Fig. 1](/twit/results/figures/tornadoTime.png)
+
 _Fig. 1. Temporal analysis._
 
 The content analysis graph shown in **Fig. 2** counts the instances of unique words found in tweets, and it is clear that "watch," which was not included as a keyword in this analysis, showed up frequently in tornado-related tweets.
 
-![Fig. 2](/twit/results/figures/tornado_freqWord.png)
+![Fig. 2](/twit/results/figures/tornado_freqWords.png)
+
 _Fig. 2. Tweet content analysis._
 
 The map of twitter activity in **Fig. 3** is shown in comparison to county population data.
 
 ![Fig. 3](/twit/results/figures/GAtornado_PopDensity.png)
+
 _Fig. 3. Map of tornado-related Twitter activity._
 
 Finally, **Fig. 4** shows the cluster hotspot analysis to show where there was significant deviation from baseline Twitter data.
 
 ![Fig. 4](/twit/results/figures/Rplot_GAclusters.png)
+
 _Fig. 4. Cluster hotspot analysis._
 
 
