@@ -46,15 +46,15 @@ The replication study by Holler (2021) used R, including the rtweet, rehydratoR,
 
 ## Materials and Procedure
 
-The script needed to replicate the data search is included [here](/procedure/code/01-tornado-search.r). This research searched for tweets from the week leading up to May 04, 2021 within 3,000 mi of Atlanta, GA, where a tornado watch was issued. The keywords included in this search were "tornado", "warning", "shelter", and "storm." Baseline data on Twitter activity to compare with the tornado tweets and to create the Normalized Tweet Difference Index (NTDI) as per Holler (2021) were also generated. The search for this baseline data was essentially the inverse of the search for the tornado data and excluded all tweets that contained the above keywords.
+The script needed to replicate the data search is included [here](twit/procedure/code/01-tornado-search.r). This research searched for tweets from the week leading up to May 04, 2021 within 3,000 mi of Atlanta, GA, where a tornado watch was issued. The keywords included in this search were "tornado", "warning", "shelter", and "storm." Baseline data on Twitter activity to compare with the tornado tweets and to create the Normalized Tweet Difference Index (NTDI) as per Holler (2021) were also generated. The search for this baseline data was essentially the inverse of the search for the tornado data and excluded all tweets that contained the above keywords.
 
-[Tornado tweet ids for rehydration](/data/derived/public/GAtweetids.txt)
+[Tornado tweet ids for rehydration](twit/data/derived/public/GAtweetids.txt)
 
-[Baseline tweet ids for rehydration](/data/derived/public/GAbaselineids.txt)
+[Baseline tweet ids for rehydration](twit/data/derived/public/GAbaselineids.txt)
 
-[This script](/procedure/code/02-analyze-tornado.r) contains the procedure for several analyses run on these tweets. First, tweets were analyzed temporally to determine when tornado-related activity was high. The script also details how the tweet contents were graphed to see which terms occurred most frequently, and they were also mapped and compared to [population density data](/data/derived/public/counties.RDS) from the US Census.
+[This script](twit/procedure/code/02-analyze-tornado.r) contains the procedure for several analyses run on these tweets. First, tweets were analyzed temporally to determine when tornado-related activity was high. The script also details how the tweet contents were graphed to see which terms occurred most frequently, and they were also mapped and compared to [population density data](/data/derived/public/counties.RDS) from the US Census.
 
-In [this script](/procedure/code/04-spatial-clustering-tornado.r), the NTDI (Holler, 2021) was created by comparing the tornado tweets to the baseline tweets using the formula NTDI = (tornado - base) / (tornado + base). A spatial cluster analysis using the G statistic was also implemented to reveal areas where Twitter activity differed significantly from the norm during the temporal duration of the tornado warning. The null hypothesis for this statistic states that there is no spatial clustering of the input features, and when clustering is found to be significantly high or low, this null hypothesis is rejected. These results were then mapped (**Fig. 4**).
+In [this script](twit/procedure/code/04-spatial-clustering-tornado.r), the NTDI (Holler, 2021) was created by comparing the tornado tweets to the baseline tweets using the formula NTDI = (tornado - base) / (tornado + base). A spatial cluster analysis using the G statistic was also implemented to reveal areas where Twitter activity differed significantly from the norm during the temporal duration of the tornado warning. The null hypothesis for this statistic states that there is no spatial clustering of the input features, and when clustering is found to be significantly high or low, this null hypothesis is rejected. These results were then mapped (**Fig. 4**).
 
 ## Replication Results
 
@@ -104,9 +104,8 @@ When comparing **Fig 3** and **Fig. 4** with **Fig. 5** and **Fig. 6**, it does 
 
 Power outages are important to consider in the context of Twitter analyses, because outages may mean that individuals who are impacted are unable to share information about their status or the situation evolving around them, leading to an incomplete picture of a disaster scenario (Crawford and Finn, 2014). It is also important to consider the human implications of such events when mapping natural disasters. There is a tendency to dissociate data like these from the humans that produced them, especially when data are made anonymous and aggregate. However, it is essential to recognize the devastating impacts of such events and realize that the repercussions of events like tornadoes and severe storms extend far beyond the temporal bounds of the storm event itself.
 
-These findings seem to confirm the findings of Wang et al. (2016) in that the areas that experienced tornado warning or damage were found to have high cluster density of tornado-related Twitter activity. These results also track well with the findings of Holler (2021) in that the Twitter activity largely tracks the eastward movement of this storm event and its impacts, similar to the activity correlating with the movement of Hurricane Dorian. 
+These findings seem to confirm the findings of Wang et al. (2016) in that the areas that experienced tornado warning or damage were found to have high cluster density of tornado-related Twitter activity. These results also track well with the findings of Holler (2021) in that the Twitter activity largely tracks the eastward movement of this storm event and its impacts, similar to the activity correlating with the movement of Hurricane Dorian.
 
-Provide a summary and interpretation of your key findings in relation to your research question. Mention if findings confirm or contradict patterns observed by Wang et al (2016) or by Holler (2
 
 ## Conclusion
 
