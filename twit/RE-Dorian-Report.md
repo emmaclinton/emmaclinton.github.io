@@ -29,7 +29,7 @@ Holler (2021) is studying Twitter data for Hurricane Dorian on the Atlantic coas
 
 Reproducing and replicating spatial research of data regarding the social media implications of natural disasters continues to be relevant for many reasons. There are many ethical considerations regarding the sharing of private information and access to disaster data. This data also has potential for high utility regarding designing response networks in future disaster scenarios and getting help to those on the ground in future scenarios.
 
-In his replication study, I will analyze Twitter activity data regarding a recent hurricane warning from April 28, 2021 - May 05, 2021 in Georgia and several surrounding states to see how this severe storm influenced people's social media activity.
+In his replication study, I will analyze Twitter activity data regarding a recent hurricane outbreak using data from April 28, 2021 - May 04, 2021 in Georgia and several surrounding states to see how this severe storm influenced people's social media activity.
 
 
 ## Original Study Information
