@@ -84,11 +84,9 @@ _Fig. 4. Cluster hotspot analysis._
 
 ## Unplanned Deviations from the Protocol
 
-There is certainly room for uncertainty in the selection of keywords in this analysis. In addition, the fact that not all tweets (in fact, the majority of tweets) are not geotagged means that much information is left out in this analysis. Wang et al. (2016) also did not include information about the GIS platform that they used in their kernel density analysis, meaning that there is probability that our analysis differs from theirs.
+There is certainly room for uncertainty in the selection of keywords in this analysis. In addition, the fact that not all tweets (in fact, the majority of tweets) are not geotagged means that much information is left out in this analysis. Wang et al. (2016) also did not include information about the GIS platform that they used in their kernel density analysis, meaning that it is likely that this analysis differs from the original study.
 
-Summarize changes and uncertainties between
-- your expectation of a reproduction workflow based on the reading and Dorian analysis
-- your final workflow after completing the lab
+Additionally, it was necessary to remove some tweets that were on the outer edge of the 3000mi search radius, as there were very few of them and they threw off the scale of the analysis.
 
 ## Discussion
 
