@@ -82,20 +82,21 @@ Finally, **Fig. 4** shows the cluster hotspot analysis to show where there was s
 
 _Fig. 4. Cluster hotspot analysis._
 
-
-
-
-- content analysis graph
-- map of twitter activity
-- hot spot analysis
-
 ## Unplanned Deviations from the Protocol
+
+There is certainly room for uncertainty in the selection of keywords in this analysis. In addition, the fact that not all tweets (in fact, the majority of tweets) are not geotagged means that much information is left out in this analysis. Wang et al. (2016) also did not include information about the GIS platform that they used in their kernel density analysis, meaning that there is probability that our analysis differs from theirs.
 
 Summarize changes and uncertainties between
 - your expectation of a reproduction workflow based on the reading and Dorian analysis
 - your final workflow after completing the lab
 
 ## Discussion
+
+![Fig. 5](/twit/results/figures/may5tornado.png)
+
+_Fig. 5. NOAA Tornado Warning (May 05)._
+
+When comparing **Fig 3** and **Fig. 4** with **Fig. 5**, it does appear that a great deal of Twitter activity paralleled the tornado tracks
 
 Provide a summary and interpretation of your key findings in relation to your research question. Mention if findings confirm or contradict patterns observed by Wang et al (2016) or by Holler (2
 
