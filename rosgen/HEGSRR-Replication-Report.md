@@ -111,6 +111,7 @@ _(Fig. 5) R output of longitudinal stream profile._
 ![Cross-sectional Profile](/results/figures/x_section.png)
 _(Fig. 6) R output of cross-sectional stream profile with 2x bankfull depth shown as black line._
 ![Cross-sectional Profile (Zoomed)](/results/figures/crossProf_zoom.png)
+
 _(Fig. 7) Zoomed in R output of cross-sectional valley profile with 2x bankfull depth shown as black line._
 ![Slope Profile](/results/figures/slope.png)
 _(Fig. 8) R output of longitudinal stream profile indicating slope changes between points._
