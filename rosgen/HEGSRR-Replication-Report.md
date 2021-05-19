@@ -110,12 +110,14 @@ Table 3. Rosgen Level II Classification
 _(Fig. 5) R output of longitudinal stream profile._
 ![Cross-sectional Profile](/results/figures/x_section.png)
 _(Fig. 6) R output of cross-sectional stream profile with 2x bankfull depth shown as black line._
+![Cross-sectional Profile (Zoomed)](/results/figures/crossProf_zoom.png)
+_(Fig. 7) Zoomed in R output of cross-sectional valley profile with 2x bankfull depth shown as black line._
 ![Slope Profile](/results/figures/slope.png)
-_(Fig. 7) R output of longitudinal stream profile indicating slope changes between points._
+_(Fig. 8) R output of longitudinal stream profile indicating slope changes between points._
 
 ## Unplanned Deviations from the Protocol
 
-The only deviation from the protocol was re-calculating slope as a general value from the start point to the end point of the longitudinal profile. In the original code, the slope value was calculated as the average slope value between each point derived from the reach centerline. Due to digitizing errors, there were some outliers of much higher elevation that were marked higher up the banks than they should have been, as can be seen in the longitudinal slope profile above (Fig. 7). This skewed the results of the slope average, resulting in a slope of 1.715. Re-calculating slope as the slope between the beginning and end points as **Slope at Starting Point / Slope at End Point** accounted for some of the digitizing uncertainty and yielded a much more credible value of 0.0066833 that aligns with the RCS. Additionally, it appears that there was some error in the digitization using one of the base layers that included a road running along the valley edge (**Fig. 3b**).
+The only deviation from the protocol was re-calculating slope as a general value from the start point to the end point of the longitudinal profile. In the original code, the slope value was calculated as the average slope value between each point derived from the reach centerline. Due to digitizing errors, there were some outliers of much higher elevation that were marked higher up the banks than they should have been, as can be seen in the longitudinal slope profile above (Fig. 8). This skewed the results of the slope average, resulting in a slope of 1.715. Re-calculating slope as the slope between the beginning and end points as **Slope at Starting Point / Slope at End Point** accounted for some of the digitizing uncertainty and yielded a much more credible value of 0.0066833 that aligns with the RCS. Additionally, it appears that there was some error in the digitization using one of the base layers that included a road running along the valley edge (**Fig. 3b**).
 
 ## Results/ Discussion
 
