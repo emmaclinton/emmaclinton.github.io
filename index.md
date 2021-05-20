@@ -12,6 +12,7 @@ Hi! I'm Emma Clinton and this is my portfolio for the Spring 2021 Open Source GI
 3. [SQL Query Analysis with OSM Data: Greenspace Access in Dar es Salaam](DSM_sql/dsm.md)
 4. [Reproduction Analysis: Climate Change Vulnerability Analysis in Malawi](malcomb/RP-Malcomb-Report.md)
 4. [Replication Analysis: Mapping Twitter Response Data to Georgia Hurricane](twit/RE-Dorian-Report.md)
+5. [Reproduction Analysis: Spatial Access to COVID-19 Healthcare Resources](kang/RE-Kang.md)
 
 
 ## Blog Posts
