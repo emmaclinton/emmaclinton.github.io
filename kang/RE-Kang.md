@@ -4,7 +4,7 @@ title: RE- Spatial-temporal and content analysis of Twitter Data
 ---
 
 
-**Replication of**
+**Reproduction of**
 # Spatial, temporal and content analysis of Twitter data
 
 Original study *by* Wang, Z., X. Ye, and M. H. Tsou. 2016. Spatial, temporal, and content analysis of Twitter for wildfire hazards. *Natural Hazards* 83 (1):523–540. DOI:[10.1007/s11069-016-2329-6](https://doi.org/10.1007/s11069-016-2329-6).
@@ -21,41 +21,29 @@ Revised: `DD Month YYYY`
 
 ## Original Study Information
 
-The original study by Kang et al (2020) used hospital data from IDPH, COVID-19 confirmed case data from IDPH, residential data from the United States Census Bureau, and road network data from Open Street Map to analyze the spatial accessibility of healthcare resources for residents of the state of Illinois in the context of the COVID-19 pandemic. This analysis used a parallel enhanced two-step floating catchment area to find all people within the catchment areas of the healthcare services. The catchments in this analysis were created from travel time along the road network.
+This analysis is a reproduction of Kang et al. (2020). This study looks at the cyberinfrastructure and analysis behind the [Where COVID 19 Dashboard](https://wherecovid19.cigi.illinois.edu/spatialAccess.html) for the state of Illinois. This dashboard is meant to be a tool to rapidly measure the accessibility of healthcare resources (ICU beds and ventilators) in order to understand how prepared healthcare systems are to save lives during crises like the COVID-19 pandemic and to inform where future services should potentially be allocated.
 
-The second step in the analysis was to calculate a service-to-population ratio within each catchment. Accessibility was then calculated as the sum of the service-to-population ratio. This summing means that areas that fall within areas of overlap between catchments were given a higher accessibility rating. To account for distance decay, multiple zones were created to represent different travel times: 0-10 min, 10-20 min, and 20-30 min, and three weights were applied in these zones (1, 0.68, and 0.22), respectively. It must be noted that these weights are not justified in the text of the paper nor in the provided code, so it is unclear on what they are based.
+This paper found that ICU beds and ventilators are not evenly distributed throughout the state of Illinois, and that people living in central and northern Chicago were better able to access healthcare services than the population living in southern Chicago. There was no significant difference between at-risk populations' access to beds and ventilators and COVID-19 patients' access to those same services.
 
+Reproduction of this analysis is important for verification of the results of the original study, which have very important implications in terms of health care provision in the context of emergency situations like the evolving COVID-19 pandemic. Replication of this study could prove highly useful for creating similar tools for other states or even at a federal level.
 
-Detail how to improve the code and the paper alignment to increase reproducibility.
-
-
- The first phase involved searching for "fire" or "wildfire" in Tweets, while the second phase pulled out fire-related tweets associated with specific locations (i.e. associated with specific wildfires). Data mining was done using the `tm` package in `R` and data was cleaned by removing URLs and stop words. Wang et al. (2016) used kernel density estimation to determine hot spots of Twitter activity, normalized by population data. K-means clustering was used to determine which terms most frequently appeared together. This analysis found that there was strong spatial and temporal coupling of wildfire activity and Twitter activity, and that spatial coupling strengthened when Twitter data were normalized by population. It is not known what GIS platform was used to carry out this spatial analysis.
-
-Wang et al. (2016) also conducted a social network analysis to determine which users were "hubs" of information and were frequently retweeted and retweeted mainly only other large hubs of information. This process required the `igraph` package in `R`. A social network analysis was built from this retweet information showing how information diffuses through a network. The findings of this analysis indicate that there exists strong separation between hubs of retweet activity (i.e. users who are frequently retweeted, such as media or authority figures) and less popular users, with only hubs being consistently retweeted and other users not being retweeted nor retweeting other users who are not frequently retweeted.
-
-Holler (2021) loosely replicated the methods of Wang et al (2016) for the case of Hurricane Dorian's landfall on the U.S. mainland during the 2019 Atlantic Hurricane season.
-
-Holler modified Wang et al's methods by not searching for retweets for network analysis, focusing instead on original Tweet content with keywords hurricane, Dorian, or sharpiegate (a trending hashtag referring to the storm). Holler modified the methodology for normalizing tweet data by creating a Normalized Tweet Difference Index (NTDI) and extended the methodology to test for spatial clustering with the local Getis-Ord statistic. The study tested a hypothesis that false narratives of hurricane risk promulgated at the highest levels of the United States government would significantly distort the geographic distribution of Twitter activity related to the hurricane and its impacts, finding that original Twitter data still clustered only in the affected areas of the Atlantic coast in spite of false narratives about risk of a westward track through Alabama.
-
-The replication study by Holler (2021) used R, including the rtweet, rehydratoR, igraph, sf, and spdep packages for analysis.
+"modest contributions MY FOOT"
 
 ## Materials and Procedure
+The script needed to replicate the data search is included [here](https://github.com/emmaclinton/RP-Kang/blob/main/COVID-19Acc.ipynb).
 
-The script needed to replicate the data search is included [here](https://github.com/emmaclinton/RE-Dorian/blob/main/procedure/code/01-tornado-search.R). This research searched for tweets from the week leading up to May 04, 2021 within 3,000 mi of Atlanta, GA, where a tornado watch was issued. The keywords included in this search were "tornado", "warning", "shelter", and "storm." Baseline data on Twitter activity to compare with the tornado tweets and to create the Normalized Tweet Difference Index (NTDI) as per Holler (2021) were also generated. The search for this baseline data was essentially the inverse of the search for the tornado data and excluded all tweets that contained the above keywords.
+The original study by Kang et al (2020) used hospital data from IDPH, COVID-19 confirmed case data from IDPH, residential data from the United States Census Bureau, and road network data from Open Street Map to analyze the spatial accessibility of healthcare resources for residents of the state of Illinois in the context of the COVID-19 pandemic. This analysis used a parallel enhanced two-step floating catchment area to find all people within the catchment areas of the healthcare services. The catchments in this analysis were created from travel time along the road network.
 
-[Tornado tweet ids for rehydration](https://github.com/emmaclinton/RE-Dorian/blob/main/data/derived/public/GAtweetids.txt)
+The second step in the analysis was to calculate a service-to-population ratio within each catchment. The "service" in this model is defined as ICU beds and/or ventilators. Two ratios were calculated: a bed-to-at-risk-population ratio and a bed-to-COVID-19 patients ratio. At-risk population was defined as population over age 50. To account for distance decay, multiple zones were created to represent different travel times: 0-10 min, 10-20 min, and 20-30 min, and three weights were applied in these zones (1, 0.68, and 0.22), respectively. These zones are created from a convex hull based on network travel nodes. It must be noted that these weights are not justified in the text of the paper nor in the provided code, so it is unclear on what they are based. Accessibility was then calculated as the sum of the service-to-population ratio. This summing means that areas that fall within areas of overlap between catchments were given a higher accessibility rating.
 
-[Baseline tweet ids for rehydration](https://github.com/emmaclinton/RE-Dorian/blob/main/data/derived/public/GAbaselineids.txt)
+Finally, the final accessibility results are aggregated into hexagonal grids. (Hexagons were used to minimize orientation bias from edge effects.)
 
-[This script](https://github.com/emmaclinton/RE-Dorian/blob/main/procedure/code/02-analyze-tornado.r) contains the procedure for several analyses run on these tweets. First, tweets were analyzed temporally to determine when tornado-related activity was high. The script also details how the tweet contents were graphed to see which terms occurred most frequently, and they were also mapped and compared to [population density data](https://github.com/emmaclinton/RE-Dorian/blob/main/data/derived/public/counties.RDS) from the [US Census](https://www.census.gov/data.html).
-
-In [this script](https://github.com/emmaclinton/RE-Dorian/blob/main/procedure/code/04-spatial-clustering-tornado.R), the NTDI (Holler, 2021) was created by comparing the tornado tweets to the baseline tweets using the formula NTDI = (tornado - base) / (tornado + base). A spatial cluster analysis using the G statistic was also implemented to reveal areas where Twitter activity differed significantly from the norm during the temporal duration of the tornado warning. The null hypothesis for this statistic states that there is no spatial clustering of the input features, and when clustering is found to be significantly high or low, this null hypothesis is rejected. These results were then mapped (**Fig. 4**).
 
 ## Replication Results
 
-The temporal analysis of tweet activity in the region yielded the results shown in **Fig. 1.** There was clearly an increase in tornado-related Twitter activity around May 4.
+The spatial analysis of hospital accessibility in Chicago yielded the results shown in **Fig. 1.**
 
-![Fig. 1](/twit/results/figures/tornadoTime.png)
+![Fig. 1](/kang/assets/final.png)
 
 _Fig. 1. Temporal analysis._
 
