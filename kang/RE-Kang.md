@@ -5,16 +5,14 @@ title: RE- Spatial-temporal and content analysis of Twitter Data
 
 
 **Reproduction of**
-# Spatial, temporal and content analysis of Twitter data
+# "Rapidly measuring spatial accessibility of COVID-19 healthcare resources: a case study of Illinois, USA."
 
-Original study *by* Wang, Z., X. Ye, and M. H. Tsou. 2016. Spatial, temporal, and content analysis of Twitter for wildfire hazards. *Natural Hazards* 83 (1):523–540. DOI:[10.1007/s11069-016-2329-6](https://doi.org/10.1007/s11069-016-2329-6).
-and
-First replication study by Holler, J. 2021 (in preparation). Hurricane Dorian vs Sharpie Pen: an empirical test of social amplification of risk on social media.
+Original study *by* Kang, J. Y., A. Michels, F. Lyu, Shaohua Wang, N. Agbodo, V. L. Freeman, and Shaowen Wang. 2020. Rapidly measuring spatial accessibility of COVID-19 healthcare resources: a case study of Illinois, USA. International Journal of Health Geographics 19 (1):1–17. [DOI:10.1186/s12942-020-00229-x.](DOI:10.1186/s12942-020-00229-x)
 
 Replication Author:
 Emma Clinton
 
-Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RE-Dorian)
+Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RP-Kang)
 
 Created: `19 May 2021`
 Revised: `DD Month YYYY`
