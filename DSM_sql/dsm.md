@@ -22,7 +22,7 @@ that is not listed as an amenity and is listed as a building.
 
 Data in OSM is organized in the form of **tags**, which consist of a _key_ and a _value_, in the form of key="value". A key is used to define the type or category of the object in question, and the value is used to enumerate or elaborate on the character of the feature. An example of this key="value" format would be natural="wood". The key here is _natural_, which specifies the type of feature as a natural feature, and the value is _wood_, meaning that the type of natural feature is a wood or a forest. We use these keys to pick out the residential and greenspace features we want to use in our analysis.
 
-```
+```sql
 /* Create a table of points that are residential buildings*/
 
 -- By default, PostGIS doesn't seem to know what type of geometry it's getting,
@@ -53,7 +53,7 @@ DROP COLUMN amenity;
 
 We then repeat this process of picking out residences with the polygon features to ensure our analysis captures all residences.
 
-```
+```sql
 
 CREATE TABLE respoly AS
 SELECT osm_id, building, amenity, st_transform(way,32737)::geometry(polygon,32737) AS geom,
@@ -75,7 +75,7 @@ WHERE res IS NULL;
 
 When using SQL, it's best to simplify, simplify. Here, we convert these complex polygons to their centroids for ease of analysis, then merge these features with the points layer to create a single layer of residences.
 
-```
+```sql
 /* Now, convert the polygons to centroids to simplify the geometries. */
 
 CREATE TABLE respoly_centroids AS
@@ -97,7 +97,7 @@ FROM respoly_centroids;
 ```
 Our analysis will eventually be visually represented using the wards. We therefore need to join identifying information about the wards to the residences point layer, using the spatial relationship between residential points and wards to assign a "ward_name" value to residential points.
 
-```
+```sql
 /* Join the wards data to the uni_residences table. */
 
 ALTER TABLE uni_residences
@@ -112,7 +112,7 @@ WHERE st_intersects(uni_residences.geom, st_transform(ward_census.utmgeom,32737)
 
 In order to determine the final percent of residences with access to greenspace, we need to calculate a total value for the number of residences per ward. This code runs that count function and groups count values by ward name.
 
-```
+```sql
 /* Count the number of residences per ward */
 
 /* Alter table "ward census" by adding counts of the residences contained within each ward:*/
@@ -133,7 +133,7 @@ LIMIT 250;
 
 Next, we need to define and pick out our greenspaces. We will first filter by public accessibility, and then by greenspace type, using the key="value" format.
 
-```
+```sql
 /* Time to consider greenspace! */
 
 /* Filter by public accessibility */
@@ -162,7 +162,7 @@ WHERE green_ IS NULL;
 ```
 We can then buffer these greenspaces and pick out the residential points that fall within them.
 
-```
+```sql
 /* Buffer the greenspaces by an accessible amount of distance (in our case, .25 km)*/
 CREATE TABLE greenbuffer AS
 SELECT osm_id, st_buffer(geom, 250)::geometry(polygon,32737) as geom from greenspace_access;
@@ -180,7 +180,7 @@ WHERE st_intersects(uni_residences.geom, st_transform(greenbuffer.geom,32737));
 ```
 We then repeat the process of counting points within polygons that we used above to determine the number of points in each buffer.
 
-```
+```sql
 /* Count the number of greenspace-accessible residences per ward */
 
 /* Alter table "ward census" by adding counts of the residences contained within each ward: */
@@ -201,7 +201,7 @@ SELECT *
 
 And there we have it! We can now calculate the percent of residences within 0.25km of greenspaces per ward:
 
-```
+```sql
 /* Calculate the percentage of the residences in each ward that are within .25km of a publicly accessible greenspace */
 
 ALTER TABLE ward_census
@@ -218,7 +218,7 @@ Here is a [link to a web map of our final results](/assets/index.html).
 
 Our results show that the majority of wards with high greenspace access (and the majority of greenspaces) are located near the coast in the most well-developed and well-organized area of the city (**Fig. 2**). This aligns with the findings of recent studies focused on development patterns and urban sprawl in Dar es Salaam. For instance, [a recent study by the Centre for Sustainable Cities](http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/) found that the rates of development in Dar es Salaam are outpacing the capacity of the government to promote sustainable neighborhood development. [Kombe (1994)](https://www.researchgate.net/publication/248523777_Understanding_land_markets_in_African_urban_areas_The_case_of_Dar_es_Salaam_Tanzania) cite the emergence of an informal land market as the main driver of the rapid development and unplanned development of land in Dar es Salaam. This has led to informal developments as the city grows outwards from its center [(Bhanjee and Zhang, 2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania), as seen in **Fig. 1.**
 
-![Development in Dar es Salaam](/assets/dar_development.png)
+![Development in Dar es Salaam](https://www.researchgate.net/figure/Map-of-planned-residential-areas-and-informal-settlements-in-1982-and-2002_fig5_325445730/actions#embed)
 **Fig. 1.** A map of planned/unplanned development in Dar es Salaam (adapted from [Bhanjee and Zhang (2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania)).
 
 
@@ -262,7 +262,7 @@ Msuya, I., Moshi, I., and Levira, F. (2020). Dar es Salaam: the unplanned urban 
 
 And if you'd rather see the code all in one place:
 
-```
+```sql
 /* Create a table of points that are residential buildings*/
 /* Here, we are defining residential buildings as any point/polygon that is not listed as an amenity and listed as a building*/
 -- By default, PostGIS doesn't seem to know what type of geometry it's getting,
