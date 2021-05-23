@@ -30,11 +30,21 @@ Reproduction of this analysis is important for verification of the results of th
 ## Materials and Procedure
 The script needed to replicate the data search is included [here](https://github.com/emmaclinton/RP-Kang/blob/main/COVID-19Acc.ipynb).
 
+**CITE DATA SOURCES**
+
 The original study by Kang et al (2020) used hospital data from IDPH, COVID-19 confirmed case data from IDPH, residential data from the United States Census Bureau, and road network data from Open Street Map to analyze the spatial accessibility of healthcare resources for residents of the state of Illinois in the context of the COVID-19 pandemic. This analysis used a parallel enhanced two-step floating catchment area to find all people within the catchment areas of the healthcare services. The catchments in this analysis were created from travel time along the road network.
 
 The second step in the analysis was to calculate a service-to-population ratio within each catchment. The "service" in this model is defined as ICU beds and/or ventilators. Two ratios were calculated: a bed-to-at-risk-population ratio and a bed-to-COVID-19 patients ratio. At-risk population was defined as population over age 50. To account for distance decay, multiple zones were created to represent different travel times: 0-10 min, 10-20 min, and 20-30 min, and three weights were applied in these zones (1, 0.68, and 0.22), respectively. These zones are created from a convex hull based on network travel nodes. It must be noted that these weights are not justified in the text of the paper nor in the provided code, so it is unclear on what they are based. Accessibility was then calculated as the sum of the service-to-population ratio. This summing means that areas that fall within areas of overlap between catchments were given a higher accessibility rating.
 
 Finally, the final accessibility results are aggregated into hexagonal grids. (Hexagons were used to minimize orientation bias from edge effects.)
+
+## Deviations from the Protocol
+
+The original study calculated accessibility of healthcare services for both the state of Illinois and for the city of Chicago. A modified version of the original analysis code, provided by [Joseph Holler](https://github.com/josephholler), which only calculates accessibility for the city of Chicago, was used in this reproduction.
+
+The road network provided for us to complete this replication was confined to the limits of Chicago. The road network we used therefore did not  account for use of hospitals outside of the city, regardless of their distance from Chicago. However, the original collection of hospital points was used, meaning that hospitals outside of the city limits were snapped to the nearest node in the road network, causing hospitals outside of the city to be assigned to the node of the city’s road network to which they were most closely located. This reproduction attempts to account for these errors by modifying the road network used in the study to include a 30-km buffer around the city to include roads that fall within that distance. Additionally, errors in the OSM data speed attribute made it impossible for the original code to be run. Speed limits for nodes with these hardcoded errors are therefore assigned the study's default speed of 35 mph (the same speed as is assigned to roads with no speed data). This code correction can be attributed to [Maja Cannavo](https://majacannavo.github.io/geog323/geog323main).
+
+In their report, Kang et al. (2020) did not provide robust justification for the weight values used in their analysis. In this reproduction, I ran the analysis a second time with different arbitrary weight values of 1.0, 0.85, and 0.5 in order to get a qualitative sense for how sensitive the model might be to these weight values.
 
 
 ## Replication Results
