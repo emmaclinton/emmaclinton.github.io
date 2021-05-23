@@ -225,7 +225,7 @@ https://www.researchgate.net/profile/Charlie-Zhang-5/publication/325445730/figur
 <!-- CSS Code -->
 <style type="text/css" scoped>
 img.GeneratedImage {
-width:835.28px;height:544.25px;margin:10px;border-width:6px;border-color:#000000;border-style:solid;
+width:544.25px;height:835.28px;margin:10px;border-width:6px;border-color:#000000;border-style:solid;
 }
 </style>
 
