@@ -61,7 +61,7 @@ _Fig. 1. Temporal analysis._
 
 The revised spatial analysis of hospital accessibility including the 30km buffer of the road network and using the new weight values from [Delameter, Shortridge, and Kilcoyne (2019)](https://doi.org/10.1186/s12913-019-3969-5) yielded the results shown in **Fig. 3.**
 
-![Fig. 3](/kang/assets/new_weights.png)
+![Fig. 3](/kang/assets/final_new_weights.png)
 
 
 ## Discussion
