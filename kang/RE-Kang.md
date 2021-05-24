@@ -1,11 +1,7 @@
 ---
 layout: page
-title: RE- Spatial-temporal and content analysis of Twitter Data
+title: RP-Spatial accessibility of COVID-19 healthcare resources
 ---
-
-
-**Reproduction of**
-# "Rapidly measuring spatial accessibility of COVID-19 healthcare resources: a case study of Illinois, USA."
 
 Original study *by* Kang, J. Y., A. Michels, F. Lyu, Shaohua Wang, N. Agbodo, V. L. Freeman, and Shaowen Wang. 2020. Rapidly measuring spatial accessibility of COVID-19 healthcare resources: a case study of Illinois, USA. International Journal of Health Geographics 19 (1):1–17. [DOI:10.1186/s12942-020-00229-x.](DOI:10.1186/s12942-020-00229-x)
 
