@@ -198,7 +198,7 @@ Our replication analysis yielded slightly different results than those generated
 ![Results (TA Adaptive Capacity)](/maps/ac_2010.png)
 _(Fig. 1) Access and assets (adaptive capacity) scores from our results._
 
-![Results (TA Adaptive Capacity)](/maps/fig4compare_copy.png)
+![Results (TA Adaptive Capacity)](/maps/fig4compare_resize.png)
 _(Fig. 2) Difference in access and assets (adaptive capacity) scores (difference = reproduction score - original study score)._
 
 There are some differences between the two. Compared to Malcomb et al. (2014), our analysis seems to have generally provided lower adaptive capacity values than those in the original study. This may be due to a modification made to the code in which a line multiplying capacity values by 20 to make them more similar to the values of Malcomb et al. (20140 was removed. However, it may also be due to the sources of uncertainty outlined above: particularly the organization into quintiles and the uncertainty surrounding the timing of aggregation to the TA level. However, as indicated in **Table 3**, the rho value is relatively close to 1, indicating a positive correlation between the values of the two maps.
@@ -217,10 +217,10 @@ There are some differences between the two. Compared to Malcomb et al. (2014), o
 
 
 
-![Results (Vulnerability](/maps/vulnerability_new_copy.png)
+![Results (Vulnerability](/maps/vulnerability_resize.png)
 _(Fig. 3) Final vulnerability score from our results._
 
-![Results (Vulnerability Comparison](/maps/fig5comp.png)
+![Results (Vulnerability Comparison](/maps/fig5comp_resize.png)
 _(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
 
 ![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
