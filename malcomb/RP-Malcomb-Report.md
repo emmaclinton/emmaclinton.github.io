@@ -217,7 +217,7 @@ There are some differences between the two. Compared to Malcomb et al. (2014), o
 
 
 
-![Results (Vulnerability](/maps/fig4compare_copy.png)
+![Results (Vulnerability](/maps/vulnerability_resize.png)
 _(Fig. 3) Final vulnerability score from our results._
 
 ![Results (Vulnerability Comparison](/maps/fig5comp_resize.png)
