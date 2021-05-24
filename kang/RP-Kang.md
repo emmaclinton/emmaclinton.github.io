@@ -41,7 +41,7 @@ The road network provided for us to complete this replication was confined to th
 Another alteration to the code was made regarding the weights assigned to different distance buffers for the hospitals. [Kang et al. (2020)](https://doi.org/10.1186/s12942-020-00229-x) did not explain nor justify the weight values used in their analysis. Therefore, the analysis was also run with new weight values of [1.0, 0.5, and 1.0]. These weight values come from [Delameter, Shortridge, and Kilcoyne (2019)](https://doi.org/10.1186/s12913-019-3969-5), who found that for a two-step floating catchment analysis, the most accurate weight values for healthcare service distance decay came from a logistic cumulative distance function, with distance decay based on distance to the nearest facility for a population.
 
 
-## Replication Results
+## Replication Results and Discussion
 
 The spatial analysis of hospital accessibility in Chicago yielded the results shown in **Fig. 1.**
 
@@ -59,24 +59,11 @@ The revised spatial analysis of hospital accessibility including the 30km buffer
 
 ![Fig. 3](/kang/assets/final_new_weights.png)
 
-_Fig. 3. Output from buffered road network with new weight values._
+_Fig. 3. Output from buffered road network with new weight values [1.0 (0-10 min), 0.5 (10-20 min), and 0.1(20-30 min)]._
 
+From the results of **Fig. 1** and **Fig. 2**, it appears that the use of the expanded road network led to far higher accessibility in the northwestern area of Chicago (**Fig. 2**) that were left out in **Fig. 1**. The inclusion of this expanded road network seems to have improved the accuracy of this map.
 
-## Discussion
-
-![Fig. 5](/twit/results/figures/may5tornado.png)
-
-_Fig. 5. NOAA Tornado Warning (May 05)._
-
-![Fig. 6](/twit/results/figures/tornadopts.png)
-
-_Fig. 5. NOAA Tornado and Storm Location Points (May 05)._
-
-When comparing **Fig 3** and **Fig. 4** with **Fig. 5** and **Fig. 6**, it does appear that a great deal of Twitter activity paralleled the tornado tracks. These storms were severe and caused widespread dmamage, and many southern states were warned to be on alert for tornadoes on May 3-5, 2021. In some areas, storm activity resulted in significant property damage, several deaths, and extensive power outages (Victor and Jimenez, 2021). These storms generally moved eastwards, and it appears that the areas of the country that have the highest significant clustering of activity are located within the moderate- to high-risk areas of the American south. (**Fig. 4**, **Fig. 5**, **Fig. 6**).
-
-Power outages are important to consider in the context of Twitter analyses, because outages may mean that individuals who are impacted are unable to share information about their status or the situation evolving around them, leading to an incomplete picture of a disaster scenario (Crawford and Finn, 2014). It is also important to consider the human implications of such events when mapping natural disasters. There is a tendency to dissociate data like these from the humans that produced them, especially when data are made anonymous and aggregate. However, it is essential to recognize the devastating impacts of such events and realize that the repercussions of events like tornadoes and severe storms extend far beyond the temporal bounds of the storm event itself.
-
-These findings seem to confirm the findings of Wang et al. (2016) in that the areas that experienced tornado warning or damage were found to have high cluster density of tornado-related Twitter activity. These results also track well with the findings of Holler (2021) in that the Twitter activity largely tracks the eastward movement of this storm event and its impacts, similar to the activity correlating with the movement of Hurricane Dorian.
+The result of the use of distance weights from [Delameter, Shortridge, and Kilcoyne (2019)](https://doi.org/10.1186/s12913-019-3969-5) is shown in **Fig. 3**. When compared to **Fig. 2**, it appears that the lower weights of the 10-20 and 20-30 minute buffers have reduced accessibility values across the map, as indicated by the generally less-saturated colors in **Fig. 3**, especially in the southern and northwestern areas of the city. 
 
 
 ## Conclusion
