@@ -15,24 +15,22 @@ Emma Clinton
 Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RP-Kang)
 
 Created: `19 May 2021`
-Revised: `DD Month YYYY`
+Revised: `24 May 2021`
 
 ## Original Study Information
 
-This analysis is a reproduction of Kang et al. (2020). This study looks at the cyberinfrastructure and analysis behind the [Where COVID 19 Dashboard](https://wherecovid19.cigi.illinois.edu/spatialAccess.html) for the state of Illinois. This dashboard is meant to be a tool to rapidly measure the accessibility of healthcare resources (ICU beds and ventilators) in order to understand how prepared healthcare systems are to save lives during crises like the COVID-19 pandemic and to inform where future services should potentially be allocated.
+This analysis is a reproduction of [Kang et al. (2020)](https://doi.org/10.1186/s12942-020-00229-x). This study looks at the cyberinfrastructure and analysis behind the [Where COVID 19 Dashboard](https://wherecovid19.cigi.illinois.edu/spatialAccess.html) for the state of Illinois. This dashboard is meant to be a tool to rapidly measure the accessibility of healthcare resources (ICU beds and ventilators) in order to understand how prepared healthcare systems are to save lives during crises like the COVID-19 pandemic and to inform where future services should potentially be allocated.
 
 This paper found that ICU beds and ventilators are not evenly distributed throughout the state of Illinois, and that people living in central and northern Chicago were better able to access healthcare services than the population living in southern Chicago. There was no significant difference between at-risk populations' access to beds and ventilators and COVID-19 patients' access to those same services.
 
 Reproduction of this analysis is important for verification of the results of the original study, which have very important implications in terms of health care provision in the context of emergency situations like the evolving COVID-19 pandemic. Replication of this study could prove highly useful for creating similar tools for other states or even at a federal level.
-
-"modest contributions MY FOOT"
 
 ## Materials and Procedure
 The script needed to replicate the data search is included [here](https://github.com/emmaclinton/RP-Kang/blob/main/COVID-19Acc.ipynb).
 
 **CITE DATA SOURCES**
 
-The original study by Kang et al (2020) used hospital data from IDPH, COVID-19 confirmed case data from IDPH, residential data from the United States Census Bureau, and road network data from Open Street Map to analyze the spatial accessibility of healthcare resources for residents of the state of Illinois in the context of the COVID-19 pandemic. This analysis used a parallel enhanced two-step floating catchment area to find all people within the catchment areas of the healthcare services. The catchments in this analysis were created from travel time along the road network.
+The original study by [Kang et al. (2020)](https://doi.org/10.1186/s12942-020-00229-x) used hospital data from IDPH, COVID-19 confirmed case data from IDPH, residential data from the United States Census Bureau, and road network data from Open Street Map to analyze the spatial accessibility of healthcare resources for residents of the state of Illinois in the context of the COVID-19 pandemic. This analysis used a parallel enhanced two-step floating catchment area to find all people within the catchment areas of the healthcare services. The catchments in this analysis were created from travel time along the road network.
 
 The second step in the analysis was to calculate a service-to-population ratio within each catchment. The "service" in this model is defined as ICU beds and/or ventilators. Two ratios were calculated: a bed-to-at-risk-population ratio and a bed-to-COVID-19 patients ratio. At-risk population was defined as population over age 50. To account for distance decay, multiple zones were created to represent different travel times: 0-10 min, 10-20 min, and 20-30 min, and three weights were applied in these zones (1, 0.68, and 0.22), respectively. These zones are created from a convex hull based on network travel nodes. It must be noted that these weights are not justified in the text of the paper nor in the provided code, so it is unclear on what they are based. Accessibility was then calculated as the sum of the service-to-population ratio. This summing means that areas that fall within areas of overlap between catchments were given a higher accessibility rating.
 
@@ -44,40 +42,27 @@ The original study calculated accessibility of healthcare services for both the 
 
 The road network provided for us to complete this replication was confined to the limits of Chicago. The road network we used therefore did not  account for use of hospitals outside of the city, regardless of their distance from Chicago. However, the original collection of hospital points was used, meaning that hospitals outside of the city limits were snapped to the nearest node in the road network, causing hospitals outside of the city to be assigned to the node of the city’s road network to which they were most closely located. This reproduction attempts to account for these errors by modifying the road network used in the study to include a 30-km buffer around the city to include roads that fall within that distance. Additionally, errors in the OSM data speed attribute made it impossible for the original code to be run. Speed limits for nodes with these hardcoded errors are therefore assigned the study's default speed of 35 mph (the same speed as is assigned to roads with no speed data). This code correction can be attributed to [Maja Cannavo](https://majacannavo.github.io/geog323/geog323main).
 
-In their report, Kang et al. (2020) did not provide robust justification for the weight values used in their analysis. In this reproduction, I ran the analysis a second time with different arbitrary weight values of 1.0, 0.85, and 0.5 in order to get a qualitative sense for how sensitive the model might be to these weight values.
+Another alteration to the code was made regarding the weights assigned to different distance buffers for the hospitals. [Kang et al. (2020)](https://doi.org/10.1186/s12942-020-00229-x) did not explain nor justify the weight values used in their analysis. Therefore, the analysis was also run with new weight values of [1.0, 0.5, and 1.0]. These weight values come from [Delameter, Shortridge, and Kilcoyne (2019)](https://doi.org/10.1186/s12913-019-3969-5), who found that for a two-step floating catchment analysis, the most accurate weight values for healthcare service distance decay came from a logistic cumulative distance function, with distance decay based on distance to the nearest facility for a population.
 
 
 ## Replication Results
 
 The spatial analysis of hospital accessibility in Chicago yielded the results shown in **Fig. 1.**
 
-![Fig. 1](/kang/assets/final.png)
+![Fig. 1](/kang/assets/basic_result.png)
 
 _Fig. 1. Temporal analysis._
 
-The content analysis graph shown in **Fig. 2** counts the instances of unique words found in tweets, and it is clear that "watch," which was not included as a keyword in this analysis, showed up frequently in tornado-related tweets.
+The revised spatial analysis of hospital accessibility including the 30km buffer of the road network in Chicago yielded the results shown in **Fig. 2.**
 
-![Fig. 2](/twit/results/figures/tornado_freqWords.png)
+![Fig. 2](/kang/assets/final.png)
 
-_Fig. 2. Tweet content analysis._
+_Fig. 1. Temporal analysis._
 
-The map of twitter activity in **Fig. 3** is shown in comparison to county population data.
+The revised spatial analysis of hospital accessibility including the 30km buffer of the road network and using the new weight values from [Delameter, Shortridge, and Kilcoyne (2019)](https://doi.org/10.1186/s12913-019-3969-5) yielded the results shown in **Fig. 3.**
 
-![Fig. 3](/twit/results/figures/GAtornado_PopDensity.png)
+![Fig. 3](/kang/assets/new_weights.png)
 
-_Fig. 3. Map of tornado-related Twitter activity._
-
-Finally, **Fig. 4** shows the cluster hotspot analysis to show where there was significant deviation from baseline Twitter data.
-
-![Fig. 4](/twit/results/figures/Rplot_GAclusters.png)
-
-_Fig. 4. Cluster hotspot analysis._
-
-## Unplanned Deviations from the Protocol
-
-There is certainly room for uncertainty in the selection of keywords in this analysis. In addition, the fact that not all tweets (in fact, the majority of tweets) are not geotagged means that much information is left out in this analysis. Wang et al. (2016) also did not include information about the GIS platform that they used in their kernel density analysis, meaning that it is likely that this analysis differs from the original study.
-
-Additionally, it was necessary to remove some tweets that were on the outer edge of the 3000mi search radius, as there were very few of them and they threw off the scale of the analysis.
 
 ## Discussion
 
