@@ -29,7 +29,7 @@ Holler (2021) is studying Twitter data for Hurricane Dorian on the Atlantic coas
 
 Reproducing and replicating spatial research of data regarding the social media implications of natural disasters continues to be relevant for many reasons. There are many ethical considerations regarding the sharing of private information and access to disaster data. This data also has potential for high utility regarding designing response networks in future disaster scenarios and getting help to those on the ground in future scenarios.
 
-In this replication study, I will analyze Twitter activity data regarding a recent hurricane outbreak using data from April 26, 2021 - May 04, 2021 in Georgia and several surrounding states to see how this severe storm influenced people's social media activity.
+In this replication study, I will analyze Twitter activity data regarding a recent tornado outbreak using data from April 26, 2021 - May 04, 2021 in Georgia and several surrounding states to see how this severe storm influenced people's social media activity.
 
 
 ## Original Study Information
@@ -84,7 +84,7 @@ _Fig. 4. Cluster hotspot analysis._
 
 ## Unplanned Deviations from the Protocol
 
-There is certainly room for uncertainty in the selection of keywords in this analysis. In addition, the fact that not all tweets (in fact, the majority of tweets) are not geotagged means that much information is left out in this analysis. Wang et al. (2016) also did not include information about the GIS platform that they used in their kernel density analysis, meaning that it is likely that this analysis differs from the original study.
+There is certainly room for uncertainty in the selection of keywords in this analysis. In addition, the fact that not all tweets (in fact, the majority of tweets) are not geotagged means that much information is left out in this analysis (roughly 700 tweets had spatial information associated with them, compared to several thousand tweets that contained the search keywords). Wang et al. (2016) also did not include information about the GIS platform that they used in their kernel density analysis, meaning that it is likely that this analysis differs from the original study.
 
 Additionally, it was necessary to remove some tweets that were on the outer edge of the 3000mi search radius, as there were very few of them and they threw off the scale of the analysis.
 
