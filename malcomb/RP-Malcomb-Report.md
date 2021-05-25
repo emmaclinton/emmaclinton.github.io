@@ -217,7 +217,7 @@ There are some differences between the two. Compared to Malcomb et al. (2014), o
 ![Results (Vulnerability](/maps/vulnerability_resize.png)
 _(Fig. 3) Final vulnerability score from our results._
 
-![Results (Vulnerability Comparison](/maps/fig5comp_new.png)
+![Results (Vulnerability Comparison](/maps/fig5_scatterplot_zoom.png)
 _(Fig. 4) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
 
 ![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
@@ -225,7 +225,7 @@ _(Fig. 4) Final vulnerability score comparison between our results and those of 
 _(Fig. 5) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot (rho = 0.1859791)._
 
 
-The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity; however, it appears that the values in the scatterplot are oddly discretized. It is possible that this is due to some earlier classiificaiton of the data or some lack of decimal precision that caused the values to appear more similar to one another than they otherwise might have been. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
+The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
 
 Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study. Any discrepancies in our data are likely due to practical errors.
 
