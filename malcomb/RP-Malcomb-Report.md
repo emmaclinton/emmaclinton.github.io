@@ -7,7 +7,7 @@ title: RP- Vulnerability modeling for sub-Saharan Africa
 Original study *by* Malcomb, D. W., E. A. Weaver, and A. R. Krakowka. 2014. Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi. *Applied Geography* 48:17–30. DOI:[10.1016/j.apgeog.2014.01.004](https://doi.org/10.1016/j.apgeog.2014.01.004)
 
 Replication Authors:
-Your Name, Joseph Holler, Kufre Udoh, Open Source GIScience students of Fall 2019 and Spring 2021
+Emma Clinton, Joseph Holler, Kufre Udoh, Open Source GIScience students of Fall 2019 and Spring 2021
 
 Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RP-Malcomb)
 
@@ -30,7 +30,7 @@ The original study was published without data or code, but has detailed narrativ
 *Access and Assets Data:*
  Demographic and Health Survey data are a product of the United States Agency for International Development ([USAID](https://www.usaid.gov/)). Variables contained in this dataset are used to represent adaptive capacity (access + assets) in Malcomb et al.’s (2014) study. These data come from survey questionnaires with large sample sizes. The DHS data used in our study were collected in 2010. In Malawi, the DHA data dates back as far as 1992, but data has not been collected consistently every year.
 
- Each point in the household dataset represents a cluster of households, with each cluster corresponding to some form of census enumeration units, such as villages in rural areas or city blocks in urban areas [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf). This means that each household in each cluster has the same GPS data. This data is collected by trained [USAID](https://www.usaid.gov/) staff using GPS receivers. To preserve privacy, these points are then displaced randomly some distance from their origin, sometimes moved up to 2 km in urban areas or 5 km in more rural areas. 
+ Each point in the household dataset represents a cluster of households, with each cluster corresponding to some form of census enumeration units, such as villages in rural areas or city blocks in urban areas [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf). This means that each household in each cluster has the same GPS data. This data is collected by trained [USAID](https://www.usaid.gov/) staff using GPS receivers. To preserve privacy, these points are then displaced randomly some distance from their origin, sometimes moved up to 2 km in urban areas or 5 km in more rural areas.
 
 Missing data is a common occurrence in this dataset as a result of negligence or incorrect naming. However, according to the [DHS GPS Manual](/data/metadata/DHS_GPS_Manual_English_A4_24May2013_DHSM9.pdf), these issues are easily rectified and typically sites for which data does not exist are recollected. Sometimes, however, missing information is coded in as such or assigned a proxy location.
 
@@ -218,14 +218,14 @@ There are some differences between the two. Compared to Malcomb et al. (2014), o
 _(Fig. 3) Final vulnerability score from our results._
 
 ![Results (Vulnerability Comparison](/maps/fig5comp_new.png)
-_(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
+_(Fig. 4) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score)._
 
 ![Results (Vulnerability Comparison scatterplot](/maps/fig5rho.png)
 
-_(Fig. 3) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot (rho = 0.1859791)._
+_(Fig. 5) Final vulnerability score comparison between our results and those of the original study (difference = reproduction score - original score) in the form of a scatterplot (rho = 0.1859791)._
 
 
-The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
+The final vulnerability map (equivalent to Fig. 5 in Malcomb et al. [2014]) exhibited more difference than that seen in Fig. 4. Again, our analysis seems more likely to yield lower vulnerability values than the original. The Spearman's correlation test yielded rho = 0.1859791, indicating low correlation between the values on the original and reproduction map. This may be due to the lack of clarity on how the variables corresponding to livelihood sensitivity; however, it appears that the values in the scatterplot are oddly discretized. It is possible that this is due to some earlier classiificaiton of the data or some lack of decimal precision that caused the values to appear more similar to one another than they otherwise might have been. There was substantial opportunity for variation in interpretation of the original methods in this section of the study. It is possible that our values are very different from those assigned by Malcomb et al. (2014) because there is no way to check that the way we calculated the variables in **Table 2** parallels the calculations of the original authors.
 
 Ultimately, we did not have the code used by the original authors when they carried out this study. This would not have been as much of a problem if the methods had been more explicit. However, this lack of code, combined with the fact that the methods were incompletely documented, means that there was a great deal of "room for interpretation" involved in our attempt to reproduce their results, even with 100% of the data used in the original study. Any discrepancies in our data are likely due to practical errors.
 

@@ -48,7 +48,7 @@ WHERE res IS NULL;
 
 ALTER TABLE respoint
 DROP COLUMN amenity;
-}
+
 ```
 
 We then repeat this process of picking out residences with the polygon features to ensure our analysis captures all residences.
