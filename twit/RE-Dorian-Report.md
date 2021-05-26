@@ -17,7 +17,7 @@ Emma Clinton
 Replication Materials Available at: [emmaclinton.github.io](https://github.com/emmaclinton/RE-Dorian)
 
 Created: `05 May 2021`
-Revised: `DD Month YYYY`
+Revised: `25 May 2021`
 
 ## Abstract
 
@@ -100,7 +100,7 @@ _Fig. 5. NOAA Tornado and Storm Location Points (May 05)._
 
 When comparing **Fig 3** and **Fig. 4** with **Fig. 5** and **Fig. 6**, it does appear that a great deal of Twitter activity paralleled the tornado tracks. These storms were severe and caused widespread damage, and many southern states were warned to be on alert for tornadoes on May 3-5, 2021. In some areas, storm activity resulted in significant property damage, several deaths, and extensive power outages (Victor and Jimenez, 2021). These storms generally moved eastwards, and it appears that the areas of the country that have the highest significant clustering of activity are located within the moderate- to high-risk areas of the American south. (**Fig. 4**, **Fig. 5**, **Fig. 6**).
 
-It is interesting to consider the twitter activity in Florida shown in **Fig. 3**. There were warnings of severe weather in Florida, but the tornadoes never actually made landfall, and as **Fig. 4** shows, the Twitter activity was not significantly different from the baseline. Perhaps the fact that the tornadoes did not make landfall here made for a less significant spike in tornado related Twitter activity than in areas where tornadoes actually occurred. 
+It is interesting to consider the twitter activity in Florida shown in **Fig. 3**. There were warnings of severe weather in Florida, but the tornadoes never actually made landfall, and as **Fig. 4** shows, the Twitter activity was not significantly different from the baseline. Perhaps the fact that the tornadoes did not make landfall here made for a less significant spike in tornado related Twitter activity than in areas where tornadoes actually occurred.
 
 Power outages are important to consider in the context of Twitter analyses, because outages may mean that individuals who are impacted are unable to share information about their status or the situation evolving around them, leading to an incomplete picture of a disaster scenario (Crawford and Finn, 2014). It is also important to consider the human implications of such events when mapping natural disasters. There is a tendency to dissociate data like these from the humans that produced them, especially when data are made anonymous and aggregate. However, it is essential to recognize the devastating impacts of such events and realize that the repercussions of events like tornadoes and severe storms extend far beyond the temporal bounds of the storm event itself.
 
