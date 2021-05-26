@@ -218,7 +218,6 @@ Here is a [link to a web map of our final results](/assets/index.html).
 
 Our results show that the majority of wards with high greenspace access (and the majority of greenspaces) are located near the coast in the most well-developed and well-organized area of the city (**Fig. 2**). This aligns with the findings of recent studies focused on development patterns and urban sprawl in Dar es Salaam. For instance, [a recent study by the Centre for Sustainable Cities](http://www.centreforsustainablecities.ac.uk/research/dar-es-salaam-the-unplanned-urban-sprawl-threatening-neighbourhood-sustainability/) found that the rates of development in Dar es Salaam are outpacing the capacity of the government to promote sustainable neighborhood development. [Kombe (1994)](https://www.researchgate.net/publication/248523777_Understanding_land_markets_in_African_urban_areas_The_case_of_Dar_es_Salaam_Tanzania) cite the emergence of an informal land market as the main driver of the rapid development and unplanned development of land in Dar es Salaam. This has led to informal developments as the city grows outwards from its center [(Bhanjee and Zhang, 2018)](https://www.researchgate.net/publication/325445730_Mapping_Latest_Patterns_of_Urban_Sprawl_in_Dar_es_Salaam_Tanzania), as seen in **Fig. 1.**
 
-https://www.researchgate.net/profile/Charlie-Zhang-5/publication/325445730/figure/fig5/AS:743206538973186@1554205655149/Map-of-planned-residential-areas-and-informal-settlements-in-1982-and-2002.png/actions#embed
 
 <!-- Codes by HTML.am -->
 
